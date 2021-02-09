@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene("NewGame");
+        //Destroy(GameObject.Find("Audio Source"));
     }
 
     public void HowToPlay()
