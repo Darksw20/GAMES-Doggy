@@ -206,7 +206,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 575955297}
-        m_TargetAssemblyTypeName: HowTo, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameRouting, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 575955295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff1534ad0b2ae546a8ff70b9954fe03, type: 3}
+  m_Script: {fileID: 11500000, guid: f15a2003ae7a88143962319bb07d2f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &648242619

@@ -355,7 +355,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1049398819}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameRouting, Assembly-CSharp
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
@@ -1215,7 +1215,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1049398819}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameRouting, Assembly-CSharp
         m_MethodName: HowToPlay
         m_Mode: 1
         m_Arguments:
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049398817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72be81d495abcfb41abbe0699c391d59, type: 3}
+  m_Script: {fileID: 11500000, guid: f15a2003ae7a88143962319bb07d2f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1240957191
@@ -1528,7 +1528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1049398819}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameRouting, Assembly-CSharp
         m_MethodName: Sound
         m_Mode: 1
         m_Arguments:
@@ -1660,8 +1660,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1049398819}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_TargetAssemblyTypeName: GameRouting, Assembly-CSharp
+        m_MethodName: QuitGameSequence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
