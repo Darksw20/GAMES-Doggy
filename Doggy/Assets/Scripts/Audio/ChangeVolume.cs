@@ -15,4 +15,11 @@ public class ChangeVolume : MonoBehaviour
             AudioListener.pause = false;
         }
     }
+    /*
+    private void Start()
+    {
+        Toggle toggle = GameObject.Find("Toggle").GetComponent<Toggle>();
+        toggle.isOn = AudioListener.pause;
+    }
+    */
 }
