@@ -45,10 +45,19 @@ public class GameRouting : MonoBehaviour
     }
     public void NewGame()
     {
+        // Aqui creo un personaje
         SceneManager.LoadScene("NewGame");
         //Destroy(GameObject.Find("Audio Source"));
     }
-
+    public void Levels()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("LoadGame");
+        //Destroy(GameObject.Find("Audio Source"));
+    }
     public void HowToPlay()
     {
         SceneManager.LoadScene("HowTo");
