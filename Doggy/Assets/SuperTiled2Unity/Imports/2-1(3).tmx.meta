@@ -1,0 +1,57 @@
+fileFormatVersion: 2
+guid: 7b02d8695e39dad488acfd09ee2bbc74
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  missingFiles: []
+  errors:
+  - Errors detected in tileset 'TILESET 2.tsx'. Check the tileset inspector for more
+    details. Your map may be broken until these are fixed.
+  - Could not find tile 6. Make sure the tilesets were successfully imported.
+  - Could not find tile 306. Make sure the tilesets were successfully imported.
+  - Could not find tile 386. Make sure the tilesets were successfully imported.
+  - Could not find tile 381. Make sure the tilesets were successfully imported.
+  - Could not find tile 236. Make sure the tilesets were successfully imported.
+  - Could not find tile 237. Make sure the tilesets were successfully imported.
+  - Could not find tile 238. Make sure the tilesets were successfully imported.
+  - Could not find tile 239. Make sure the tilesets were successfully imported.
+  - Could not find tile 240. Make sure the tilesets were successfully imported.
+  - Could not find tile 251. Make sure the tilesets were successfully imported.
+  - Could not find tile 252. Make sure the tilesets were successfully imported.
+  - Could not find tile 253. Make sure the tilesets were successfully imported.
+  - Could not find tile 254. Make sure the tilesets were successfully imported.
+  - Could not find tile 255. Make sure the tilesets were successfully imported.
+  - Could not find tile 266. Make sure the tilesets were successfully imported.
+  - Could not find tile 267. Make sure the tilesets were successfully imported.
+  - Could not find tile 268. Make sure the tilesets were successfully imported.
+  - Could not find tile 269. Make sure the tilesets were successfully imported.
+  - Could not find tile 270. Make sure the tilesets were successfully imported.
+  - Could not find tile 281. Make sure the tilesets were successfully imported.
+  - Could not find tile 282. Make sure the tilesets were successfully imported.
+  - Could not find tile 283. Make sure the tilesets were successfully imported.
+  - Could not find tile 284. Make sure the tilesets were successfully imported.
+  - Could not find tile 285. Make sure the tilesets were successfully imported.
+  - Could not find tile 296. Make sure the tilesets were successfully imported.
+  - Could not find tile 297. Make sure the tilesets were successfully imported.
+  - Could not find tile 298. Make sure the tilesets were successfully imported.
+  - Could not find tile 299. Make sure the tilesets were successfully imported.
+  - Could not find tile 300. Make sure the tilesets were successfully imported.
+  - Could not find tile 381. Make sure the tilesets were successfully imported.
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 21
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  tilesAsObjects: 0
+  sortingMode: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets: []
