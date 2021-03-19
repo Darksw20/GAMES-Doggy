@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 1a84b4e51a5f08b40ac3b1af44dd92aa
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
+  missingFiles:
+  - Assets/SuperTiled2Unity/TILESET 2.png
+  errors:
+  - 'Missing texture asset: ../TILESET 2.png'
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 11
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  useSpriteAtlas: 1
+  atlasWidth: 2048
+  atlasHeight: 2048

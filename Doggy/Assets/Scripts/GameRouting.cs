@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameRouting : MonoBehaviour
 {
+    public TMP_InputField userName;
     
     public void QuitGameSequence()
     {
         Application.Quit();
     }
 
-    public void Dificulties()
+    public static void Dificulties()
     {
         SceneManager.LoadScene("Dificulty");
     }
@@ -45,10 +47,19 @@ public class GameRouting : MonoBehaviour
     }
     public void NewGame()
     {
+        // Aqui creo un personaje
         SceneManager.LoadScene("NewGame");
         //Destroy(GameObject.Find("Audio Source"));
     }
-
+    public void Levels()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("LoadGame");
+        //Destroy(GameObject.Find("Audio Source"));
+    }
     public void HowToPlay()
     {
         SceneManager.LoadScene("HowTo");
@@ -59,7 +70,7 @@ public class GameRouting : MonoBehaviour
         SceneManager.LoadScene("Sound");
     }
 
-    public void Level1_1()
+    public static void Level1_1()
     {
         //Aqui debe estar la logica de crear nuevo personaje
         SceneManager.LoadScene("Level1_1");
