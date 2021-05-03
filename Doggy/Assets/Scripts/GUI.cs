@@ -29,7 +29,6 @@ public class GUI : MonoBehaviour
         blueDiamond.SetText(GameManager.instancia.blueJewels.ToString());
         level.SetText("Nivel: "+ GameManager.instancia.level.ToString());
         time.SetText("Tiempo: " + GameManager.instancia.time.ToString());
-        GameManager.instancia.money++;
         coins.SetText(GameManager.instancia.money.ToString());
 
     }

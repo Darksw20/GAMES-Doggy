@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         playerName = "";
         level = 0;
         points = 0;
-        health = 0;
+        health = 3;
         money = 0;
         redJewels = 0;
         blueJewels = 0;
