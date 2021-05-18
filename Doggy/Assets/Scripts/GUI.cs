@@ -9,12 +9,6 @@ public class GUI : MonoBehaviour
     public TextMeshProUGUI blueDiamond;
     public TextMeshProUGUI redDiamond;
     public TextMeshProUGUI health;
-    public string timeText;
-    public string levelText;
-    public string coinsText;
-    public string blueDiamondText;
-    public string redDiamondText;
-    public string healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +24,13 @@ public class GUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time.SetText(timeText);
-        level.SetText(levelText);
-        coins.SetText(coinsText);
-        blueDiamond.SetText(blueDiamondText);
-        redDiamond.SetText(redDiamondText);
-        health.SetText(healthText);
+        health.SetText(GameManager.instancia.health.ToString());
+        redDiamond.SetText(GameManager.instancia.redJewels.ToString());
+        blueDiamond.SetText(GameManager.instancia.blueJewels.ToString());
+        level.SetText("Nivel: "+ GameManager.instancia.level.ToString());
+        time.SetText("Tiempo: " + GameManager.instancia.time.ToString());
+        coins.SetText(GameManager.instancia.money.ToString());
+
     }
+
 }
