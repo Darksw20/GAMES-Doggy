@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameMusic
   - Coin
+  - MysteryBox
+  - GameLoader
   layers:
   - Default
   - TransparentFX

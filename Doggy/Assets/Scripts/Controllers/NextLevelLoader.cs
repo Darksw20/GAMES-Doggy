@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinPicker : MonoBehaviour
+public class NextLevelLoader : GameRouting
 {
-    
+    public string level;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Coin")
+
+        if(other.transform.tag == "GameLoader")
         {
-            GameManager.instancia.money++;
-            Destroy(other.gameObject);
+            ChooseLevel(level);
         }
     }
 }

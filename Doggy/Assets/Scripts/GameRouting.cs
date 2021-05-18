@@ -107,4 +107,38 @@ public class GameRouting : MonoBehaviour
     {
         SceneManager.LoadScene("Level3_2_3");
     }
+
+    public void ChooseLevel(string level)
+    {
+        switch (level)
+        {
+            case "Level1_1":
+                Level1_1();
+            break;
+            case "Level1_2":
+                Level1_2();
+                break;
+            case "Level2_1_1":
+                Level2_1_1();
+                break;
+            case "Level2_1_2":
+                Level2_1_2();
+                break;
+            case "Level2_2":
+                Level2_2();
+                break;
+            case "Level3_1":
+                Level3_1();
+                break;
+            case "Level3_2_1":
+                Level3_2_1();
+                break;
+            case "Level3_2_2":
+                Level3_2_2();
+                break;
+            case "Level3_2_3":
+                Level3_2_3();
+                break;
+        }
+    }
 }
