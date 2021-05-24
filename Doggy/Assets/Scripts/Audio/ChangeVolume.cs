@@ -5,22 +5,41 @@ using UnityEngine.UI;
 
 public class ChangeVolume : MonoBehaviour
 {
-    public void SetMusic()
-    {
-        if(AudioListener.pause == false)
-        {
-            AudioListener.pause = true;
-        } else
-        {
-            AudioListener.pause = false;
+    const int MUSIC_ON = 1;
+    const int MUSIC_OFF = 0;
 
+    public Toggle audioToggle;
+    public void ToggleMusic()
+    {
+        Debug.Log(""+ audioToggle.isOn);
+        if(GameManager.instancia.isMusicOn == MUSIC_ON) // si no esta pausado, lo pausas
+        {
+            GameManager.instancia.isMusicOn = MUSIC_OFF;
+            AudioListener.pause = true;
+        }
+        else if(GameManager.instancia.isMusicOn == MUSIC_OFF)
+        {
+
+            GameManager.instancia.isMusicOn = MUSIC_ON;
+            AudioListener.pause = false; //lo mantienes sin pausar o lo despausas
         }
     }
-    /*
+
     private void Start()
     {
-        Toggle toggle = GameObject.Find("Toggle").GetComponent<Toggle>();
-        toggle.isOn = AudioListener.pause;
+        if (GameManager.instancia.isMusicOn == MUSIC_ON)
+        {
+            audioToggle.isOn = true;
+            AudioListener.pause = false;
+            Debug.Log("check prendido --");
+        }
+        else if (GameManager.instancia.isMusicOn == MUSIC_OFF)
+        {
+            audioToggle.isOn = false;
+            AudioListener.pause = true;
+            Debug.Log("check apagado --");
+        }
     }
-    */
+    
 }
+
