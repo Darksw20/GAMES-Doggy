@@ -19,6 +19,7 @@ public class ChangeVolume : MonoBehaviour
         }
         else if(GameManager.instancia.isMusicOn == MUSIC_OFF)
         {
+
             GameManager.instancia.isMusicOn = MUSIC_ON;
             AudioListener.pause = false; //lo mantienes sin pausar o lo despausas
         }
