@@ -19,6 +19,15 @@ public class TopDownPlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (movement.x < 0)
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 180.0f);
+        if (movement.x > 0)
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        if (movement.y < 0)
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -90.0f);
+        if (movement.y > 0)
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
     }
 
     void FixedUpdate()
