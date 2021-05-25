@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="60" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="5">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="60" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="6">
  <tileset firstgid="1" source="TILESET1-1.tsx"/>
  <layer id="1" name="piso" width="60" height="34">
   <data encoding="csv">
@@ -160,5 +160,8 @@
   <object id="4" x="0" y="128">
    <polygon points="0,0 224,0 224,32 32,32 32,256 224,256 224,288 32,288 32,608 128,608 128,512 448,512 448,128 576,128 576,0 1056,0 1056,32 864,32 864,96 992,96 992,288 1792,288 1792,448 1664,448 1664,512 1472,512 1472,576 1120,576 1120,800 1184,800 1184,832 1088,832 1088,416 1344,416 1344,448 1120,448 1120,544 1440,544 1440,480 1632,480 1632,416 1760,416 1760,320 992,320 992,832 896,832 896,800 960,800 960,128 832,128 832,32 608,32 608,160 480,160 480,544 160,544 160,608 576,608 576,256 608,256 608,640 320,640 320,736 672,736 672,704 832,704 832,256 736,256 736,608 704,608 704,128 736,128 736,224 864,224 864,736 704,736 704,768 320,768 320,832 288,832 288,640 32,640 32,736 0,736"/>
   </object>
+ </objectgroup>
+ <objectgroup id="8" name="Fin">
+  <object id="5" x="0" y="864" width="32" height="96"/>
  </objectgroup>
 </map>

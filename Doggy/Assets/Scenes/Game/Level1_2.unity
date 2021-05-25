@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3226110746912037358, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3226110746912037358, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,6 +584,10 @@ PrefabInstance:
     - target: {fileID: 1259666520889243391, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344339228735813566, guid: 8994158086661d14291a2452042bfd35, type: 3}
+      propertyPath: m_TagString
+      value: GameLoader
       objectReference: {fileID: 0}
     - target: {fileID: 6829064145472454295, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Layer
@@ -2191,6 +2195,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -2092484110881787493, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
+      propertyPath: m_TagString
+      value: GameLoader
+      objectReference: {fileID: 0}
     - target: {fileID: -625334985038882539, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -2894,6 +2902,7 @@ GameObject:
   - component: {fileID: 1248418372}
   - component: {fileID: 1248418376}
   - component: {fileID: 1248418377}
+  - component: {fileID: 1248418379}
   - component: {fileID: 1248418378}
   m_Layer: 9
   m_Name: Ana
@@ -3046,7 +3055,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07, y: 0}
+  m_Offset: {x: 0.08839074, y: -0.0026272535}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3057,8 +3066,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.4632185, y: 0.5052545}
   m_EdgeRadius: 0
+--- !u!114 &1248418379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248418371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec28232e6bd44bb459150e1008551ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 0}
+  level: Level2_1_1
 --- !u!1 &1290787629
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,6 +4395,10 @@ PrefabInstance:
     - target: {fileID: 6383459247581093066, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597312890161258032, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
+      propertyPath: m_TagString
+      value: GameLoader
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -2695619058785784247, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
