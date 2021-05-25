@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lvl1_2_shopController : MonoBehaviour
+public class lvl2_1_1_shopController : MonoBehaviour
 {
-    private Rigidbody2D rb;
 
-    private bool hasBoughtRun = false;
+    private bool hasBoughtStrenght = false;
 
     void Update()
     {
         if (Input.GetButton("1"))
         {
-            if (GameManager.instancia.galletas > 0 && !hasBoughtRun)
+            if (GameManager.instancia.galletas > 0 && !hasBoughtStrenght)
             {
                 GameManager.instancia.galletas--;
-                rb.GetComponent<TopDownPlayerMovement>().setMoveSpeed(4f);
+                hasBoughtStrenght = true;
             }
         }
 
@@ -27,5 +26,10 @@ public class lvl1_2_shopController : MonoBehaviour
                 GameManager.instancia.time += 5;
             }
         }
+    }
+
+    public bool getStrenght()
+    {
+        return hasBoughtStrenght;
     }
 }
