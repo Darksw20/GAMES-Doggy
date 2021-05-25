@@ -110,43 +110,53 @@ public class GameRouting : MonoBehaviour
 
     public void ChooseLevel(string level)
     {
+        //En cada uno de estos se deben settear los valores del nivel;
         switch (level)
         {
             case "Level1_1":
+            case "0":
                 Level1_1();
                 break;
 
             case "Level1_2":
+            case "1":
                 Level1_2();
                 break;
 
             case "Level2_1_1":
+            case "2":
                 Level2_1_1();
                 break;
 
             case "Level2_1_2":
+            case "3":
                 Level2_1_2();
                 break;
 
             case "Level2_2":
+            case "4":
                 Level2_2();
                 break;
 
             case "Level3_1":
+            case "5":
                 Level3_1();
                 break;
 
             case "Level3_2_1":
+            case "6":
                 Level3_2_1();
                 break;
 
             case "Level3_2_2":
+            case "7":
                 Level3_2_2();
                 break;
 
             case "Level3_2_3":
+            case "8":
                 Level3_2_3();
                 break;
         }
-    }
+    }   
 }
