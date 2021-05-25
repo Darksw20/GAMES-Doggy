@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TopDownPlayerMovement : MonoBehaviour
 {
-
     public Rigidbody2D rb;
 
     public float moveSpeed = 2f;
@@ -25,5 +24,10 @@ public class TopDownPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void setMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
     }
 }

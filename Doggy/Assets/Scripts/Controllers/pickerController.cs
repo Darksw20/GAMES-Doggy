@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class pickerController : MonoBehaviour
 {
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.transform.tag)
@@ -31,6 +30,10 @@ public class pickerController : MonoBehaviour
             case "Galleta":
                 GameManager.instancia.galletas++;
                 Destroy(other.gameObject);
+                break;
+
+            case null:
+                Debug.Log(other.GetType().ToString());
                 break;
         }
     }
