@@ -7,25 +7,31 @@ public class pickerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Coin")
+        switch (other.transform.tag)
         {
-            GameManager.instancia.money++;
-            Destroy(other.gameObject);
-        }
+            case "Coin":
+                GameManager.instancia.money++;
+                Destroy(other.gameObject);
+                break;
 
-        if (other.transform.tag == "MysteryBox")
-        {
-            int num = (int)(Random.Range(1.0f,2.0f)*1000);
-            if (num % 2 == 1)
-            {
-                GameManager.instancia.redJewels++;
+            case "MysteryBox":
+                int num = (int)(Random.Range(1.0f, 2.0f) * 1000);
+                if (num % 2 == 1)
+                {
+                    GameManager.instancia.redJewels++;
+                    Destroy(other.gameObject);
+                }
+                else if (num % 2 == 0)
+                {
+                    GameManager.instancia.blueJewels++;
+                    Destroy(other.gameObject);
+                }
+                break;
+
+            case "Galleta":
+                GameManager.instancia.galletas++;
                 Destroy(other.gameObject);
-            }
-            else if(num % 2 == 0)
-            {
-                GameManager.instancia.blueJewels++;
-                Destroy(other.gameObject);
-            }
+                break;
         }
     }
 }

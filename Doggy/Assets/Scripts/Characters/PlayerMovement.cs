@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
+        if(gameObject.transform.position.x <= 1.83F)
+        {
+            Vector2 vector2 = new Vector2(1.84F, gameObject.transform.position.y);
+            gameObject.transform.position = vector2;
+        }
+
         if(Input.GetButtonDown("Jump"))
         {
             isJumping = true;
@@ -31,6 +38,18 @@ public class PlayerMovement : MonoBehaviour
         {
             isCrouching = false;
         }
+
+        if (gameObject.transform.position.y <= -10 && SceneManager.GetActiveScene().name == "Level1_1")
+        {
+            Vector2 vector2 = new Vector2(1.84F, -0.38F);
+            gameObject.transform.position = vector2;
+            GameManager.instancia.health--;
+            if(GameManager.instancia.health == 0)
+            {
+
+            }
+        }
+
     }
 
     private void FixedUpdate()

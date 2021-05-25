@@ -27,8 +27,8 @@ public class GUI : MonoBehaviour
         health.SetText(GameManager.instancia.health.ToString());
         redDiamond.SetText(GameManager.instancia.redJewels.ToString());
         blueDiamond.SetText(GameManager.instancia.blueJewels.ToString());
-        level.SetText("Nivel: "+ GameManager.instancia.level.ToString());
-        time.SetText("Tiempo: " + GameManager.instancia.time.ToString());
+        level.SetText("Nivel: \n" + GameManager.instancia.level.ToString());
+        time.SetText("Tiempo: \n" + GameManager.instancia.time.ToString());
         coins.SetText(GameManager.instancia.money.ToString());
 
     }
