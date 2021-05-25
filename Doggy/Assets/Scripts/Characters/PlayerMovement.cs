@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             isCrouching = false;
         }
 
-        if (gameObject.transform.position.y <= -2 && SceneManager.GetActiveScene().name == "Level1_1")
+        if (gameObject.transform.position.y <= -10 && SceneManager.GetActiveScene().name == "Level1_1")
         {
             Vector2 vector2 = new Vector2(1.84F, -0.38F);
             gameObject.transform.position = vector2;
