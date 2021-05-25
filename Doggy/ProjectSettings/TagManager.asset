@@ -9,6 +9,7 @@ TagManager:
   - MysteryBox
   - GameLoader
   - Galleta
+  - PajaroCarpinteroLvl2_1_1
   layers:
   - Default
   - TransparentFX

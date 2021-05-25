@@ -32,6 +32,10 @@ public class pickerController : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
 
+            case "PajaroCarpinteroLvl2_1_1":
+                //codigo para que se vayan guardando los objetos
+                Debug.Log("hhhh");
+                break;
             case null:
                 Debug.Log(other.GetType().ToString());
                 break;
