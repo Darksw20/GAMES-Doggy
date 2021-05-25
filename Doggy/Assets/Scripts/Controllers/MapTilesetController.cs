@@ -9,9 +9,9 @@ public class MapTilesetController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maps[0].SetActive(true);
-        maps[1].SetActive(true);
-        maps[1].SetActive(true);
+        maps[0].SetActive(false);
+        maps[1].SetActive(false);
+        maps[2].SetActive(true);
     }
 
     // Update is called once per frame
