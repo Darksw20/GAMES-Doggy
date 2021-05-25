@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 684140480}
   - component: {fileID: 684140479}
   - component: {fileID: 684140478}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pajaro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2028,8 +2028,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 824238057
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3036210646392582501, guid: 6689887fc4c434847b1af3a39809f2ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2050,7 +2050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684140477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.977, y: -4.334, z: 0}
+  m_LocalPosition: {x: -7.2, y: -4.35, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2410,7 +2410,7 @@ GameObject:
   - component: {fileID: 861758579}
   - component: {fileID: 861758578}
   - component: {fileID: 861758580}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Ana
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2473,8 +2473,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 824238057
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5556329897649300392, guid: cd177e598a6d53a45a9931f9a78db6a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2495,7 +2495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861758572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.938, y: -4.16, z: 0}
+  m_LocalPosition: {x: -5.46, y: -4.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1877542729}
@@ -2555,7 +2555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 861758579}
   animator: {fileID: 861758573}
-  runSpeed: 40
+  runSpeed: 20
 --- !u!114 &861758579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,9 +2568,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6397ff8578f4da49b74bef5340fdec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 350
+  m_JumpForce: 300
   m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0
+  m_MovementSmoothing: 0.06
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -2598,12 +2598,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.03
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &931526162
 GameObject:
@@ -3135,7 +3135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083681709}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4238,7 +4238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676890359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2375212, y: -1.7319999, z: -10}
+  m_LocalPosition: {x: -1.759521, y: -1.7519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357233178}
@@ -4465,7 +4465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1877542729}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ceiling Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4829,7 +4829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984869194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2375212, y: -1.7319999, z: -10}
+  m_LocalPosition: {x: -1.759521, y: -1.7519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
