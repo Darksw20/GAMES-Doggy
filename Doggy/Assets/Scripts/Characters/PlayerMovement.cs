@@ -20,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
+        if(gameObject.transform.position.x <= 1.83F)
+        {
+            Vector2 vector2 = new Vector2(1.84F, gameObject.transform.position.y);
+            gameObject.transform.position = vector2;
+        }
+
         if(Input.GetButtonDown("Jump"))
         {
             isJumping = true;
