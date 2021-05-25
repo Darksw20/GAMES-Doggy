@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public string playerName;
     public int level;
     public int points;
+    public int galletas;
     public int health;
     public int money;
     public int redJewels;
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         playerName = "";
         level = 0;
         points = 0;
+        galletas = 0;
         health = 3;
         money = 0;
         redJewels = 0;
