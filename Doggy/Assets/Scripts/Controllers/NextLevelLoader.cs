@@ -11,7 +11,11 @@ public class NextLevelLoader : GameRouting
 
         if(other.transform.tag == "GameLoader")
         {
+            SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
             ChooseLevel(level);
+        }else if(other.transform.tag == "Die")
+        {
+
         }
     }
 }
