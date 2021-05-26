@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class lvl1_2_shopController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     private bool hasBoughtRun = false;
 
