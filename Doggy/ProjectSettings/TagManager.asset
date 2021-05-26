@@ -11,6 +11,7 @@ TagManager:
   - Galleta
   - PajaroCarpinteroLvl2_1_1
   - CarroLvl_2_1_1
+  - hudIcon
   layers:
   - Default
   - TransparentFX
