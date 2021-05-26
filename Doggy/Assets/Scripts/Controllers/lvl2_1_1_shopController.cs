@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class lvl2_1_1_shopController : MonoBehaviour
 {
 
-    private bool hasBoughtStrenght = false;
+    private static bool hasBoughtStrenght = false;
 
     void Update()
     {
@@ -28,7 +29,7 @@ public class lvl2_1_1_shopController : MonoBehaviour
         }
     }
 
-    public bool getStrenght()
+    public static bool getStrenght()
     {
         return hasBoughtStrenght;
     }

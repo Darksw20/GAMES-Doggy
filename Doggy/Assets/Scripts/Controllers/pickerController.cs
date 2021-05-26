@@ -1,9 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pickerController : MonoBehaviour
 {
+    public Object controller;
+    private lvl2_1_1_itemsController itemsController;
+
+    void Start()
+    {
+        if(SceneManager.GetActiveScene().name == "Level2_1_1")
+        {
+            controller = GetComponent<lvl2_1_1_itemsController>();
+            itemsController = (lvl2_1_1_itemsController)controller;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.transform.tag)
@@ -33,9 +46,13 @@ public class pickerController : MonoBehaviour
                 break;
 
             case "PajaroCarpinteroLvl2_1_1":
-                //codigo para que se vayan guardando los objetos
-                Debug.Log("hhhh");
+                itemsController.giveItem();
                 break;
+
+            case "CarroLvl_2_1_1":
+                itemsController.pickItem(other.gameObject);
+                break;
+
             case null:
                 Debug.Log(other.GetType().ToString());
                 break;
