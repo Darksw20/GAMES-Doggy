@@ -43,6 +43,17 @@ public class lvl2_1_1_itemsController : MonoBehaviour
             {
                 llanta1.SetActive(true);
             }
+            else
+            {
+                if (piecesFound == 1)
+                    llanta1.SetActive(true);
+                if (piecesFound == 2)
+                    llanta2.SetActive(true);
+                if (piecesFound == 3)
+                    llanta3.SetActive(true);
+                if (piecesFound == 4)
+                    llanta4.SetActive(true);
+            }
         }
     }
 
