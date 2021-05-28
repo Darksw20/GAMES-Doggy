@@ -5,13 +5,15 @@ using UnityEngine;
 public class TopDownPlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-
     public float moveSpeed = 2f;
-    Vector2 movement;
+
+    private Follow follow;
+    private Vector2 movement;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        follow = GetComponent<Follow>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class TopDownPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        follow.getMaxRigidBody().MovePosition(follow.getMaxRigidBody().position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     public void setMoveSpeed(float speed)

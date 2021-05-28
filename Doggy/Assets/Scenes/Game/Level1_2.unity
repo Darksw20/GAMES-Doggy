@@ -2979,6 +2979,7 @@ GameObject:
   - component: {fileID: 1248418377}
   - component: {fileID: 1248418379}
   - component: {fileID: 1248418378}
+  - component: {fileID: 1248418380}
   m_Layer: 9
   m_Name: Ana
   m_TagString: Player
@@ -3157,6 +3158,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: {fileID: 0}
   level: Level2_1_1
+--- !u!114 &1248418380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248418371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9d9ca27616bad4793f7d4d6608688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max: {fileID: 1462891158}
 --- !u!1 &1275682949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5626310593630464210, guid: 8994158086661d14291a2452042bfd35, type: 3}
