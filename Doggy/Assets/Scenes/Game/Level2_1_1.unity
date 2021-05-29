@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 31708592}
   - component: {fileID: 31708591}
   m_Layer: 5
-  m_Name: box
+  m_Name: hud_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2451,7 +2451,7 @@ GameObject:
   - component: {fileID: 732857189}
   - component: {fileID: 732857188}
   m_Layer: 5
-  m_Name: llanta3
+  m_Name: hud_llanta3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2999,14 +2999,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 861758572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577e27064f2a9e044ac0fb47543dec9d, type: 3}
+  m_Script: {fileID: 11500000, guid: c29b0cc081b2949429d1f872736d6ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  llanta1: {fileID: 2114459578}
-  llanta2: {fileID: 1003830620}
-  llanta3: {fileID: 732857186}
-  llanta4: {fileID: 2108659677}
-  caja: {fileID: 31708590}
 --- !u!1 &931526162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,7 +3272,7 @@ GameObject:
   - component: {fileID: 1003830623}
   - component: {fileID: 1003830622}
   m_Layer: 5
-  m_Name: llanta2
+  m_Name: hud_llanta2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4974,7 +4969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676890359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.759521, y: -1.7519999, z: -10}
+  m_LocalPosition: {x: -1.6702437, y: -1.7519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357233178}
@@ -5600,7 +5595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984869194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.759521, y: -1.7519999, z: -10}
+  m_LocalPosition: {x: -1.6702437, y: -1.7519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6220,7 +6215,7 @@ GameObject:
   - component: {fileID: 2108659680}
   - component: {fileID: 2108659679}
   m_Layer: 5
-  m_Name: llanta4
+  m_Name: hud_llanta4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6295,7 +6290,7 @@ GameObject:
   - component: {fileID: 2114459581}
   - component: {fileID: 2114459580}
   m_Layer: 5
-  m_Name: llanta1
+  m_Name: hud_llanta1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

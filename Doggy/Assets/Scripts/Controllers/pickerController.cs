@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class pickerController : MonoBehaviour
 {
     public Object controller;
-    private lvl2_1_1_itemsController itemsController;
+    private itemsController itemsController;
 
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == "Level2_1_1")
+        if(SceneManager.GetActiveScene().name == "Level2_1_1" ||
+            SceneManager.GetActiveScene().name == "Level2_2")
         {
-            controller = GetComponent<lvl2_1_1_itemsController>();
-            itemsController = (lvl2_1_1_itemsController)controller;
+            controller = GetComponent<itemsController>();
+            itemsController = (itemsController)controller;
         }
     }
 
@@ -46,7 +47,7 @@ public class pickerController : MonoBehaviour
                 break;
 
             case "Tubo":
-
+                itemsController.pickItem(other.gameObject);
                 break;
 
             case "PajaroCarpinteroLvl2_1_1":
