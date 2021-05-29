@@ -12,6 +12,7 @@ TagManager:
   - PajaroCarpinteroLvl2_1_1
   - CarroLvl_2_1_1
   - BacheLvl2_1_2
+  - Tubo
   layers:
   - Default
   - TransparentFX

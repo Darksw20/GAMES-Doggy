@@ -45,6 +45,10 @@ public class pickerController : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
 
+            case "Tubo":
+
+                break;
+
             case "PajaroCarpinteroLvl2_1_1":
                 itemsController.giveItem();
                 break;
