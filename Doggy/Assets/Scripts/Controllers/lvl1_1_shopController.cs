@@ -27,7 +27,7 @@ public class lvl1_1_shopController : MonoBehaviour
     {
         if(Input.GetButton("1"))
         {
-            if (GameManager.instancia.galletas > 0 && !hasBoughtLight)
+            if (GameManager.instancia.galletas > 0 && !hasBoughtSniff)
             {
                 GameManager.instancia.galletas--;
                 // code
