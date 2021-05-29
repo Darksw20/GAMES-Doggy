@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 11060392}
   m_Layer: 0
   m_Name: tuboT_2
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 49826767}
   m_Layer: 0
   m_Name: tuboT_1
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 257298186}
   m_Layer: 0
   m_Name: tuboC_3
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1387,7 +1387,7 @@ GameObject:
   - component: {fileID: 577703247}
   m_Layer: 0
   m_Name: tuboC_4
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1571,6 +1571,7 @@ GameObject:
   - component: {fileID: 715783215}
   - component: {fileID: 715783217}
   - component: {fileID: 715783216}
+  - component: {fileID: 715783218}
   m_Layer: 9
   m_Name: Max
   m_TagString: Untagged
@@ -1704,6 +1705,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &715783218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715783212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a89508e86fe42d4b989db72c1873387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &732616789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,7 +2202,7 @@ GameObject:
   - component: {fileID: 1044736681}
   m_Layer: 0
   m_Name: tubo_1
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2638,7 +2651,7 @@ GameObject:
   - component: {fileID: 1320176425}
   m_Layer: 0
   m_Name: tuboC_6
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2942,7 +2955,7 @@ GameObject:
   - component: {fileID: 1413418409}
   m_Layer: 0
   m_Name: tuboT_3
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3185,7 +3198,7 @@ GameObject:
   - component: {fileID: 1436923981}
   m_Layer: 0
   m_Name: tuboC_1
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4467,7 +4480,7 @@ GameObject:
   - component: {fileID: 1873767984}
   m_Layer: 0
   m_Name: tuboC_2
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4705,7 +4718,7 @@ GameObject:
   - component: {fileID: 1903992225}
   m_Layer: 0
   m_Name: tuboC_5
-  m_TagString: Untagged
+  m_TagString: Tubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -32,6 +32,11 @@ public class pickerController : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
 
+            case "Tubo":
+
+                break;
+
+
             case null:
                 Debug.Log(other.GetType().ToString());
                 break;
