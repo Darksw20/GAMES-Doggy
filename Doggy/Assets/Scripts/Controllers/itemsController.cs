@@ -165,4 +165,10 @@ public class itemsController : MonoBehaviour
             Debug.Log("Ganaste");
         }
     }
+
+    public GameObject isCarrying()
+    {
+        return itemBeingCarried;
+    }
+
 }

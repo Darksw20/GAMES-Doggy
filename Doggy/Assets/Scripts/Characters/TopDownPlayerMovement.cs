@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TopDownPlayerMovement : MonoBehaviour
 {
@@ -32,6 +33,27 @@ public class TopDownPlayerMovement : MonoBehaviour
         //Arriba
         if (movement.y > 0)
             transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+
+        if (SceneManager.GetActiveScene().name == "Level2_2" && Input.GetMouseButtonDown(0))
+        {
+            if (GetComponent<itemsController>().isCarrying() != null)
+            {
+                GameObject item = GetComponent<itemsController>().isCarrying();
+                if (item.transform.localScale == new Vector3(0.5F, 0.5F, 0))            
+                {
+                    item.transform.localScale = new Vector3(0.5F, -0.5F, 0);
+                } else if (item.transform.localScale == new Vector3(0.5F, -0.5F, 0))
+                {
+                    item.transform.localScale = new Vector3(-0.5F, 0.5F, 0);
+                } else if (item.transform.localScale == new Vector3(-0.5F, 0.5F, 0))
+                {
+                    item.transform.localScale = new Vector3(-0.5F, -0.5F, 0);
+                } else if (item.transform.localScale == new Vector3(-0.5F, -0.5F, 0))
+                {
+                    item.transform.localScale = new Vector3(0.5F, 0.5F, 0);
+                }
+            }
+        }
     }
 
     void FixedUpdate()
