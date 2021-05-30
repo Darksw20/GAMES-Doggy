@@ -6,17 +6,17 @@ public class lvl3_1_danceController : MonoBehaviour
 {
 
     public GameObject ana;
-    //public GameObject perrero;
+    public GameObject perrero;
 
     private Animator anaAnimator;
-    //private Animator perreroAnimator;
+    private Animator perreroAnimator;
 
     private Vector2 movement;
 
     void Start()
     {
         anaAnimator = ana.GetComponent<Animator>();
-        //perreroAnimator = perrero.GetComponent<Animator>();
+        perreroAnimator = perrero.GetComponent<Animator>();
     }
 
     void Update()
