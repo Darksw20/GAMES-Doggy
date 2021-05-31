@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class lvl3_1_danceController : MonoBehaviour
 {
-
     public GameObject ana;
     public GameObject perrero;
 
@@ -60,15 +59,16 @@ public class lvl3_1_danceController : MonoBehaviour
 
     private string toAdd = null;
 
+    private bool dance1Finished = false;
+    private bool dance2Finished = false;
+    private bool dance3Finished = false;
+    private bool dance4Finished = false;
+
     void Start()
     {
-        current_1.Clear();
-        current_2.Clear();
-        current_3.Clear();
-        current_4.Clear();
         anaAnimator = ana.GetComponent<Animator>();
         perreroAnimator = perrero.GetComponent<Animator>();
-        firstDance();
+        StartCoroutine(dance(dance_1));
     }
 
     void Update()
@@ -78,6 +78,21 @@ public class lvl3_1_danceController : MonoBehaviour
 
         anaAnimator.SetFloat("x", movement.x);
         anaAnimator.SetFloat("y", movement.y);
+
+        if (shouldDance)
+        {
+            if (currentMovement == 1 && checkMatch(dance_1, current_1))
+                StartCoroutine(nextDance(2));
+            else if (currentMovement == 2 && checkMatch(dance_2, current_2))
+                StartCoroutine(nextDance(3));
+            else if (currentMovement == 3 && checkMatch(dance_3, current_3))
+                StartCoroutine(nextDance(4));
+            else if (currentMovement == 4 && checkMatch(dance_4, current_4))
+            {
+                // End scene
+            }
+        }
+        Debug.Log(currentMovement);
 
         if (shouldDance && Input.GetKeyDown(KeyCode.UpArrow) ||
                            Input.GetKeyDown(KeyCode.DownArrow) ||
@@ -119,21 +134,6 @@ public class lvl3_1_danceController : MonoBehaviour
                     current_4.Add(toAdd);
                     break;
             }
-            foreach (var x in current_1)
-            {
-                Debug.Log(x.ToString());
-            }
-        }
-
-        if (shouldDance)
-        {
-            if (checkMatch(dance_1, current_1) ||
-                checkMatch(dance_2, current_2) ||
-                checkMatch(dance_3, current_3) ||
-                checkMatch(dance_4, current_4))
-            {
-                StartCoroutine(nextDance());
-            }
         }
     }
 
@@ -146,54 +146,48 @@ public class lvl3_1_danceController : MonoBehaviour
             if (l1[i] != l2[i])
                 return false;
         }
+        if (currentMovement == 2)
+            dance1Finished = true;
+        else if (currentMovement == 3)
+            dance2Finished = true;
+        else if (currentMovement == 4)
+            dance3Finished = true;
         return true;
     }
 
-    private void firstDance()
+    IEnumerator nextDance(int next)
     {
         shouldDance = false;
-        StartCoroutine(dance(dance_1));
-    }
-
-    private void secondDance()
-    {
-        shouldDance = false;
-        StartCoroutine(dance(dance_2));
-    }
-
-    private void thirdDance()
-    {
-        shouldDance = false;
-        StartCoroutine(dance(dance_3));
-    }
-
-    private void fourthDance()
-    {
-        shouldDance = false;
-        StartCoroutine(dance(dance_4));
-    }
-
-    IEnumerator nextDance()
-    {
         yield return new WaitForSeconds(1);
-        if (currentMovement == 1)
+        if (next == 1 && !dance1Finished)
         {
+            dance1Finished = true;
             current_1.Clear();
-            secondDance();
-        } else if (currentMovement == 2)
+            currentMovement++;
+            StartCoroutine(dance(dance_1));
+            yield break;
+        } else if (next == 2 && !dance2Finished)
         {
+            dance2Finished = true;
             current_2.Clear();
-            thirdDance();
-        } else if (currentMovement == 3)
+            currentMovement++;
+            StartCoroutine(dance(dance_2));
+            yield break;
+        } else if (next == 3 && !dance3Finished)
         {
+            dance3Finished = true;
             current_3.Clear();
-            fourthDance();
-        } else if (currentMovement == 5)
+            currentMovement++;
+            StartCoroutine(dance(dance_3));
+            yield break;
+        } else if (next == 4 && !dance4Finished)
         {
+            dance4Finished = true;
             current_4.Clear();
-            // Next scene code
+            currentMovement++;
+            StartCoroutine(dance(dance_4));
+            yield break;
         }
-        currentMovement++;
     }
 
     IEnumerator dance(List<string> list)
