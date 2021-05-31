@@ -12,6 +12,7 @@ public class lvl3_1_danceController : MonoBehaviour
     private Animator perreroAnimator;
 
     private Vector2 movement;
+    private int currentMovement = 1;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class lvl3_1_danceController : MonoBehaviour
 
         anaAnimator.SetFloat("x", movement.x);
         anaAnimator.SetFloat("y", movement.y);
+
     }
 
     private void firstDance()
@@ -35,10 +37,51 @@ public class lvl3_1_danceController : MonoBehaviour
         list.Add("y 1");
         list.Add("y -1");
         list.Add("y 1");
-        StartCoroutine(danceMovement(list));
+        StartCoroutine(dance(list));
     }
 
-    IEnumerator danceMovement(List<string> list)
+    private void secondDance()
+    {
+        List<string> list = new List<string>();
+        list.Add("y -1");
+        list.Add("x 1");
+        list.Add("x -1");
+        list.Add("y 1");
+        list.Add("x -1");
+        list.Add("y 1");
+        StartCoroutine(dance(list));
+    }
+
+    private void thirdDance()
+    {
+        List<string> list = new List<string>();
+        list.Add("y 1");
+        list.Add("y 1");
+        list.Add("x 1");
+        list.Add("y -1");
+        list.Add("x -1");
+        list.Add("x -1");
+        list.Add("y -1");
+        list.Add("x 1");
+        StartCoroutine(dance(list));
+    }
+
+    private void fourthDance()
+    {
+        List<string> list = new List<string>();
+        list.Add("x -1");
+        list.Add("x 1");
+        list.Add("x -1");
+        list.Add("y -1");
+        list.Add("y 1");
+        list.Add("y -1");
+        list.Add("x -1");
+        list.Add("x -1");
+        list.Add("x 1");
+        StartCoroutine(dance(list));
+    }
+
+    IEnumerator dance(List<string> list)
     {
         for (int i = 0; i < list.Count; i++)
         {
@@ -51,12 +94,12 @@ public class lvl3_1_danceController : MonoBehaviour
             {
                 value = float.Parse(list[i].Substring(1, 3));
             }
-            StartCoroutine(dance(name, value));
+            StartCoroutine(danceMovement(name, value));
             yield return new WaitForSeconds(1);
         }
     }
 
-    IEnumerator dance(string name, float value)
+    IEnumerator danceMovement(string name, float value)
     {
         perreroAnimator.SetFloat(name, value);
         yield return new WaitForSeconds(1);
