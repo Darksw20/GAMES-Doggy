@@ -14,6 +14,8 @@ public class lvl3_1_danceController : MonoBehaviour
     private int currentMovement = 1;
     private bool shouldDance = false;
 
+    private bool memoryAbility = false;
+
     private List<string> dance_1 = new List<string>
         {
             "y 1",
@@ -64,11 +66,25 @@ public class lvl3_1_danceController : MonoBehaviour
     private bool dance3Finished = false;
     private bool dance4Finished = false;
 
+    private GameObject steps1;
+    private GameObject steps2;
+    private GameObject steps3;
+    private GameObject steps4;
+
     void Start()
     {
         anaAnimator = ana.GetComponent<Animator>();
         perreroAnimator = perrero.GetComponent<Animator>();
-        StartCoroutine(dance(dance_1));
+        steps1 = GameObject.Find("steps1");
+        steps2 = GameObject.Find("steps2");
+        steps3 = GameObject.Find("steps3");
+        steps4 = GameObject.Find("steps4");
+        steps1.SetActive(false);
+        steps2.SetActive(false);
+        steps3.SetActive(false);
+        steps4.SetActive(false);
+        StartCoroutine(dance(dance_1, "Perrero"));
+        steps1.SetActive(true);
     }
 
     void Update()
@@ -79,20 +95,77 @@ public class lvl3_1_danceController : MonoBehaviour
         anaAnimator.SetFloat("x", movement.x);
         anaAnimator.SetFloat("y", movement.y);
 
+        if (memoryAbility)
+        {
+            shouldDance = false;
+            if (currentMovement == 1)
+            {
+                current_1.Clear();
+                current_1.Add("y 1");
+                current_1.Add("y -1");
+                current_1.Add("y 1");
+                StartCoroutine(nextDance(2));
+                steps2.SetActive(true);
+            } else if (currentMovement == 2)
+            {
+                current_2.Clear();
+                current_2.Add("y -1");
+                current_2.Add("x 1");
+                current_2.Add("x -1");
+                current_2.Add("y 1");
+                current_2.Add("x -1");
+                current_2.Add("y 1");
+                StartCoroutine(nextDance(3));
+
+            } else if (currentMovement == 3)
+            {
+                current_3.Clear();
+                current_3.Add("y 1");
+                current_3.Add("y 1");
+                current_3.Add("x 1");
+                current_3.Add("y -1");
+                current_3.Add("x -1");
+                current_3.Add("x -1");
+                current_3.Add("y -1");
+                current_3.Add("x 1");
+                StartCoroutine(nextDance(4));
+
+            } else if (currentMovement == 4)
+            {
+                current_4.Clear();
+                current_4.Add("x -1");
+                current_4.Add("x 1");
+                current_4.Add("x -1");
+                current_4.Add("y -1");
+                current_4.Add("y 1");
+                current_4.Add("y -1");
+                current_4.Add("x -1");
+                current_4.Add("x -1");
+                current_4.Add("x 1");
+                dance(dance_4, "Ana");
+            }
+            memoryAbility = false;
+        }
+
         if (shouldDance)
         {
             if (currentMovement == 1 && checkMatch(dance_1, current_1))
+            {
                 StartCoroutine(nextDance(2));
+            }
             else if (currentMovement == 2 && checkMatch(dance_2, current_2))
+            {
                 StartCoroutine(nextDance(3));
+            }
             else if (currentMovement == 3 && checkMatch(dance_3, current_3))
+            {
                 StartCoroutine(nextDance(4));
+            }
             else if (currentMovement == 4 && checkMatch(dance_4, current_4))
             {
                 // End scene
             }
         }
-        Debug.Log(currentMovement);
 
         if (shouldDance && Input.GetKeyDown(KeyCode.UpArrow) ||
                            Input.GetKeyDown(KeyCode.DownArrow) ||
@@ -164,34 +237,47 @@ public class lvl3_1_danceController : MonoBehaviour
             dance1Finished = true;
             current_1.Clear();
             currentMovement++;
-            StartCoroutine(dance(dance_1));
+            StartCoroutine(dance(dance_1, "Perrero"));
             yield break;
         } else if (next == 2 && !dance2Finished)
         {
             dance2Finished = true;
             current_2.Clear();
             currentMovement++;
-            StartCoroutine(dance(dance_2));
+            StartCoroutine(dance(dance_2, "Perrero"));
             yield break;
         } else if (next == 3 && !dance3Finished)
         {
             dance3Finished = true;
             current_3.Clear();
             currentMovement++;
-            StartCoroutine(dance(dance_3));
+            StartCoroutine(dance(dance_3, "Perrero"));
             yield break;
         } else if (next == 4 && !dance4Finished)
         {
             dance4Finished = true;
             current_4.Clear();
             currentMovement++;
-            StartCoroutine(dance(dance_4));
+            StartCoroutine(dance(dance_4, "Perrero"));
             yield break;
         }
     }
 
-    IEnumerator dance(List<string> list)
+    IEnumerator dance(List<string> list, string character)
     {
+        if (currentMovement == 2)
+        {
+            steps1.SetActive(false);
+            steps2.SetActive(true);
+        } else if (currentMovement == 3)
+        {
+            steps2.SetActive(false);
+            steps3.SetActive(true);
+        } else if (currentMovement == 4)
+        {
+            steps3.SetActive(false);
+            steps4.SetActive(true);
+        }
         for (int i = 0; i < list.Count; i++)
         {
             string name = list[i].Substring(0, 1);
@@ -203,16 +289,39 @@ public class lvl3_1_danceController : MonoBehaviour
             {
                 value = float.Parse(list[i].Substring(1, 3));
             }
-            StartCoroutine(danceMovement(name, value));
+            StartCoroutine(danceMovement(name, value, character));
             yield return new WaitForSeconds(1);
         }
         shouldDance = true;
+        steps1.SetActive(false);
+        steps2.SetActive(false);
+        steps3.SetActive(false);
+        steps4.SetActive(false);
     }
 
-    IEnumerator danceMovement(string name, float value)
+    IEnumerator danceMovement(string name, float value, string character)
     {
-        perreroAnimator.SetFloat(name, value);
-        yield return new WaitForSeconds(1);
-        perreroAnimator.SetFloat(name, 0);
+        if (character == "Ana")
+        {
+            anaAnimator.SetFloat(name, value);
+            yield return new WaitForSeconds(1);
+            anaAnimator.SetFloat(name, 0);
+        } else if (character == "Perrero")
+        {
+            perreroAnimator.SetFloat(name, value);
+            yield return new WaitForSeconds(1);
+            perreroAnimator.SetFloat(name, 0);
+        }   
     }
+
+    public void setMemory(bool memory)
+    {
+        memoryAbility = memory;
+    }
+
+    public bool getMemory()
+    {
+        return memoryAbility;
+    }
+
 }
