@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lvl1_2_shopController : MonoBehaviour
+public class lvl3_1_shopController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
-    private bool hasBoughtRun = false;
+    public GameObject mapa;
 
     void Update()
     {
         if (Input.GetButton("1"))
         {
-            if (GameManager.instancia.galletas > 0 && !hasBoughtRun)
+            bool hasBoughtMemory = mapa.GetComponent<lvl3_1_danceController>().getMemory();
+            if (!hasBoughtMemory)
             {
                 GameManager.instancia.galletas--;
-                rb.GetComponent<TopDownPlayerMovement>().setMoveSpeed(4f);
+                mapa.GetComponent<lvl3_1_danceController>().setMemory(true);
             }
         }
 
