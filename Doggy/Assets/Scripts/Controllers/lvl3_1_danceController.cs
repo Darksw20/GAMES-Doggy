@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lvl3_1_danceController : MonoBehaviour
+public class lvl3_1_danceController : GameRouting
 {
     public GameObject ana;
     public GameObject perrero;
@@ -163,6 +163,7 @@ public class lvl3_1_danceController : MonoBehaviour
             }
             else if (currentMovement == 4 && checkMatch(dance_4, current_4))
             {
+                Level3_2_1();
                 // End scene
             }
         }
