@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class itemsController : MonoBehaviour
+public class itemsController : GameRouting
 {
 
     private GameObject llanta1;
@@ -163,6 +163,7 @@ public class itemsController : MonoBehaviour
         {
             // Código para terminar escena
             Debug.Log("Ganaste");
+            Level2_1_2();
         }
     }
 
