@@ -9,6 +9,7 @@ TagManager:
   - MysteryBox
   - GameLoader
   - Galleta
+  - Circulo
   layers:
   - Default
   - TransparentFX
