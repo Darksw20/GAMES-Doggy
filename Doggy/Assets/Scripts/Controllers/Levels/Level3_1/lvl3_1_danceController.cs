@@ -13,7 +13,6 @@ public class lvl3_1_danceController : GameRouting
     private Vector2 movement;
     private int currentMovement = 1;
     private bool shouldDance = false;
-
     private bool memoryAbility = false;
 
     private List<string> dance_1 = new List<string>
@@ -59,8 +58,6 @@ public class lvl3_1_danceController : GameRouting
         };
     private List<string> current_4 = new List<string>();
 
-    private string toAdd = null;
-
     private bool dance1Finished = false;
     private bool dance2Finished = false;
     private bool dance3Finished = false;
@@ -95,131 +92,106 @@ public class lvl3_1_danceController : GameRouting
         anaAnimator.SetFloat("x", movement.x);
         anaAnimator.SetFloat("y", movement.y);
 
+        // Habilidad de memoria
         if (memoryAbility)
-        {
-            shouldDance = false;
-            if (currentMovement == 1)
-            {
-                current_1.Clear();
-                current_1.Add("y 1");
-                current_1.Add("y -1");
-                current_1.Add("y 1");
-                StartCoroutine(nextDance(2));
-                steps2.SetActive(true);
-            } else if (currentMovement == 2)
-            {
-                current_2.Clear();
-                current_2.Add("y -1");
-                current_2.Add("x 1");
-                current_2.Add("x -1");
-                current_2.Add("y 1");
-                current_2.Add("x -1");
-                current_2.Add("y 1");
-                StartCoroutine(nextDance(3));
+            useMemoryAbility();
 
-            } else if (currentMovement == 3)
-            {
-                current_3.Clear();
-                current_3.Add("y 1");
-                current_3.Add("y 1");
-                current_3.Add("x 1");
-                current_3.Add("y -1");
-                current_3.Add("x -1");
-                current_3.Add("x -1");
-                current_3.Add("y -1");
-                current_3.Add("x 1");
-                StartCoroutine(nextDance(4));
-
-            } else if (currentMovement == 4)
-            {
-                current_4.Clear();
-                current_4.Add("x -1");
-                current_4.Add("x 1");
-                current_4.Add("x -1");
-                current_4.Add("y -1");
-                current_4.Add("y 1");
-                current_4.Add("y -1");
-                current_4.Add("x -1");
-                current_4.Add("x -1");
-                current_4.Add("x 1");
-                dance(dance_4, "Ana");
-            }
-            memoryAbility = false;
-        }
-
-        if (shouldDance)
-        {
-            if (currentMovement == 1 && checkMatch(dance_1, current_1))
-            {
-                StartCoroutine(nextDance(2));
-            }
-            else if (currentMovement == 2 && checkMatch(dance_2, current_2))
-            {
-                StartCoroutine(nextDance(3));
-            }
-            else if (currentMovement == 3 && checkMatch(dance_3, current_3))
-            {
-                StartCoroutine(nextDance(4));
-            }
-            else if (currentMovement == 4 && checkMatch(dance_4, current_4))
-            {
-                Level3_2_1();
-                // End scene
-            }
-        }
-
+        // Agregar movimiento del jugador a una lista
         if (shouldDance && Input.GetKeyDown(KeyCode.UpArrow) ||
                            Input.GetKeyDown(KeyCode.DownArrow) ||
                            Input.GetKeyDown(KeyCode.LeftArrow) ||
                            Input.GetKeyDown(KeyCode.RightArrow))
+            addMovementToList(movement.x, movement.y);
+
+        // Verificar si la lista de movimientos del jugador
+        // es igual a la lista de cada baile
+        if (shouldDance)
+            checkDanceMoves();
+    }
+    private void useMemoryAbility()
+    {
+        memoryAbility = false;
+        shouldDance = false;
+        if (currentMovement == 1)
         {
-            toAdd = null;
-            if (movement.x == 1 && movement.y == 0)
-            {
-                toAdd = "x 1";
-            }
-            else if (movement.x == -1 && movement.y == 0)
-            {
-                toAdd = "x -1";
-            }
-            else if (movement.x == 0 && movement.y == 1)
-            {
-                toAdd = "y 1";
-            }
-            else if (movement.x == 0 && movement.y == -1)
-            {
-                toAdd = "y -1";
-            }
-            switch (currentMovement)
-            {
-                case 1:
-                    current_1.Add(toAdd);
-                    break;
-
-                case 2:
-                    current_2.Add(toAdd);
-                    break;
-
-                case 3:
-                    current_3.Add(toAdd);
-                    break;
-
-                case 4:
-                    current_4.Add(toAdd);
-                    break;
-            }
+            current_1 = dance_1;
+            dance(dance_1, "Ana");
+            StartCoroutine(nextDance(2));
         }
+        else if (currentMovement == 2)
+        {
+            current_2 = dance_2;
+            dance(dance_2, "Ana");
+            StartCoroutine(nextDance(3));
+        }
+        else if (currentMovement == 3)
+        {
+            current_3 = dance_3;
+            dance(dance_3, "Ana");
+            StartCoroutine(nextDance(4));
+        }
+        else if (currentMovement == 4)
+        {
+            current_4 = dance_4;
+            dance(dance_4, "Ana");
+        }
+    }
+
+    private void addMovementToList(float x, float y)
+    {
+        string toAdd = null;
+        if (x == 1 && y == 0)
+            toAdd = "x 1";
+        else if (x == -1 && y == 0)
+            toAdd = "x -1";
+        else if (x == 0 && y == 1)
+            toAdd = "y 1";
+        else if (x == 0 && y == -1)
+            toAdd = "y -1";
+
+        if (currentMovement == 1)
+            current_1.Add(toAdd);
+        else if (currentMovement == 2)
+            current_2.Add(toAdd);
+        else if (currentMovement == 3)
+            current_3.Add(toAdd);
+        else if (currentMovement == 4)
+            current_4.Add(toAdd);
+    }
+
+    private void checkDanceMoves()
+    {
+        if (currentMovement == 1 && checkMatch(dance_1, current_1))
+            StartCoroutine(nextDance(2));
+        else if (currentMovement == 2 && checkMatch(dance_2, current_2))
+            StartCoroutine(nextDance(3));
+        else if (currentMovement == 3 && checkMatch(dance_3, current_3))
+            StartCoroutine(nextDance(4));
+        else if (currentMovement == 4 && checkMatch(dance_4, current_4))
+            Level3_2_1();
     }
 
     private bool checkMatch(List<string> l1, List<string> l2)
     {
+        // Revisar si tienen el mismo tamaño
         if (l1.Count != l2.Count)
             return false;
+
+        // Si tienen el mismo tamaño, pero no los mismos datos
+        // la animación vuelve a repetirse
         for (int i = 0; i < l1.Count; i++)
         {
             if (l1[i] != l2[i])
+            {
+                shouldDance = false;
+                l2.Clear();
+                StartCoroutine(dance(l1, "Perrero"));
                 return false;
+            }        
         }
+
+        // Las listas son iguales, entonces actualizamos las
+        // variables con los bailes y regresamos true
         if (currentMovement == 2)
             dance1Finished = true;
         else if (currentMovement == 3)
@@ -266,7 +238,10 @@ public class lvl3_1_danceController : GameRouting
 
     IEnumerator dance(List<string> list, string character)
     {
-        if (currentMovement == 2)
+        if (currentMovement == 1)
+        {
+            steps1.SetActive(true);
+        } else if (currentMovement == 2)
         {
             steps1.SetActive(false);
             steps2.SetActive(true);
@@ -281,6 +256,7 @@ public class lvl3_1_danceController : GameRouting
         }
         for (int i = 0; i < list.Count; i++)
         {
+            Debug.Log(i);
             string name = list[i].Substring(0, 1);
             float value;
             if (list[i].Length == 3)
