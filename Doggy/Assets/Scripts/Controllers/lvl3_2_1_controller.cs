@@ -33,11 +33,7 @@ public class lvl3_2_1_controller : GameRouting
         object4 = GameObject.Find("object4");
         object5 = GameObject.Find("object5");
 
-        circle1.GetComponent<SpriteRenderer>().enabled = false;
-        circle2.GetComponent<SpriteRenderer>().enabled = false;
-        circle3.GetComponent<SpriteRenderer>().enabled = false;
-        circle4.GetComponent<SpriteRenderer>().enabled = false;
-        circle5.GetComponent<SpriteRenderer>().enabled = false;
+        resetLevel();
     }
     void Update()
     {
@@ -52,6 +48,26 @@ public class lvl3_2_1_controller : GameRouting
                 foundDifference(hit.collider.gameObject);
             }
         }
+
+        if (GameManager.instancia.time == 0)
+            resetLevel();
+    }
+    private void resetLevel()
+    {
+        object1.SetActive(true);
+        object2.SetActive(true);
+        object3.SetActive(true);
+        object4.SetActive(true);
+        object5.SetActive(true);
+
+        circle1.GetComponent<SpriteRenderer>().enabled = false;
+        circle2.GetComponent<SpriteRenderer>().enabled = false;
+        circle3.GetComponent<SpriteRenderer>().enabled = false;
+        circle4.GetComponent<SpriteRenderer>().enabled = false;
+        circle5.GetComponent<SpriteRenderer>().enabled = false;
+
+        differencesFound = 0;
+        GameManager.instancia.time = 40;
     }
 
     private void foundDifference(GameObject gameObject)
