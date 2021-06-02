@@ -21,15 +21,19 @@ public class Level3_2_3 : MonoBehaviour
     public GameObject Top;
     public GameObject _2Top;
     public GameObject Bottom;
+    public GameObject Correcto;
+    public GameObject _2Correcto;
 
     private SpriteRenderer sTop;
-    private SpriteRenderer s_2Top;
+    private SpriteRenderer _2sTop;
     private SpriteRenderer sBottom;
 
     void Start()
     {
+        Correcto.SetActive(false);
+        _2Correcto.SetActive(false);
         sTop = Top.GetComponent<SpriteRenderer>();
-        s_2Top = _2Top.GetComponent<SpriteRenderer>();
+        _2sTop = _2Top.GetComponent<SpriteRenderer>();
         sBottom = Bottom.GetComponent<SpriteRenderer>();
     }
 
@@ -43,42 +47,43 @@ public class Level3_2_3 : MonoBehaviour
             if (hit.collider != null)
             {
                 if (hit.collider.gameObject.tag == "Sabor")
-                {
                     setSabor(hit.collider.gameObject);
-                } else if (hit.collider.gameObject.tag == "Cono")
-                {
+                else if (hit.collider.gameObject.tag == "Cono")
                     setCono(hit.collider.gameObject);
-                }
+                else if (hit.collider.gameObject.tag == "Boton")
+                    checkOrder();
             }
         }
     }
     private void checkOrder()
     {
+        sTop.sprite = null;
+        _2sTop.sprite = null;
+        sBottom.sprite = null;
+        if (saborActual != null)
+            GameObject.Find(saborActual).GetComponent<Items>().unselectItem();
+        if (conoActual != null)
+            GameObject.Find(conoActual).GetComponent<Items>().unselectItem();
         if (!level1Completed)
         {
             if (saborActual == "Vainilla" && conoActual == "Cono")
             {
-                GameObject.Find("Vainilla").GetComponent<Items>().unselectItem();
-                GameObject.Find("Cono").GetComponent<Items>().unselectItem();
+                Correcto.SetActive(true);
                 level1Completed = true;
-                saborActual = null;
-                conoActual = null;
-                sTop.sprite = null;
-                sBottom.sprite = null;
+                Top.transform.position = new Vector3(50F, 6.7F, 0F);
             }
+            saborActual = null;
+            conoActual = null;
         }
         else if (!level2Completed)
         {
             if (saborActual == "Chocolate" && conoActual == "Canasta")
             {
-                GameObject.Find("Chocolate").GetComponent<Items>().unselectItem();
-                GameObject.Find("Canasta").GetComponent<Items>().unselectItem();
+                _2Correcto.SetActive(true);
                 level2Completed = true;
-                saborActual = null;
-                conoActual = null;
-                sTop.sprite = null;
-                sBottom.sprite = null;
             }
+            saborActual = null;
+            conoActual = null;
         }
         if (level1Completed && level2Completed)
         {
@@ -88,43 +93,40 @@ public class Level3_2_3 : MonoBehaviour
 
     private void updateOrder()
     {
-        switch (saborActual)
+        if (saborActual == "Vainilla")
         {
-            case "Vainilla":
-                sTop.sprite = Vainilla;
-                break;
+            sTop.sprite = Vainilla;
+            if (level1Completed)
+                _2sTop.sprite = Vainilla;
 
-            case "Chocolate":
-                sTop.sprite = Chocolate;
-                break;
-
-            case "Fresa":
-                sTop.sprite = Fresa;
-                break;
-
-            case null:
-                sTop.sprite = null;
-                break;
         }
-        switch (conoActual)
+        else if (saborActual == "Chocolate")
         {
-            case "Canasta":
-                sBottom.sprite = Canasta;
-                break;
-
-            case "Cono":
-                sBottom.sprite = Cono;
-                break;
-
-            case "Vaso":
-                sBottom.sprite = Vaso;
-                break;
-
-            case null:
-                sBottom.sprite = null;
-                break;
+            sTop.sprite = Chocolate;
+            if (level1Completed)
+                _2sTop.sprite = Chocolate;
         }
-        checkOrder();
+        else if (saborActual == "Fresa")
+        {
+            sTop.sprite = Fresa;
+            if (level1Completed)
+                _2sTop.sprite = Fresa;
+        }
+        else
+        {
+            sTop.sprite = null;
+            if (level1Completed)
+                _2sTop.sprite = null;
+        }
+
+        if (conoActual == "Canasta")
+            sBottom.sprite = Canasta;
+        else if (conoActual == "Cono")
+            sBottom.sprite = Cono;
+        else if (conoActual == "Vaso")
+            sBottom.sprite = Vaso;
+        else
+            sBottom.sprite = null;
     }
 
     private void setSabor(GameObject gameObject)

@@ -12,6 +12,7 @@ TagManager:
   - Circulo
   - Sabor
   - Cono
+  - Boton
   layers:
   - Default
   - TransparentFX
