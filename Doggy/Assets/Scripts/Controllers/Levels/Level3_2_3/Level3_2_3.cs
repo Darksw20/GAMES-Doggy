@@ -71,9 +71,6 @@ public class Level3_2_3 : MonoBehaviour
                 Correcto.SetActive(true);
                 level1Completed = true;
                 Top.transform.position = new Vector3(50F, 6.7F, 0F);
-            } else 
-            {
-                GameManager.instancia.health--;
             }
             saborActual = null;
             conoActual = null;
@@ -84,9 +81,6 @@ public class Level3_2_3 : MonoBehaviour
             {
                 _2Correcto.SetActive(true);
                 level2Completed = true;
-            } else
-            {
-                GameManager.instancia.health--;
             }
             saborActual = null;
             conoActual = null;
