@@ -21,6 +21,8 @@ public class Level3_2_3 : MonoBehaviour
     public GameObject Top;
     public GameObject _2Top;
     public GameObject Bottom;
+    public GameObject Correcto;
+    public GameObject _2Correcto;
 
     private SpriteRenderer sTop;
     private SpriteRenderer s_2Top;
@@ -28,6 +30,8 @@ public class Level3_2_3 : MonoBehaviour
 
     void Start()
     {
+        Correcto.SetActive(false);
+        _2Correcto.SetActive(false);
         sTop = Top.GetComponent<SpriteRenderer>();
         s_2Top = _2Top.GetComponent<SpriteRenderer>();
         sBottom = Bottom.GetComponent<SpriteRenderer>();
@@ -43,41 +47,44 @@ public class Level3_2_3 : MonoBehaviour
             if (hit.collider != null)
             {
                 if (hit.collider.gameObject.tag == "Sabor")
-                {
                     setSabor(hit.collider.gameObject);
-                } else if (hit.collider.gameObject.tag == "Cono")
-                {
+                else if (hit.collider.gameObject.tag == "Cono")
                     setCono(hit.collider.gameObject);
-                }
+                else if (hit.collider.gameObject.tag == "Boton")
+                    checkOrder();
             }
         }
     }
     private void checkOrder()
     {
+        if (saborActual != null)
+            GameObject.Find(saborActual).GetComponent<Items>().unselectItem();
+        if (conoActual != null)
+            GameObject.Find(conoActual).GetComponent<Items>().unselectItem();
         if (!level1Completed)
         {
             if (saborActual == "Vainilla" && conoActual == "Cono")
             {
-                GameObject.Find("Vainilla").GetComponent<Items>().unselectItem();
-                GameObject.Find("Cono").GetComponent<Items>().unselectItem();
+                Correcto.SetActive(true);
                 level1Completed = true;
-                saborActual = null;
-                conoActual = null;
-                sTop.sprite = null;
-                sBottom.sprite = null;
+            } else 
+            {
+                GameManager.instancia.health--;
             }
+            saborActual = null;
+            conoActual = null;
+            sTop.sprite = null;
+            sBottom.sprite = null;
         }
         else if (!level2Completed)
         {
             if (saborActual == "Chocolate" && conoActual == "Canasta")
             {
-                GameObject.Find("Chocolate").GetComponent<Items>().unselectItem();
-                GameObject.Find("Canasta").GetComponent<Items>().unselectItem();
+                _2Correcto.SetActive(true);
                 level2Completed = true;
-                saborActual = null;
-                conoActual = null;
-                sTop.sprite = null;
-                sBottom.sprite = null;
+            } else
+            {
+                GameManager.instancia.health--;
             }
         }
         if (level1Completed && level2Completed)
@@ -124,7 +131,6 @@ public class Level3_2_3 : MonoBehaviour
                 sBottom.sprite = null;
                 break;
         }
-        checkOrder();
     }
 
     private void setSabor(GameObject gameObject)
