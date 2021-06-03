@@ -6,17 +6,23 @@ public class TopDownVehicleMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
 
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
     private Vector2 movement;
 
     void Start()
     {
         movement.x = 0.1F;
-        rigidbody = GetComponent<Rigidbody2D>();
+
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
 }
