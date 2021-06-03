@@ -18,7 +18,7 @@ public class TopDownVehicleMovement : MonoBehaviour
 
     void Update()
     {
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.y = Input.GetAxisRaw("Vertical")/10;
     }
 
     void FixedUpdate()
