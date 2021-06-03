@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lvl1_2_shopController : MonoBehaviour
+public class shop : MonoBehaviour
 {
     private Rigidbody2D rb;
 
