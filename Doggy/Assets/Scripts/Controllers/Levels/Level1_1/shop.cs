@@ -12,7 +12,7 @@ public class shop : MonoBehaviour
     private bool canBuyLight = true;
     private bool canBuySniff = true;
 
-    private bool renderLine = true;
+    private bool renderLine = false;
 
     public Color c1 = Color.yellow;
     public Color c2 = Color.red;
@@ -25,7 +25,6 @@ public class shop : MonoBehaviour
         lineRenderer.positionCount = 2;
         lineRenderer.sortingLayerName = "Background";
 
-        // A simple 2 color gradient with a fixed alpha of 1.0f.
         float alpha = 1.0f;
         Gradient gradient = new Gradient();
         gradient.SetKeys(
@@ -64,16 +63,39 @@ public class shop : MonoBehaviour
         }
 
         if (renderLine)
+            renderSniff();
+    }
+
+    private void renderSniff()
+    {
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        if (light1 != null)
         {
-            LineRenderer lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.SetPosition(0, GameObject.Find("Max").GetComponent<Transform>().localPosition);
             lineRenderer.SetPosition(1, GameObject.Find("galleta1").GetComponent<Transform>().localPosition);
+        }
+        else if (light2 != null)
+        {
+            lineRenderer.SetPosition(0, GameObject.Find("Max").GetComponent<Transform>().localPosition);
+            lineRenderer.SetPosition(1, GameObject.Find("galleta2").GetComponent<Transform>().localPosition);
+        }
+        else if (light3 != null)
+        {
+            lineRenderer.SetPosition(0, GameObject.Find("Max").GetComponent<Transform>().localPosition);
+            lineRenderer.SetPosition(1, GameObject.Find("galleta3").GetComponent<Transform>().localPosition);
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+            renderLine = false;
         }
     }
 
     private void sniffAbility()
     {
         renderLine = true;
+        canBuySniff = false;
+        StartCoroutine(sniffAbilityOff());
     }
 
     private void lightWildcard()
@@ -86,6 +108,15 @@ public class shop : MonoBehaviour
         if (light3 != null)
             light3.enabled = true;
         StartCoroutine(lightWildcardOff());
+    }
+
+    IEnumerator sniffAbilityOff()
+    {
+        yield return new WaitForSeconds(10);
+        renderLine = false;
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.enabled = false;
+        canBuySniff = true;
     }
 
     IEnumerator lightWildcardOff()
