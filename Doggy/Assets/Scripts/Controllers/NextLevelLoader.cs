@@ -8,7 +8,6 @@ public class NextLevelLoader : GameRouting
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if(other.transform.tag == "GameLoader")
         {
             SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
