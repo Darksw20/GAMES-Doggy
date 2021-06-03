@@ -12,6 +12,29 @@ public class shop : MonoBehaviour
     private bool canBuyLight = true;
     private bool canBuySniff = true;
 
+    private bool renderLine = true;
+
+    public Color c1 = Color.yellow;
+    public Color c2 = Color.red;
+
+    void Start()
+    {
+        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.widthMultiplier = 0.05f;
+        lineRenderer.positionCount = 2;
+        lineRenderer.sortingLayerName = "Background";
+
+        // A simple 2 color gradient with a fixed alpha of 1.0f.
+        float alpha = 1.0f;
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c2, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+        );
+        lineRenderer.colorGradient = gradient;
+    }
+
     void Update()
     {
         if(Input.GetButton("1"))
@@ -39,11 +62,18 @@ public class shop : MonoBehaviour
                 lightWildcard();
             }
         }
+
+        if (renderLine)
+        {
+            LineRenderer lineRenderer = GetComponent<LineRenderer>();
+            lineRenderer.SetPosition(0, GameObject.Find("Max").GetComponent<Transform>().localPosition);
+            lineRenderer.SetPosition(1, GameObject.Find("galleta1").GetComponent<Transform>().localPosition);
+        }
     }
 
     private void sniffAbility()
     {
-
+        renderLine = true;
     }
 
     private void lightWildcard()
