@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class shop : MonoBehaviour
+public class shop_lvl1_1 : MonoBehaviour
 {
     public Light2D light1;
     public Light2D light2;

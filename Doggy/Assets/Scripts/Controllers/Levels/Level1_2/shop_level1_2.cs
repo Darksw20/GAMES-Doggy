@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shop : MonoBehaviour
+public class shop_level1_2 : MonoBehaviour
 {
     private bool canBuySpeed = true;
 

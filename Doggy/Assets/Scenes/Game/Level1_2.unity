@@ -3864,6 +3864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a89508e86fe42d4b989db72c1873387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!61 &1248418378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4415,10 +4416,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395906501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccf1ef422d9a6044aeb9544e669c41e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f7b905cc7755c240a63586ace6c875b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1248418373}
 --- !u!1 &1433939845
 GameObject:
   m_ObjectHideFlags: 0
