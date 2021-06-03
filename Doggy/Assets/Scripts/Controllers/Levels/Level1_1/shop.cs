@@ -14,26 +14,39 @@ public class shop : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(GameManager.instancia.galletas);
         if(Input.GetButton("1"))
         {
-            if (GameManager.instancia.galletas > 0 && canBuySniff)
+            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuySniff)
             {
-                GameManager.instancia.galletas--;
-                // code
+                if (GameManager.instancia.redJewels > 0)
+                    GameManager.instancia.redJewels--;
+                else
+                    GameManager.instancia.blueJewels--;
+
+                sniffAbility();
             }
         }
 
         if(Input.GetButton("2"))
         {
-            if(GameManager.instancia.galletas > 0 && canBuyLight)
+            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuyLight)
             {
-                GameManager.instancia.galletas--;
-                turnOnLights();
+                if (GameManager.instancia.redJewels > 0)
+                    GameManager.instancia.redJewels--;
+                else
+                    GameManager.instancia.blueJewels--;
+
+                lightWildcard();
             }
         }
     }
-    private void turnOnLights()
+
+    private void sniffAbility()
+    {
+
+    }
+
+    private void lightWildcard()
     {
         canBuyLight = false;
         if (light1 != null)
@@ -42,10 +55,10 @@ public class shop : MonoBehaviour
             light2.enabled = true;
         if (light3 != null)
             light3.enabled = true;
-        StartCoroutine(lightAbility());
+        StartCoroutine(lightWildcardOff());
     }
 
-    IEnumerator lightAbility()
+    IEnumerator lightWildcardOff()
     {
         yield return new WaitForSeconds(10);
         if (light1 != null)
