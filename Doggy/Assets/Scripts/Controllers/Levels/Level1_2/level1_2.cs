@@ -24,10 +24,24 @@ public class level1_2 : MonoBehaviour
         InvokeRepeating("changeMap", 20F, 20F);
     }
 
+    void Update()
+    {
+        if (GameManager.instancia.time == 0)
+           timeOver();
+    }
+
     public void resetLevel()
     {
         Ana.GetComponent<Transform>().localPosition = new Vector3(-3F, 1F, 0);
         Max.GetComponent<Transform>().localPosition = new Vector3(-3.75F, 1F, 0);
+    }
+
+    private void timeOver()
+    {
+        resetLevel();
+        GameManager.instancia.time = 50;
+        GameManager.instancia.health--;
+        mapChangeCount = 0;
     }
 
     private void pineConesRandomPosition()
