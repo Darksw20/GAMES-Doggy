@@ -3435,10 +3435,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f8d62a25c20fd4193f8edf8be69504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maps:
-  - {fileID: -1631205411760451682, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
-  - {fileID: 257251948}
-  - {fileID: 1275682949}
+  _1map: {fileID: 1505543904}
+  _2map: {fileID: 257251948}
+  _3map: {fileID: 1275682949}
 --- !u!1 &1176805808
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,6 +4529,11 @@ Transform:
   m_Father: {fileID: 1176805809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505543904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1631205411760451682, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
+  m_PrefabInstance: {fileID: 1818408371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513585904
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,7 +5214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ana: {fileID: 1248418371}
-  Max: {fileID: 0}
+  Max: {fileID: 125758906}
   _1pineCone: {fileID: 940338519}
   _2pineCone: {fileID: 1513585904}
   _3pineCone: {fileID: 1246274011}
@@ -5493,6 +5497,10 @@ PrefabInstance:
     - target: {fileID: -1631205411760451682, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1631205411760451682, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1086886459256473806, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_Layer

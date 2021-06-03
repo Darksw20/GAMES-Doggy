@@ -13,18 +13,21 @@ public class level1_2 : MonoBehaviour
     public GameObject _4pineCone;
     public GameObject _5pineCone;
 
-    private MapTilesetController TilesetsController = GameObject.Find("Tilesets").GetComponent<MapTilesetController>();
+    private MapTilesetController TilesetsController;
+
+    private int mapChangeCount = 0;
 
     void Start()
     {
+        TilesetsController = GameObject.Find("Tilesets").GetComponent<MapTilesetController>();
         InvokeRepeating("pineConesRandomPosition", 5F, 5F);
+        InvokeRepeating("changeMap", 20F, 20F);
     }
 
     public void resetLevel()
     {
         Ana.GetComponent<Transform>().localPosition = new Vector3(-3F, 1F, 0);
         Max.GetComponent<Transform>().localPosition = new Vector3(-3.75F, 1F, 0);
-        TilesetsController.setRandomMap();
     }
 
     private void pineConesRandomPosition()
@@ -34,5 +37,14 @@ public class level1_2 : MonoBehaviour
         _3pineCone.GetComponent<pineCone>().changePosition();
         _4pineCone.GetComponent<pineCone>().changePosition();
         _5pineCone.GetComponent<pineCone>().changePosition();
+    }
+
+    private void changeMap()
+    {
+        if (mapChangeCount <= 3)
+        {
+            TilesetsController.setRandomMap();
+            mapChangeCount++;
+        }
     }
 }
