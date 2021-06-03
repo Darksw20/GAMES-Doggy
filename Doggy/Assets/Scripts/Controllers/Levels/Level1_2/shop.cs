@@ -4,28 +4,46 @@ using UnityEngine;
 
 public class shop : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
-    private bool hasBoughtRun = false;
+    private bool canBuySpeed = true;
 
     void Update()
     {
         if (Input.GetButton("1"))
         {
-            if (GameManager.instancia.galletas > 0 && !hasBoughtRun)
+            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuySpeed)
             {
-                GameManager.instancia.galletas--;
-                rb.GetComponent<TopDownPlayerMovement>().setMoveSpeed(4f);
+                if (GameManager.instancia.redJewels > 0)
+                    GameManager.instancia.redJewels--;
+                else
+                    GameManager.instancia.blueJewels--;
+
+                speedAbility();
             }
         }
 
         if (Input.GetButton("2"))
         {
-            if (GameManager.instancia.galletas > 0)
+            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0))
             {
-                GameManager.instancia.galletas--;
-                GameManager.instancia.time += 5;
+                if (GameManager.instancia.redJewels > 0)
+                    GameManager.instancia.redJewels--;
+                else
+                    GameManager.instancia.blueJewels--;
+
+                timeWildcard();
             }
         }
     }
+
+    private void speedAbility()
+    {
+        canBuySpeed = false;
+        GameObject.Find("Ana").GetComponent<TopDownPlayerMovement>().setMoveSpeed(4f);
+    }
+
+    private void timeWildcard()
+    {
+        GameManager.instancia.time += 5;
+    }
+
 }
