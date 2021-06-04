@@ -89,9 +89,6 @@ public class lvl3_1_danceController : GameRouting
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        anaAnimator.SetFloat("x", movement.x);
-        anaAnimator.SetFloat("y", movement.y);
-
         // Habilidad de memoria
         if (memoryAbility)
             useMemoryAbility();
@@ -106,7 +103,12 @@ public class lvl3_1_danceController : GameRouting
         // Verificar si la lista de movimientos del jugador
         // es igual a la lista de cada baile
         if (shouldDance)
+        {
+            anaAnimator.SetFloat("x", movement.x);
+            anaAnimator.SetFloat("y", movement.y);
+
             checkDanceMoves();
+        }
     }
     private void useMemoryAbility()
     {
