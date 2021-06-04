@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="150" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="3">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="150" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="5">
  <tileset firstgid="1" source="TILESET3.tsx"/>
  <layer id="1" name="Fondo" width="150" height="24">
   <data encoding="csv">
@@ -173,5 +173,8 @@
   <object id="2" x="0" y="672">
    <polygon points="0,0 1856,0 3744,0 4800,0 4800,96 3616,96 1664,96 0,96"/>
   </object>
+ </objectgroup>
+ <objectgroup id="10" name="Final">
+  <object id="4" x="4768" y="0" width="32" height="672"/>
  </objectgroup>
 </map>

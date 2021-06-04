@@ -58,6 +58,11 @@ public class pickerController : MonoBehaviour
                 itemsController.pickItem(other.gameObject);
                 break;
 
+            case "FinalJuego":
+                //aqui se hace ese codigo
+                Debug.Log("Se acabo el juego mije");
+                break;
+
             case null:
                 Debug.Log(other.GetType().ToString());
                 break;
