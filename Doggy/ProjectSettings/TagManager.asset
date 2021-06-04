@@ -18,6 +18,7 @@ TagManager:
   - Cono
   - Boton
   - Mapa
+  - Meta
   layers:
   - Default
   - TransparentFX

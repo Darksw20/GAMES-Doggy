@@ -17,6 +17,7 @@ public class GameData
     public int dificulty;
     public int isMusicOn;
     public int saveSlot;
+    public int laps;
 
     public GameData()
     {
@@ -32,5 +33,6 @@ public class GameData
         dificulty = GameManager.instancia.dificulty;
         isMusicOn = GameManager.instancia.isMusicOn;
         saveSlot = GameManager.instancia.saveSlot;
+        laps = GameManager.instancia.laps;
     }
 }

@@ -87,7 +87,7 @@ public class GameRouting : MonoBehaviour
     {
         SceneManager.LoadScene("Level2_1_2");
     }
-    public void Level2_2()
+    public static void Level2_2()
     {
         SceneManager.LoadScene("Level2_2");
     }

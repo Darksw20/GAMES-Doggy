@@ -46,6 +46,15 @@ public class pickerController : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
 
+            case "Meta":
+                GameManager.instancia.laps++;
+                Debug.Log("Vuelta "+GameManager.instancia.laps.ToString()+" completada");
+                if(GameManager.instancia.laps == 7)
+                {
+                    GameRouting.Level2_2();
+                }
+                break;
+
             case "Tubo":
                 itemsController.pickItem(other.gameObject);
                 break;
