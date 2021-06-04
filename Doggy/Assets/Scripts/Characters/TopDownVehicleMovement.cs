@@ -1,27 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TopDownVehicleMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
 
     private Rigidbody2D rb;
-    private Vector2 movement;
 
     void Start()
     {
-        movement.x = 0.1F;
-
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        movement.y = Input.GetAxisRaw("Vertical")/10;
+        // Collision with object
+        if (collision.gameObject.name == "rayon")
+        {
+            GameManager.instancia.health--;
+            SceneManager.LoadScene("Level3_2_3");
+        }
     }
 
-    void FixedUpdate()
+    public void moveObject(Vector2 movement)
     {
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
