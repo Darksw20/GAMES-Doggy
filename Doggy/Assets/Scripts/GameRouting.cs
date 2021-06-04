@@ -6,7 +6,6 @@ using TMPro;
 
 public class GameRouting : MonoBehaviour
 {
-    public TMP_InputField userName;
     
     public void QuitGameSequence()
     {
@@ -156,6 +155,10 @@ public class GameRouting : MonoBehaviour
             case "Level3_2_3":
             case "8":
                 Level3_2_3();
+                break;
+
+            case "Menu":
+                MainMenu();
                 break;
         }
     }   

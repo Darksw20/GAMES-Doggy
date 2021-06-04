@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pickerController : MonoBehaviour
+public class pickerController : GameRouting
 {
     public Object controller;
     private itemsController itemsController;
@@ -68,7 +68,7 @@ public class pickerController : MonoBehaviour
                 break;
 
             case "FinalJuego":
-                //aqui se hace ese codigo
+                Anim_Fin();
                 Debug.Log("Se acabo el juego mije");
                 break;
 

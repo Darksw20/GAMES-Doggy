@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InitializeGame : MonoBehaviour
+public class InitializeGame : GameRouting
 {
     public TMP_InputField userName;
     public void clickSaveButton()
@@ -12,7 +12,7 @@ public class InitializeGame : MonoBehaviour
         GameManager.instancia.playerName = userName.text == null || userName.text == "" ? "Ana" : userName.text;
         Debug.Log("Your name is " + GameManager.instancia.playerName);
 
-        GameRouting.Dificulties();
+        Dificulties();
     }
     public void easyInitializeGame()
     {
@@ -20,7 +20,7 @@ public class InitializeGame : MonoBehaviour
         GameManager.instancia.time = 100;
         GameManager.instancia.dificulty = 0;
         GameManager.instancia.VisualizeData();
-        GameRouting.Level1_1();
+        Anim_adoption();
     }
 
     public void normalInitializeGame()
@@ -29,7 +29,7 @@ public class InitializeGame : MonoBehaviour
         GameManager.instancia.time = 60;
         GameManager.instancia.dificulty = 1;
         GameManager.instancia.VisualizeData();
-        GameRouting.Level1_1();
+        Anim_adoption();
     }
 
     public void hardInitializeGame()
@@ -38,7 +38,7 @@ public class InitializeGame : MonoBehaviour
         GameManager.instancia.time = 30;
         GameManager.instancia.dificulty = 2;
         GameManager.instancia.VisualizeData();
-        GameRouting.Level1_1();
+        Anim_adoption();
     }
 
 }

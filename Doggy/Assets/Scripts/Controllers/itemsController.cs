@@ -163,7 +163,7 @@ public class itemsController : GameRouting
         {
             // Código para terminar escena
             Debug.Log("Ganaste");
-            Level2_1_2();
+            Anim_construction();
         }
     }
 
