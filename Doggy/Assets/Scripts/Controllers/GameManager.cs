@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int dificulty;
     public int isMusicOn;
     public int saveSlot;
+    public int laps;
     //att privado (_instancia)
     static private GameManager _instancia;
 
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         time = 0;
         dificulty = 0;
         saveSlot = 0;
+        laps = 0;
     }
 
     public void VisualizeData()
@@ -90,5 +92,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Your Time is " + _instancia.time);
         Debug.Log("Your Dificulty is " + _instancia.dificulty);
         Debug.Log("Your Save Slot is " + _instancia.saveSlot);
+        Debug.Log("Your Laps are " + _instancia.laps);
+
     }
 }

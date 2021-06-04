@@ -18,6 +18,7 @@ TagManager:
   - Cono
   - Boton
   - Mapa
+  - Meta
   - BacheLvl3_2_3
   layers:
   - Default

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level3_2_2 : MonoBehaviour
+public class Level3_2_2 : GameRouting
 {
 
     public Sprite Chocolate;
@@ -87,7 +87,7 @@ public class Level3_2_2 : MonoBehaviour
         }
         if (level1Completed && level2Completed)
         {
-            // next scene code
+            Level3_2_3();
         }
     }
 
