@@ -19,6 +19,7 @@ TagManager:
   - Boton
   - Mapa
   - Meta
+  - BacheLvl3_2_3
   layers:
   - Default
   - TransparentFX
