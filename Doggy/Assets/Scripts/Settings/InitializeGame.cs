@@ -9,7 +9,7 @@ public class InitializeGame : MonoBehaviour
     public TMP_InputField userName;
     public void clickSaveButton()
     {
-        GameManager.instancia.playerName = userName.text;
+        GameManager.instancia.playerName = userName.text == null || userName.text == "" ? "Ana" : userName.text;
         Debug.Log("Your name is " + GameManager.instancia.playerName);
 
         GameRouting.Dificulties();
