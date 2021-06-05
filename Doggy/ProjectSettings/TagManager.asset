@@ -20,7 +20,6 @@ TagManager:
   - Mapa
   - Meta
   - BacheLvl3_2_3
-  - FinalJuego
   layers:
   - Default
   - TransparentFX
@@ -31,8 +30,8 @@ TagManager:
   - 
   - 
   - Background
-  - Obstacle
   - Player
+  - 
   - 
   - 
   - 
