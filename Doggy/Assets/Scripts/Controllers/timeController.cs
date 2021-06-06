@@ -8,6 +8,7 @@ public class timeController : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instancia.time = countdownTime;
         StartCoroutine(CountdownToStart());
     }
 
@@ -16,6 +17,7 @@ public class timeController : MonoBehaviour
         countdownTime = GameManager.instancia.time;
         while (countdownTime >= 0)
         {
+            Debug.Log("from timeController: " + GameManager.instancia.time);
             GameManager.instancia.time = countdownTime;
 
             yield return new WaitForSeconds(1f);

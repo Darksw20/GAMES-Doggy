@@ -22,13 +22,11 @@ public class NextLevelLoader : GameRouting
                 GameManager.instancia.galletas == 3)
             {
                 SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
-                GameManager.instancia.VisualizeData();
                 nextLevel();
             }
             if (SceneManager.GetActiveScene().name == "Level1_2")
             {
                 SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
-                GameManager.instancia.VisualizeData();
                 nextLevel();
             }
             
