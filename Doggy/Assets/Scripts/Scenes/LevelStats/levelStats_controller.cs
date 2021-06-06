@@ -12,11 +12,27 @@ public class levelStats_controller : GameRouting
     public TextMeshProUGUI blueDiamonds;
     public TextMeshProUGUI coins;
 
-    private static string currentScene = null;
+    public Sprite missionCompleted;
+    public Sprite levelCompleted;
+
+    public GameObject backgroundImage;
 
     void Start()
     {
-        updateText();
+        showImage();
+    }
+
+    private void showImage()
+    {
+        int level = GameManager.instancia.level;
+        if (level == 1 || level == 3 || level == 4 || level == 6 || level == 7 || level == 8)
+        {
+            backgroundImage.GetComponent<SpriteRenderer>().sprite = missionCompleted;
+        } else if (level == 2 || level == 5 || level == 9)
+        {
+            backgroundImage.GetComponent<SpriteRenderer>().sprite = levelCompleted;
+        }
+        StartCoroutine(removeImage());
     }
 
     private void updateText()
@@ -27,11 +43,6 @@ public class levelStats_controller : GameRouting
         redDiamonds.text = GameManager.instancia.redJewels.ToString();
         blueDiamonds.text = GameManager.instancia.blueJewels.ToString();
         coins.text = GameManager.instancia.money.ToString();
-    }
-
-    public static void setCurrentScene(string scene)
-    {
-        currentScene = scene;
     }
 
     public void nextScene()
@@ -71,6 +82,13 @@ public class levelStats_controller : GameRouting
                 return "Level3_2_3";
         }
         return null;
+    }
+
+    IEnumerator removeImage()
+    {
+        yield return new WaitForSeconds(3);
+        backgroundImage.GetComponent<SpriteRenderer>().sprite = null;
+        updateText();
     }
 
 }
