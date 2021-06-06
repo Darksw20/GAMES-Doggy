@@ -22,6 +22,7 @@ public class level1_2 : MonoBehaviour
     {
         TilesetsController = GameObject.Find("Tilesets").GetComponent<MapTilesetController>();
         InvokeRepeating("pineConesRandomPosition", 0F, 5F);
+        InvokeRepeating("updateAIpath", 0F, 0.5F);
         InvokeRepeating("changeMap", 0, 20F);
     }
 
@@ -52,7 +53,6 @@ public class level1_2 : MonoBehaviour
         _3pineCone.GetComponent<pineCone>().changePosition();
         _4pineCone.GetComponent<pineCone>().changePosition();
         _5pineCone.GetComponent<pineCone>().changePosition();
-        StartCoroutine(updateAIpath());
     }
 
     private void changeMap()
@@ -65,9 +65,9 @@ public class level1_2 : MonoBehaviour
         }
     }
 
-    IEnumerator updateAIpath()
+    private void updateAIpath()
     {
-        yield return new WaitForSeconds(1.5F);
         AstarPath.active.Scan();
     }
+
 }
