@@ -33,7 +33,7 @@ public class level1_2 : MonoBehaviour
     public void resetLevel()
     {
         Ana.GetComponent<Transform>().localPosition = new Vector3(-3F, 1F, 0);
-        Max.GetComponent<Transform>().localPosition = new Vector3(-3.75F, 1F, 0);
+        Max.GetComponent<Transform>().localPosition = new Vector3(0F, 0F, 0);
     }
 
     private void timeOver()
