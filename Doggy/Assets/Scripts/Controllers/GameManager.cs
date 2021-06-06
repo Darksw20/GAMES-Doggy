@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // ------------------------
     public string playerName;
     public int level;
+    public int nextLevel;
     public int points;
     public int galletas;
     public int health;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int redJewels;
     public int blueJewels;
     public int time;
+    public int levelTime;
     public int dificulty;
     public int isMusicOn;
     public int saveSlot;
@@ -67,14 +69,14 @@ public class GameManager : MonoBehaviour
         isMusicOn = 1;
         
         playerName = "";
-        level = 0;
+        level = 1;
+        nextLevel = 2;
         points = 0;
         galletas = 0;
         health = 3;
         money = 0;
         redJewels = 0;
         blueJewels = 0;
-        time = 0;
         dificulty = 0;
         saveSlot = 0;
         laps = 0;

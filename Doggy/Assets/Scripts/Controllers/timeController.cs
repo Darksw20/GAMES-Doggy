@@ -1,28 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class timeController : MonoBehaviour
 {
-    public int countdownTime;
+    public float timeRemaining;
+    public bool timerIsRunning = false;
 
     private void Start()
     {
-        StartCoroutine(CountdownToStart());
+        GameManager.instancia.levelTime = (int)timeRemaining;
+        timerIsRunning = true;
     }
 
-    IEnumerator CountdownToStart()
+    void Update()
     {
-        countdownTime = GameManager.instancia.time;
-        while (countdownTime >= 0)
+        if (timerIsRunning)
         {
-            GameManager.instancia.time = countdownTime;
-
-            yield return new WaitForSeconds(1f);
-
-            countdownTime--;
+            if (timeRemaining > 0)
+            {
+                GameManager.instancia.time = Mathf.FloorToInt(timeRemaining % 60);
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                SceneManager.LoadScene("Death");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
         }
-        //que ocurre cuando se termina el codigo?
-        
     }
 }
