@@ -1,21 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
 
-    void Start()
-    {
-        sentences = new Queue<string>();
-    }
+    private Queue<string> sentences;
 
     public void startDialogue(Dialogue dialogue)
     {
-        Debug.Log("Empezando diálogo con " + dialogue.name);
+        sentences = new Queue<string>();
 
-        // Limpiar la queue y agregar todas los diálogos
+        nameText.text = dialogue.name;
+
         sentences.Clear();
         foreach(string sentence in dialogue.sentences)
         {
@@ -34,12 +34,26 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        StopAllCoroutines();
+        StartCoroutine(typeSentence(sentence));
+
+    }
+
+    IEnumerator typeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     private void endDialogue()
     {
-        Debug.Log("El diálogo terminó");
+        GameObject.Find("Dialogue").SetActive(false);
+        GameObject.Find("Pajaro").SetActive(false);
+        enabled = false;
     }
 
 }
