@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class timeController : MonoBehaviour
 {
-    public int countdownTime;
+    public float timeRemaining;
+    public bool timerIsRunning = false;
 
     private void Start()
     {
-        GameManager.instancia.time = countdownTime;
-        StartCoroutine(CountdownToStart());
+        GameManager.instancia.levelTime = (int)timeRemaining;
+        Debug.Log(GameManager.instancia.levelTime);
+        timerIsRunning = true;
     }
 
-    IEnumerator CountdownToStart()
+    void Update()
     {
-        countdownTime = GameManager.instancia.time;
-        while (countdownTime >= 0)
+        if (timerIsRunning)
         {
-            Debug.Log("from timeController: " + GameManager.instancia.time);
-            GameManager.instancia.time = countdownTime;
-
-            yield return new WaitForSeconds(1f);
-
-            countdownTime--;
+            if (timeRemaining > 0)
+            {
+                GameManager.instancia.time = Mathf.FloorToInt(timeRemaining % 60);
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
         }
-        //que ocurre cuando se termina el codigo?
-        
     }
 }

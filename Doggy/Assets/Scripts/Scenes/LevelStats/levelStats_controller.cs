@@ -37,7 +37,7 @@ public class levelStats_controller : GameRouting
 
     private void updateText()
     {
-        time.text = "Completado en:\n" + GameManager.instancia.time.ToString() + " segundos";
+        time.text = "Completado en:\n" + (GameManager.instancia.levelTime-GameManager.instancia.time) + " segundos";
         level.text = getLevelText();
         health.text = GameManager.instancia.health.ToString();
         redDiamonds.text = GameManager.instancia.redJewels.ToString();

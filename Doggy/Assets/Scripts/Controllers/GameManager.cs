@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int redJewels;
     public int blueJewels;
     public int time;
+    public int levelTime;
     public int dificulty;
     public int isMusicOn;
     public int saveSlot;
@@ -76,7 +77,6 @@ public class GameManager : MonoBehaviour
         money = 0;
         redJewels = 0;
         blueJewels = 0;
-        time = 0;
         dificulty = 0;
         saveSlot = 0;
         laps = 0;
