@@ -9,12 +9,11 @@ public class pineCone : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Mapa")
+        if (collision.gameObject.tag == "Mapa" || collision.gameObject.tag == "Coin" || collision.gameObject.tag == "MisteryBox")
         {
             changePosition();
         } else if (collision.gameObject.tag == "Player" && canDamage)
         {
-            Debug.Log("health");
             GameManager.instancia.health--;
             GameObject.Find("Maps").GetComponent<level1_2>().resetLevel();
         }

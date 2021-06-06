@@ -52,6 +52,7 @@ public class level1_2 : MonoBehaviour
         _3pineCone.GetComponent<pineCone>().changePosition();
         _4pineCone.GetComponent<pineCone>().changePosition();
         _5pineCone.GetComponent<pineCone>().changePosition();
+        StartCoroutine(updateAIpath());
     }
 
     private void changeMap()
@@ -62,5 +63,11 @@ public class level1_2 : MonoBehaviour
             GameObject.Find("AI").GetComponent<AIDestinationSetter>().target = TilesetsController.getTarget();
             mapChangeCount++;
         }
+    }
+
+    IEnumerator updateAIpath()
+    {
+        yield return new WaitForSeconds(1.5F);
+        AstarPath.active.Scan();
     }
 }

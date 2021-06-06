@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3344339228735813566, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_TagString
-      value: GameLoader
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6829064145472454295, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Layer
@@ -2768,7 +2768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2092484110881787493, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_TagString
-      value: GameLoader
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -625334985038882539, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_Layer
@@ -5022,7 +5022,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.2
-  endReachedDistance: 1
+  endReachedDistance: 0.25
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -6054,7 +6054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597312890161258032, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_TagString
-      value: GameLoader
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -2695619058785784247, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
