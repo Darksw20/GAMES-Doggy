@@ -3903,8 +3903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec28232e6bd44bb459150e1008551ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: {fileID: 0}
-  level: Level2_1_1
+  level: 2
+  nextLevel: 3
 --- !u!1 &1275682949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5626310593630464210, guid: 8994158086661d14291a2452042bfd35, type: 3}

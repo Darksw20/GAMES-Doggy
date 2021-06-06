@@ -98,7 +98,9 @@ public class lvl3_2_1_controller : GameRouting
         }
         if (differencesFound == 5)
         {
-            Level3_2_2();
+            GameManager.instancia.level = 7;
+            GameManager.instancia.nextLevel = 8;
+            nextLevel();
         }
     }
 

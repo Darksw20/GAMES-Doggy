@@ -306,8 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e196a872cb9e1cd479e9122b6d17fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: {fileID: 0}
-  level: Level2_1_2
+  level: 4
   time: 0
   currentTime: 0
 --- !u!1 &784208138

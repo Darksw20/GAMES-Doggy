@@ -152,6 +152,14 @@ public class GameRouting : MonoBehaviour
                 Level3_2_3();
                 break;
 
+            case "10":
+                Anim_construction();
+                break;
+
+            case "11":
+                Anim_Fin();
+                break;
+
             case "Menu":
                 MainMenu();
                 break;
