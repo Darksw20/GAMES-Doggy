@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameRouting : MonoBehaviour
 {
@@ -107,54 +106,57 @@ public class GameRouting : MonoBehaviour
         SceneManager.LoadScene("Level3_2_3");
     }
 
+    public void nextLevel()
+    {
+        SceneManager.LoadScene("LevelStats");
+    }
+
     public void ChooseLevel(string level)
     {
-        //En cada uno de estos se deben settear los valores del nivel;
         switch (level)
         {
-            case "Level1_1":
-            case "0":
+            case "1":
                 Level1_1();
                 break;
 
-            case "Level1_2":
-            case "1":
+            case "2":
                 Level1_2();
                 break;
 
-            case "Level2_1_1":
-            case "2":
+            case "3":
                 Level2_1_1();
                 break;
 
-            case "Level2_1_2":
-            case "3":
+            case "4":
                 Level2_1_2();
                 break;
 
-            case "Level2_2":
-            case "4":
+            case "5":
                 Level2_2();
                 break;
 
-            case "Level3_1":
-            case "5":
+            case "6":
                 Level3_1();
                 break;
 
-            case "Level3_2_1":
-            case "6":
+            case "7":
                 Level3_2_1();
                 break;
 
-            case "Level3_2_2":
-            case "7":
+            case "8":
                 Level3_2_2();
                 break;
 
-            case "Level3_2_3":
-            case "8":
+            case "9":
                 Level3_2_3();
+                break;
+
+            case "10":
+                Anim_construction();
+                break;
+
+            case "11":
+                Anim_Fin();
                 break;
 
             case "Menu":

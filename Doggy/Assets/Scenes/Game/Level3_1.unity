@@ -2866,6 +2866,7 @@ GameObject:
   - component: {fileID: 1416537034}
   - component: {fileID: 1416537033}
   - component: {fileID: 1416537035}
+  - component: {fileID: 1416537036}
   m_Layer: 0
   m_Name: Mapa
   m_TagString: Untagged
@@ -2952,6 +2953,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ana: {fileID: 466676037}
   perrero: {fileID: 591884972}
+--- !u!114 &1416537036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416537032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfa419c174d89443bd2816351b0afcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 50
+  timerIsRunning: 0
 --- !u!1 &1580166591
 GameObject:
   m_ObjectHideFlags: 0

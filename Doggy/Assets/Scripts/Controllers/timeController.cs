@@ -4,25 +4,50 @@ using UnityEngine;
 
 public class timeController : MonoBehaviour
 {
-    public int countdownTime;
+    public float timeRemaining;
+    public bool timerIsRunning = false;
+    public GameObject backgroundImage;
 
     private void Start()
     {
-        StartCoroutine(CountdownToStart());
+        GameManager.instancia.levelTime = (int)timeRemaining;
+        timerIsRunning = true;
     }
 
-    IEnumerator CountdownToStart()
+    void Update()
     {
-        countdownTime = GameManager.instancia.time;
-        while (countdownTime >= 0)
+        if (timerIsRunning)
         {
-            GameManager.instancia.time = countdownTime;
-
-            yield return new WaitForSeconds(1f);
-
-            countdownTime--;
+            if (timeRemaining > 0)
+            {
+                GameManager.instancia.time = Mathf.FloorToInt(timeRemaining % 60);
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                disableHUD();
+                backgroundImage.SetActive(true);
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
         }
-        //que ocurre cuando se termina el codigo?
-        
+    }
+
+    private void disableHUD()
+    {
+        foreach (Transform child in GameObject.Find("Hud").transform)
+        {
+            if (child.name != "BackgroundImage")
+            {
+                child.localScale = new Vector3(0, 0, 0);
+            }
+            else if (child.name == "Shop")
+            {
+                foreach (Transform subchild in child)
+                {
+                    subchild.localScale = new Vector3(0, 0, 0);
+                }
+            }
+        }
     }
 }

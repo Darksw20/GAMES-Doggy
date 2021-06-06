@@ -3562,6 +3562,7 @@ GameObject:
   - component: {fileID: 1866709229}
   - component: {fileID: 1866709228}
   - component: {fileID: 1866709230}
+  - component: {fileID: 1866709231}
   m_Layer: 0
   m_Name: Mapa
   m_TagString: Untagged
@@ -3646,6 +3647,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9347e436515c27148a393fd565d5f785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1866709231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866709227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfa419c174d89443bd2816351b0afcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 40
+  timerIsRunning: 0
 --- !u!1 &1901898872
 GameObject:
   m_ObjectHideFlags: 0

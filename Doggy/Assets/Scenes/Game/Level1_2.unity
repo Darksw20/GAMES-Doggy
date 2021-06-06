@@ -3903,7 +3903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec28232e6bd44bb459150e1008551ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Level2_1_1
+  level: 2
+  nextLevel: 3
 --- !u!1 &1275682949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5626310593630464210, guid: 8994158086661d14291a2452042bfd35, type: 3}
@@ -5266,6 +5267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752208449}
   - component: {fileID: 1752208450}
+  - component: {fileID: 1752208451}
   m_Layer: 8
   m_Name: Maps
   m_TagString: Mapa
@@ -5309,6 +5311,20 @@ MonoBehaviour:
   _3pineCone: {fileID: 1246274011}
   _4pineCone: {fileID: 1278631156}
   _5pineCone: {fileID: 964327837}
+--- !u!114 &1752208451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752208448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfa419c174d89443bd2816351b0afcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 50
+  timerIsRunning: 0
 --- !u!1 &1766227358
 GameObject:
   m_ObjectHideFlags: 0
