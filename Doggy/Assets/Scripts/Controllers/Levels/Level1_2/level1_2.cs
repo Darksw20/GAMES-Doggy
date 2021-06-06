@@ -21,7 +21,7 @@ public class level1_2 : MonoBehaviour
     void Start()
     {
         TilesetsController = GameObject.Find("Tilesets").GetComponent<MapTilesetController>();
-        InvokeRepeating("pineConesRandomPosition", 5F, 5F);
+        InvokeRepeating("pineConesRandomPosition", 0F, 5F);
         InvokeRepeating("changeMap", 0, 20F);
     }
 
