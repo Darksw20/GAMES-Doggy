@@ -18,4 +18,5 @@ public class MaxGFX : MonoBehaviour
         {
             GetComponentInChildren<Transform>().localScale = new Vector3(-1f, 1f, 0f);
         }
+    }
 }
