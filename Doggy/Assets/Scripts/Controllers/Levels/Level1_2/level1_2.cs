@@ -22,7 +22,7 @@ public class level1_2 : MonoBehaviour
     {
         TilesetsController = GameObject.Find("Tilesets").GetComponent<MapTilesetController>();
         InvokeRepeating("pineConesRandomPosition", 5F, 5F);
-        InvokeRepeating("changeMap", 5F, 5F);
+        InvokeRepeating("changeMap", 0, 20F);
     }
 
     void Update()
@@ -56,10 +56,10 @@ public class level1_2 : MonoBehaviour
 
     private void changeMap()
     {
-        GameObject.Find("AI").GetComponent<AIDestinationSetter>().target = TilesetsController.getTarget();
-        if (mapChangeCount <= 3)
+        if (mapChangeCount < 3)
         {
             TilesetsController.setRandomMap();
+            GameObject.Find("AI").GetComponent<AIDestinationSetter>().target = TilesetsController.getTarget();
             mapChangeCount++;
         }
     }

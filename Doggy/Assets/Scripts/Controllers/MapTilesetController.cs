@@ -13,11 +13,6 @@ public class MapTilesetController : MonoBehaviour
 
     private GameObject Target;
 
-    void Start()
-    {
-        setRandomMap();
-    }
-
     public void setRandomMap()
     {
         int num = (int)Random.Range(0.0f, 3.0f);
