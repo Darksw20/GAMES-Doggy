@@ -4104,9 +4104,13 @@ MonoBehaviour:
   dialogue:
     name: "P\xE1jaro carpintero"
     sentences:
-    - 
-    - 
-    - 
+    - "Hola ______, en esta misi\xF3n tendr\xE1s que ayudar a Max a buscar las Perrymonedas
+      perdidas en el bosque"
+    - "Pero cuidado que no ser\xE1 f\xE1cil, tendr\xE1s una noche oscura y solo unas
+      luci\xE9rnagas alumbraran tu camino"
+    - "Para esta misi\xF3n tendr\xE1s 60 segundos, si no la completas en ese tiempo
+      perder\xE1s una vida"
+    - "\xA1\xA1Suerte con eso!!"
 --- !u!95 &1405538291
 Animator:
   serializedVersion: 3
@@ -4185,7 +4189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405538289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.639862, y: -0.3528525, z: 0}
+  m_LocalPosition: {x: 2.64, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4458,7 +4462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571663256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.835135, y: 1.3096001, z: -10}
+  m_LocalPosition: {x: 7.3589463, y: 1.3096001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424731366}
@@ -4708,7 +4712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601368093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.835135, y: 1.3096001, z: -10}
+  m_LocalPosition: {x: 7.3589463, y: 1.3096001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
