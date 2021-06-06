@@ -2263,6 +2263,7 @@ GameObject:
   - component: {fileID: 684140479}
   - component: {fileID: 684140478}
   - component: {fileID: 684140481}
+  - component: {fileID: 684140482}
   m_Layer: 9
   m_Name: Pajaro
   m_TagString: PajaroCarpinteroLvl2_1_1
@@ -2348,7 +2349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684140477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3, y: -4.35, z: 0}
+  m_LocalPosition: {x: -6.177, y: -4.334, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2380,6 +2381,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68, y: 0.68}
   m_EdgeRadius: 0
+--- !u!114 &684140482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684140477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006228b9a6d989749aad0063cfed219f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "P\xE1jaro carpintero"
+    sentences:
+    - "Bien hecho, lograste salir del oscuro bosque, \xA1\xA1Bienvenido al parque!!"
+    - "Necesito que me ayudes a encontrar las piezas de mi carro de madera para lograr
+      llevarte a la salida del parque lo m\xE1s pronto posible"
+    - "Te estare esperando a que traigas todas las piezas del carro de madera hacia
+      mi para as\xED construirlo pero no olvides que solo tendr\xE1n 50 segundos"
+    - "\xA1\xA1Date prisa!!"
 --- !u!1 &686007762
 GameObject:
   m_ObjectHideFlags: 0
