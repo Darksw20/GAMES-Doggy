@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 public class timeController : MonoBehaviour
 {
     public float timeRemaining;
-    public bool timerIsRunning = false;
+    public static bool timerIsRunning = false;
 
     private void Start()
     {
         GameManager.instancia.levelTime = (int)timeRemaining;
-        timerIsRunning = true;
     }
 
     void Update()
