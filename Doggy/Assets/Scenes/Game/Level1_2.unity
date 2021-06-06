@@ -391,6 +391,92 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6842496}
   m_CullTransparentMesh: 0
+--- !u!1 &33662668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33662670}
+  - component: {fileID: 33662669}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &33662669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33662668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAACQn+sQ3ee1XgIAAAEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMtymzAU/RWP1nUGiFOH7lriOF049sTtZMNGwMVoLCRGj/iR8b/3SoAhrjcW59zHuUcXPgkTuoHcSLVUrFjJAsiPCXFn8m0ykC9wpDsptuwMfcw7K0zlgqiPeaOGScRDl6ZlDUax/KfYcRccIGgFK6WqF8UOEqmNRrikXANSShqXLRD6nJAj/k1jl3LCUzR3pzOe4mBywWMOwoAaQmd3s3kXO43u4vsAf/dhl9OmWJFzWjdQOP1DZtT3CNswgZN1EcFd5FpJzpnuhBFzavzgCW20xbEwoGAUB/VqXMcK2K4yrvI4eV2WGkzngqKnJ6bQr7Yq+SVbE2uq962yD8qt6/MQRl5VW3T1Hz8NPV0qWb/0fcPA9TAVy/dv9JRTbUYuj+Gnr8KtOFC+pxmH9wrEq1wqaUWBpFHWpVoN0dPweB0tqSDfD3gr9Qa0zeB4b3h/pW6Gi5/+mHBWZ975WQtsufR++00AhXfzGwX7PdFdCUSdir8a/tDdeKE64pkpbZDqphROXiatcqFk4T1z01iTSCXAw53oBgTl5rTBMub2Cm+4Udsb5pm6V6dr3nH9G3GT4uEhPghuqI08XC9LV/KwAl2treFMwCDaEa/oUyKFaDds7EmftrWqpPkobWdZ8XW1CARxXj4+zrJ5OIP4IZtGj9/LeVzeZ5Bl4UMcEL97TOCclG9aoZ09eGtiKC5wz/ovymSpaOO3vVD0sGTnWo4sZ6KU21wBiHVb4SocFDbB97JYFAwN2oIxTPj7Jp8p4TLfQ5FeC6V+0sXRKJoOVVLSsA9pHJKSxH9CUnIhl39QSwMEFAAACAgAAJCf69O5VohtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqgWVymoWFSZK5oUmqpWmSrpGFWZq5ZZpxUmpSkqGppYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJCf6xDd57VeAgAAAQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJCf69O5VohtAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &33662670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33662668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38239959
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7251125895361814276, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -5626310593630464210, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Name
@@ -662,7 +748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2829282227449441425, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -2721254615060841513, guid: 8994158086661d14291a2452042bfd35, type: 3}
       propertyPath: m_Enabled
@@ -792,7 +878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308136573}
   - component: {fileID: 308136574}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Entry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2661,7 +2747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -625334985038882539, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1087682978178510937, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_Layer
@@ -2725,7 +2811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056427929132713813, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6017735577404010705, guid: f799ff6bb90e72e4aa319ba89a4c3e75, type: 3}
       propertyPath: m_Layer
@@ -3726,7 +3812,7 @@ GameObject:
   - component: {fileID: 1248418377}
   - component: {fileID: 1248418378}
   - component: {fileID: 1248418379}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Ana
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3903,7 +3989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec28232e6bd44bb459150e1008551ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: {fileID: 0}
   level: Level2_1_1
 --- !u!1 &1275682949 stripped
 GameObject:
@@ -5505,7 +5590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1086886459256473806, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -342966278442896700, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_Layer
@@ -5521,7 +5606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 130108127518418015, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1499961015083283642, guid: f60f9bedbe58d9f459be76e2888ede74, type: 3}
       propertyPath: m_Layer
