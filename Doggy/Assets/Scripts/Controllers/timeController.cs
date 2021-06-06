@@ -10,7 +10,6 @@ public class timeController : MonoBehaviour
     private void Start()
     {
         GameManager.instancia.levelTime = (int)timeRemaining;
-        Debug.Log(GameManager.instancia.levelTime);
         timerIsRunning = true;
     }
 

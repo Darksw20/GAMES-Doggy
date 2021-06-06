@@ -4740,6 +4740,7 @@ GameObject:
   - component: {fileID: 1916755413}
   - component: {fileID: 1916755412}
   - component: {fileID: 1916755414}
+  - component: {fileID: 1916755415}
   m_Layer: 0
   m_Name: Mapa
   m_TagString: Untagged
@@ -4835,6 +4836,20 @@ MonoBehaviour:
   Bottom: {fileID: 2118380486}
   Correcto: {fileID: 1161958546}
   _2Correcto: {fileID: 1475857489}
+--- !u!114 &1916755415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916755411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfa419c174d89443bd2816351b0afcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 60
+  timerIsRunning: 0
 --- !u!1 &1924548240
 GameObject:
   m_ObjectHideFlags: 0
