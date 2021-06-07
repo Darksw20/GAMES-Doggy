@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue)
     {
+        string aux;
         sentences = new Queue<string>();
 
         nameText.text = dialogue.name;
@@ -19,7 +20,8 @@ public class DialogueManager : MonoBehaviour
         sentences.Clear();
         foreach(string sentence in dialogue.sentences)
         {
-            sentences.Enqueue(sentence);
+            aux = sentence.Replace("______", GameManager.instancia.playerName);
+            sentences.Enqueue(aux);
         }
 
         displayNextSentence();
