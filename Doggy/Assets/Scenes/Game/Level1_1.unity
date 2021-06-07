@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 66012032}
   - component: {fileID: 66012033}
+  - component: {fileID: 66012034}
   m_Layer: 8
   m_Name: Luz1
   m_TagString: Untagged
@@ -339,6 +340,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &66012034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66012031}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ae2f549ed938ce4f8fb6406c7dfbddd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &71938241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,6 +1279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 331031368}
   - component: {fileID: 331031369}
+  - component: {fileID: 331031370}
   m_Layer: 8
   m_Name: Luz2
   m_TagString: Untagged
@@ -1331,6 +1352,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &331031370
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331031367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ae2f549ed938ce4f8fb6406c7dfbddd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &351772256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4427771653632845617, guid: d814e20f611317247af2e11d6c186dbd, type: 3}
