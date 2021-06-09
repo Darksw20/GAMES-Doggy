@@ -5324,7 +5324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 50
-  timerIsRunning: 0
 --- !u!1 &1766227358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5744,9 +5743,9 @@ MonoBehaviour:
   dialogue:
     name: "P\xE1jaro carpintero"
     sentences:
-    - "Muy bien _______ ya casi sales de este oscuro bosque, pero no ser\xE1 una
-      tarea sencilla, tendr\xE1s que encontrar la salida de un laberinto en menos
-      de 50 segundos"
+    - "Muy bien ______ ya casi sales de este oscuro bosque, pero no ser\xE1 una tarea
+      sencilla, tendr\xE1s que encontrar la salida de un laberinto en menos de 50
+      segundos"
     - "Recuerda que te estar\xE9 esperando en la salida del laberinto, no olvides
       esquivar y tener cuidado con la pi\xF1as de pino, que podr\xEDan hacerte perder
       una vida"

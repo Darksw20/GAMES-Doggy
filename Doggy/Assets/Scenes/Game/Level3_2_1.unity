@@ -3585,7 +3585,7 @@ MonoBehaviour:
   dialogue:
     name: "P\xE1jaro carpintero"
     sentences:
-    - Estamos a nada ____ de lograr regresar a casa de Ana
+    - Estamos a nada ______ de lograr regresar a casa de Ana
     - "\xA1Vamos no hay que rendirnos!"
     - "Ana, tendr\xE1s que encontrar las diferencias entre dos camiones de helados"
 --- !u!95 &1847105026
@@ -3781,7 +3781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 40
-  timerIsRunning: 0
 --- !u!1 &1901898872
 GameObject:
   m_ObjectHideFlags: 0
