@@ -20,6 +20,7 @@ TagManager:
   - Mapa
   - Meta
   - BacheLvl3_2_3
+  - TuboEstatico
   layers:
   - Default
   - TransparentFX
@@ -59,6 +60,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2041165617
+    locked: 0
+  - name: Objects
+    uniqueID: 852295495
     locked: 0
   - name: Player
     uniqueID: 824238057
