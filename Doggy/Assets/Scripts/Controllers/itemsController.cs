@@ -14,6 +14,7 @@ public class itemsController : GameRouting
 
     private int piecesFound = 0;
     private int carryingItems = 0;
+    private string typeTubo = "";
 
     private GameObject itemBeingCarried = null;
 
@@ -147,6 +148,23 @@ public class itemsController : GameRouting
             {
                 Debug.Log("Ya estás cargando un item");
             }
+        }
+    }
+
+    public void pickItem(GameObject gameObject, string tipoTubo)
+    {
+        if (carryingItems == 0)
+        {
+            carryingItems++;
+            Vector3 scale = new Vector3(0.5F, 0.5F, 0);
+            gameObject.transform.localScale = scale;
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Background";
+            itemBeingCarried = gameObject;
+            typeTubo = tipoTubo;
+        }
+        else
+        {
+            Debug.Log("Ya estás cargando un item");
         }
     }
 

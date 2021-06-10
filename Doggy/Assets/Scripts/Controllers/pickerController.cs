@@ -55,8 +55,19 @@ public class pickerController : GameRouting
                 }
                 break;
 
-            case "Tubo":
-                itemsController.pickItem(other.gameObject);
+            case "TuboEn3":
+                Debug.Log("Agarraste un Tubo en 3");
+                itemsController.pickItem(other.gameObject, "TuboEn3");
+                break;
+
+            case "TuboL":
+                Debug.Log("Agarraste un Tubo en L");
+                itemsController.pickItem(other.gameObject, "TuboL");
+                break;
+
+            case "TuboEnX":
+                Debug.Log("Agarraste un Tubo en X");
+                itemsController.pickItem(other.gameObject, "TuboEnX");
                 break;
 
             case "PajaroCarpinteroLvl2_1_1":
