@@ -31,4 +31,13 @@ public class level2_2 : MonoBehaviour
         _9i.SetActive(false);
     }
 
+    public void giveItem(GameObject tuberia)
+    {
+        switch (tuberia.name)
+        {
+            case "1a":
+                //_13m.SetActive(true);
+                break;
+        }
+    }
 }

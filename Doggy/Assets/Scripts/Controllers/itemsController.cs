@@ -12,11 +12,23 @@ public class itemsController : GameRouting
     private GameObject llanta4;
     private GameObject caja;
 
+    private GameObject _13m;
+    private GameObject _14n;
+    private GameObject _15o;
+    private GameObject _16p;
+    private GameObject _12l;
+    private GameObject _11k;
+    private GameObject _18s;
+    private GameObject _19;
+    private GameObject _17r;
+    private GameObject _9i;
+
     private int piecesFound = 0;
     private int carryingItems = 0;
-    private string typeTubo = "";
 
     private GameObject itemBeingCarried = null;
+    
+    List<string> listTubos = new List<string>(0);
 
     void Start()
     {
@@ -32,6 +44,29 @@ public class itemsController : GameRouting
             llanta3.SetActive(false);
             llanta4.SetActive(false);
             caja.SetActive(false);
+        } else if (SceneManager.GetActiveScene().name == "Level2_2")
+        {
+            _13m = GameObject.Find("13m");
+            _14n = GameObject.Find("14n");
+            _15o = GameObject.Find("15o");
+            _16p = GameObject.Find("16p");
+            _12l = GameObject.Find("12l");
+            _11k = GameObject.Find("11k");
+            _18s = GameObject.Find("18s");
+            _19 = GameObject.Find("19");
+            _17r = GameObject.Find("17r");
+            _9i = GameObject.Find("9i");
+
+            _13m.SetActive(false);
+            _14n.SetActive(false);
+            _15o.SetActive(false);
+            _16p.SetActive(false);
+            _12l.SetActive(false);
+            _11k.SetActive(false);
+            _18s.SetActive(false);
+            _19.SetActive(false);
+            _17r.SetActive(false);
+            _9i.SetActive(false);
         }
     }
 
@@ -113,45 +148,30 @@ public class itemsController : GameRouting
 
     public void pickItem(GameObject gameObject)
     {
-        if (SceneManager.GetActiveScene().name == "Level2_1_1")
+        
+        // Si el jugador compró la habilidad de fuerza
+        if (lvl2_1_1_shopController.getStrenght())
         {
-            // Si el jugador compró la habilidad de fuerza
-            if (lvl2_1_1_shopController.getStrenght())
+            addItem(gameObject.name);
+            Destroy(gameObject);
+            carryingItems++;
+            Debug.Log("Recogiste un item, regrésalo al pájaro o recoje más");
+        }
+        else
+        {
+            Debug.Log("Ya estás cargando un item");
+            if (carryingItems == 0)
             {
                 addItem(gameObject.name);
                 Destroy(gameObject);
                 carryingItems++;
-                Debug.Log("Recogiste un item, regrésalo al pájaro o recoje más");
-            }
-            else
-            {
-                Debug.Log("Ya estás cargando un item");
-                if (carryingItems == 0)
-                {
-                    addItem(gameObject.name);
-                    Destroy(gameObject);
-                    carryingItems++;
-                    Debug.Log("Recogiste un item, regrésalo al pájaro");
-                }
-            }
-        } else if (SceneManager.GetActiveScene().name == "Level2_2")
-        {
-            if (carryingItems == 0)
-            {
-                carryingItems++;
-                Vector3 scale = new Vector3(0.5F, 0.5F, 0);
-                gameObject.transform.localScale = scale;
-                gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Background";
-                itemBeingCarried = gameObject;
-            }
-            else
-            {
-                Debug.Log("Ya estás cargando un item");
+                Debug.Log("Recogiste un item, regrésalo al pájaro");
             }
         }
+        
     }
 
-    public void pickItem(GameObject gameObject, string tipoTubo)
+    public void pickTube(GameObject gameObject)
     {
         if (carryingItems == 0)
         {
@@ -160,7 +180,6 @@ public class itemsController : GameRouting
             gameObject.transform.localScale = scale;
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Background";
             itemBeingCarried = gameObject;
-            typeTubo = tipoTubo;
         }
         else
         {
@@ -182,6 +201,162 @@ public class itemsController : GameRouting
             // Código para terminar escena
             Debug.Log("Ganaste");
             Anim_construction();
+        }
+    }
+
+    public void giveItem(GameObject gameObject)
+    {
+        try
+        {
+            switch (gameObject.name)
+            {
+                case "1a":
+                    if (itemBeingCarried.name == "tuboC" && !listTubos.Contains("13m"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _13m.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("13m");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "2b":
+                    if (itemBeingCarried.name == "tuboC" && !listTubos.Contains("14n"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _14n.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("14n");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "3c":
+                    if (itemBeingCarried.name == "tuboC" && !listTubos.Contains("15o"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _15o.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("15o");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "4d":
+                    if (itemBeingCarried.name == "tuboC" && !listTubos.Contains("16p"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _16p.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("16p");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "6f":
+                    if (itemBeingCarried.name == "tuboC" && !listTubos.Contains("18s"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _18s.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("18s");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "5e":
+                    if (itemBeingCarried.name == "tuboC" && !listTubos.Contains("17r"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _17r.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("17r");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "7g":
+                    if (itemBeingCarried.name == "tuboT" && !listTubos.Contains("9i"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _9i.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("9i");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "8h":
+                    if (itemBeingCarried.name == "tuboT" && !listTubos.Contains("19"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _19.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("19");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "Final1":
+                    if (itemBeingCarried.name == "tuboX" && !listTubos.Contains("12l"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _12l.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("12l");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+                case "Final2":
+                    if (itemBeingCarried.name == "tuboT" && !listTubos.Contains("11k"))
+                    {
+                        Destroy(itemBeingCarried);
+                        carryingItems = 0;
+                        _11k.SetActive(true);
+                        piecesFound++;
+                        listTubos.Add("11k");
+                    }
+                    else
+                    {
+                        Debug.Log("Esta pieza no va aqui");
+                    }
+                    break;
+            }
+        }
+        catch (MissingReferenceException e) { Debug.Log("ya sabemos que no hay nah"); }
+        
+        if (piecesFound == 10)
+        {
+            Level3_1();
         }
     }
 

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 11060392}
   m_Layer: 0
   m_Name: tuboT_2
-  m_TagString: Tubo
+  m_TagString: TuboEn3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 49826767}
   m_Layer: 0
   m_Name: tuboT_1
-  m_TagString: Tubo
+  m_TagString: TuboEn3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,7 +422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49826765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.040001, y: 11.83, z: 178.65034}
+  m_LocalPosition: {x: 3.02, y: 11.95, z: 178.65034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 270289223}
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 257298186}
   m_Layer: 0
   m_Name: tuboC_3
-  m_TagString: Tubo
+  m_TagString: TuboL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,7 +1377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &531210172
 Transform:
   m_ObjectHideFlags: 0
@@ -1854,7 +1854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570102291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.996031, y: 10.962091, z: 178.65034}
+  m_LocalPosition: {x: 9.002, y: 10.962091, z: 178.65034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 531210172}
@@ -2155,7 +2155,7 @@ GameObject:
   - component: {fileID: 577703247}
   m_Layer: 0
   m_Name: tuboC_4
-  m_TagString: Tubo
+  m_TagString: TuboL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2168,7 +2168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577703245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54999924, y: 3.7400002, z: 178.65034}
+  m_LocalPosition: {x: -0.61, y: 3.8, z: 178.65034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 270289223}
@@ -3494,7 +3494,7 @@ GameObject:
   - component: {fileID: 908225550}
   m_Layer: 0
   m_Name: Final1
-  m_TagString: Untagged
+  m_TagString: TuboEstaticoX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3807,7 +3807,7 @@ GameObject:
   - component: {fileID: 1044736681}
   m_Layer: 0
   m_Name: tubo_1
-  m_TagString: Tubo
+  m_TagString: TuboEnX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3820,7 +3820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044736679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.700001, y: 7.77, z: 178.65034}
+  m_LocalPosition: {x: 15.76, y: 7.69, z: 178.65034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 270289223}
@@ -4264,7 +4264,7 @@ GameObject:
   - component: {fileID: 1139818172}
   m_Layer: 0
   m_Name: 4d
-  m_TagString: Untagged
+  m_TagString: TuboEstaticoL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4629,7 +4629,7 @@ GameObject:
   - component: {fileID: 1224226365}
   m_Layer: 0
   m_Name: 7g
-  m_TagString: Untagged
+  m_TagString: TuboEstatico3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4872,7 +4872,7 @@ GameObject:
   - component: {fileID: 1271316529}
   m_Layer: 0
   m_Name: 8h
-  m_TagString: Untagged
+  m_TagString: TuboEstatico3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5115,7 +5115,7 @@ GameObject:
   - component: {fileID: 1320176425}
   m_Layer: 0
   m_Name: tuboC_6
-  m_TagString: Tubo
+  m_TagString: TuboL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5128,7 +5128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320176423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.360001, y: 12.87, z: 178.65034}
+  m_LocalPosition: {x: 14.24, y: 12.87, z: 178.65034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 270289223}
@@ -5224,7 +5224,7 @@ GameObject:
   - component: {fileID: 1336323458}
   m_Layer: 0
   m_Name: 3c
-  m_TagString: Untagged
+  m_TagString: TuboEstaticoL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5732,7 +5732,7 @@ GameObject:
   - component: {fileID: 1413418409}
   m_Layer: 0
   m_Name: tuboT_3
-  m_TagString: Tubo
+  m_TagString: TuboEn3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6077,7 +6077,7 @@ GameObject:
   - component: {fileID: 1436923981}
   m_Layer: 0
   m_Name: tuboC_1
-  m_TagString: Tubo
+  m_TagString: TuboL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6090,7 +6090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436923979}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23999977, y: 6.44, z: 178.65034}
+  m_LocalPosition: {x: -0.12, y: 6.31, z: 178.65034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 270289223}
@@ -6182,6 +6182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1439629815}
+  - component: {fileID: 1439629816}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -6205,6 +6206,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1439629816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439629814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9d682dc795962479e871d28a9896c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _13m: {fileID: 570102291}
+  _14n: {fileID: 1059421949}
+  _15o: {fileID: 1590374249}
+  _16p: {fileID: 1058573038}
+  _12l: {fileID: 1543737093}
+  _11k: {fileID: 1146351088}
+  _18s: {fileID: 1108033523}
+  _19: {fileID: 21289336}
+  _17r: {fileID: 25055768}
+  _9i: {fileID: 555472745}
 --- !u!1 &1469361182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7619,7 +7642,7 @@ GameObject:
   - component: {fileID: 1842769992}
   m_Layer: 0
   m_Name: 6f
-  m_TagString: Untagged
+  m_TagString: TuboEstaticoL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8066,7 +8089,7 @@ GameObject:
   - component: {fileID: 1873767984}
   m_Layer: 0
   m_Name: tuboC_2
-  m_TagString: Tubo
+  m_TagString: TuboL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8304,7 +8327,7 @@ GameObject:
   - component: {fileID: 1898539111}
   m_Layer: 0
   m_Name: Final2
-  m_TagString: Untagged
+  m_TagString: TuboEstatico3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8413,7 +8436,7 @@ GameObject:
   - component: {fileID: 1903992225}
   m_Layer: 0
   m_Name: tuboC_5
-  m_TagString: Tubo
+  m_TagString: TuboL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8679,7 +8702,7 @@ GameObject:
   - component: {fileID: 1945322033}
   m_Layer: 0
   m_Name: 5e
-  m_TagString: Untagged
+  m_TagString: TuboEstaticoL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9024,7 +9047,7 @@ GameObject:
   - component: {fileID: 1992680488}
   m_Layer: 8
   m_Name: 1a
-  m_TagString: TuboEstatico
+  m_TagString: TuboEstaticoL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9200,7 +9223,7 @@ GameObject:
   - component: {fileID: 2016436046}
   m_Layer: 8
   m_Name: 2b
-  m_TagString: TuboEstatico
+  m_TagString: TuboEstaticoL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

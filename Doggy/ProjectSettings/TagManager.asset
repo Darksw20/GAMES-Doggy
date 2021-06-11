@@ -21,6 +21,12 @@ TagManager:
   - Meta
   - BacheLvl3_2_3
   - TuboEstatico
+  - TuboL
+  - TuboEn3
+  - TuboEnX
+  - TuboEstatico3
+  - TuboEstaticoL
+  - TuboEstaticoX
   layers:
   - Default
   - TransparentFX
