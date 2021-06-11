@@ -87,7 +87,9 @@ public class Level3_2_2 : GameRouting
         }
         if (level1Completed && level2Completed)
         {
-            Level3_2_3();
+            GameManager.instancia.level = 8;
+            GameManager.instancia.nextLevel = 9;
+            nextLevel();
         }
     }
 

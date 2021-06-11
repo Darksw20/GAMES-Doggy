@@ -198,9 +198,9 @@ public class itemsController : GameRouting
         }
         if (piecesFound == 5)
         {
-            // Código para terminar escena
-            Debug.Log("Ganaste");
-            Anim_construction();
+            GameManager.instancia.level = 3;
+            GameManager.instancia.nextLevel = 10;
+            nextLevel();
         }
     }
 

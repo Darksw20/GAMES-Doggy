@@ -95,8 +95,9 @@ public class pickerController : GameRouting
                 break;
 
             case "FinalJuego":
-                Anim_Fin();
-                Debug.Log("Se acabo el juego mije");
+                GameManager.instancia.level = 9;
+                GameManager.instancia.nextLevel = 11;
+                nextLevel();
                 break;
 
             case null:

@@ -170,7 +170,9 @@ public class lvl3_1_danceController : GameRouting
         else if (currentMovement == 3 && checkMatch(dance_3, current_3))
             StartCoroutine(nextDance(4));
         else if (currentMovement == 4 && checkMatch(dance_4, current_4))
-            Level3_2_1();
+            GameManager.instancia.level = 6;
+            GameManager.instancia.nextLevel = 7;
+            nextLevel();
     }
 
     private bool checkMatch(List<string> l1, List<string> l2)

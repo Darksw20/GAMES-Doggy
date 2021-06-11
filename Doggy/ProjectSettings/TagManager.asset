@@ -27,6 +27,7 @@ TagManager:
   - TuboEstatico3
   - TuboEstaticoL
   - TuboEstaticoX
+  - FinalJuego
   layers:
   - Default
   - TransparentFX
@@ -72,4 +73,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 824238057
+    locked: 0
+  - name: UI
+    uniqueID: 3751920249
     locked: 0
