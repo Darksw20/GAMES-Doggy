@@ -7,6 +7,7 @@ public class pickerController : GameRouting
 {
     public Object controller;
     private itemsController itemsController;
+    private level2_2 lvl22Controller;
 
     void Start()
     {
@@ -55,8 +56,34 @@ public class pickerController : GameRouting
                 }
                 break;
 
-            case "Tubo":
-                itemsController.pickItem(other.gameObject);
+            case "TuboEn3":
+                Debug.Log("Agarraste un Tubo en 3");
+                itemsController.pickTube(other.gameObject);
+                break;
+
+            case "TuboL":
+                Debug.Log("Agarraste un Tubo en L");
+                itemsController.pickTube(other.gameObject);
+                break;
+
+            case "TuboEnX":
+                Debug.Log("Agarraste un Tubo en X");
+                itemsController.pickTube(other.gameObject);
+                break;
+
+            case "TuboEstatico3":
+                Debug.Log("Agarraste un Tubo en 3");
+                itemsController.giveItem(other.gameObject);
+                break;
+
+            case "TuboEstaticoL":
+                Debug.Log("Agarraste un Tubo en L");
+                itemsController.giveItem(other.gameObject);
+                break;
+
+            case "TuboEstaticoX":
+                Debug.Log("Agarraste un Tubo en X");
+                itemsController.giveItem(other.gameObject);
                 break;
 
             case "PajaroCarpinteroLvl2_1_1":
@@ -68,8 +95,9 @@ public class pickerController : GameRouting
                 break;
 
             case "FinalJuego":
-                Anim_Fin();
-                Debug.Log("Se acabo el juego mije");
+                GameManager.instancia.level = 9;
+                GameManager.instancia.nextLevel = 11;
+                nextLevel();
                 break;
 
             case null:

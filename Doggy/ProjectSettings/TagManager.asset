@@ -20,6 +20,13 @@ TagManager:
   - Mapa
   - Meta
   - BacheLvl3_2_3
+  - TuboEstatico
+  - TuboL
+  - TuboEn3
+  - TuboEnX
+  - TuboEstatico3
+  - TuboEstaticoL
+  - TuboEstaticoX
   - FinalJuego
   layers:
   - Default
@@ -61,6 +68,12 @@ TagManager:
   - name: Background
     uniqueID: 2041165617
     locked: 0
+  - name: Objects
+    uniqueID: 852295495
+    locked: 0
   - name: Player
     uniqueID: 824238057
+    locked: 0
+  - name: UI
+    uniqueID: 3751920249
     locked: 0
