@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class level1_2 : MonoBehaviour
 {
@@ -20,8 +21,9 @@ public class level1_2 : MonoBehaviour
     void Start()
     {
         TilesetsController = GameObject.Find("Tilesets").GetComponent<MapTilesetController>();
-        InvokeRepeating("pineConesRandomPosition", 5F, 5F);
-        InvokeRepeating("changeMap", 20F, 20F);
+        InvokeRepeating("pineConesRandomPosition", 0F, 5F);
+        InvokeRepeating("updateAIpath", 0F, 0.5F);
+        InvokeRepeating("changeMap", 0, 20F);
     }
 
     void Update()
@@ -33,7 +35,7 @@ public class level1_2 : MonoBehaviour
     public void resetLevel()
     {
         Ana.GetComponent<Transform>().localPosition = new Vector3(-3F, 1F, 0);
-        Max.GetComponent<Transform>().localPosition = new Vector3(-3.75F, 1F, 0);
+        Max.GetComponent<Transform>().localPosition = new Vector3(0F, 0F, 0);
     }
 
     private void timeOver()
@@ -55,10 +57,17 @@ public class level1_2 : MonoBehaviour
 
     private void changeMap()
     {
-        if (mapChangeCount <= 3)
+        if (mapChangeCount < 3)
         {
             TilesetsController.setRandomMap();
+            GameObject.Find("AI").GetComponent<AIDestinationSetter>().target = TilesetsController.getTarget();
             mapChangeCount++;
         }
     }
+
+    private void updateAIpath()
+    {
+        AstarPath.active.Scan();
+    }
+
 }
