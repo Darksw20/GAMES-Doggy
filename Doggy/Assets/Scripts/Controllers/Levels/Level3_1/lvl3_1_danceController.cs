@@ -163,6 +163,8 @@ public class lvl3_1_danceController : GameRouting
 
     private void checkDanceMoves()
     {
+        Debug.Log("Checking dance moves");
+        Debug.Log("Current movement: " + currentMovement);
         if (currentMovement == 1 && checkMatch(dance_1, current_1))
             StartCoroutine(nextDance(2));
         else if (currentMovement == 2 && checkMatch(dance_2, current_2))
@@ -170,9 +172,11 @@ public class lvl3_1_danceController : GameRouting
         else if (currentMovement == 3 && checkMatch(dance_3, current_3))
             StartCoroutine(nextDance(4));
         else if (currentMovement == 4 && checkMatch(dance_4, current_4))
+        {
             GameManager.instancia.level = 6;
             GameManager.instancia.nextLevel = 7;
             nextLevel();
+        }
     }
 
     private bool checkMatch(List<string> l1, List<string> l2)
@@ -207,6 +211,7 @@ public class lvl3_1_danceController : GameRouting
 
     IEnumerator nextDance(int next)
     {
+        Debug.Log("Next dance");
         shouldDance = false;
         yield return new WaitForSeconds(1);
         if (next == 1 && !dance1Finished)
@@ -242,6 +247,7 @@ public class lvl3_1_danceController : GameRouting
 
     IEnumerator dance(List<string> list, string character)
     {
+        Debug.Log("Coroutine dance from " + character);
         if (currentMovement == 1)
         {
             steps1.SetActive(true);
@@ -278,6 +284,7 @@ public class lvl3_1_danceController : GameRouting
         steps2.SetActive(false);
         steps3.SetActive(false);
         steps4.SetActive(false);
+        Debug.Log("Finished dance coroutine");
     }
 
     IEnumerator danceMovement(string name, float value, string character)
