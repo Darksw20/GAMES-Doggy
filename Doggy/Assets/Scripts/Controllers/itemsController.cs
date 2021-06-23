@@ -352,7 +352,7 @@ public class itemsController : GameRouting
                     break;
             }
         }
-        catch (MissingReferenceException e) { Debug.Log("ya sabemos que no hay nah"); }
+        catch (MissingReferenceException e) { Debug.Log("ya sabemos que no hay nah"+ e); }
         
         if (piecesFound == 10)
         {

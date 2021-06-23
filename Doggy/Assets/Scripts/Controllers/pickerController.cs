@@ -28,6 +28,13 @@ public class pickerController : GameRouting
                 Destroy(other.gameObject);
                 break;
 
+            case "BacheLvl2_1_2":
+
+                GameManager.instancia.health--;
+                Destroy(other.gameObject);
+
+                break;
+
             case "MysteryBox":
                 int num = (int)(Random.Range(1.0f, 2.0f) * 1000);
                 if (num % 2 == 1)
@@ -52,7 +59,7 @@ public class pickerController : GameRouting
                 Debug.Log("Vuelta "+GameManager.instancia.laps.ToString()+" completada");
                 if(GameManager.instancia.laps == 7)
                 {
-                    GameRouting.Level2_2();
+                    Level2_2();
                 }
                 break;
 
