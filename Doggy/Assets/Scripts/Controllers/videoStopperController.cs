@@ -10,9 +10,11 @@ public class videoStopperController : GameRouting
     public double time;
     public double currentTime;
     // Use this for initialization
+
     void Start()
     {
-
+        AudioSource musicObject = GameObject.FindGameObjectsWithTag("GameMusic")[0].GetComponent<AudioSource>();
+        musicObject.mute = !musicObject.mute;
         time = gameObject.GetComponent<VideoPlayer>().clip.length;
     }
 
@@ -20,9 +22,12 @@ public class videoStopperController : GameRouting
     // Update is called once per frame
     void Update()
     {
+        AudioSource musicObject = GameObject.FindGameObjectsWithTag("GameMusic")[0].GetComponent<AudioSource>();
+
         currentTime = gameObject.GetComponent<VideoPlayer>().time;
         if (currentTime >= time)
         {
+            musicObject.mute = !musicObject.mute;
             ChooseLevel(level);
         }
     }

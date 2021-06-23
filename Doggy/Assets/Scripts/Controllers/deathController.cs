@@ -18,6 +18,6 @@ public class deathController : GameRouting
         GameManager.instancia.money = 0;
         GameManager.instancia.redJewels = 0;
         GameManager.instancia.blueJewels = 0;
-        ChooseLevel("Menu");
+        ChooseLevel(GameManager.instancia.level.ToString());
     }
 }
