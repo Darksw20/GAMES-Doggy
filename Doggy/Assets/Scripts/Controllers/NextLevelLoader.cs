@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class NextLevelLoader : GameRouting
 {
     public int level;
-    public int nextLevel;
+    public int nextLvl;
 
     void Start()
     {
         GameManager.instancia.level = level;    
-        GameManager.instancia.nextLevel = nextLevel;    
+        GameManager.instancia.nextLevel = nextLvl;    
     }
 
     private void OnTriggerEnter2D(Collider2D other)
