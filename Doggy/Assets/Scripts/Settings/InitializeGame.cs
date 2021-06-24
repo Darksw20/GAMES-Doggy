@@ -9,7 +9,9 @@ public class InitializeGame : GameRouting
     public TMP_InputField userName;
     public void clickSaveButton()
     {
-        GameManager.instancia.playerName = userName.text == null || userName.text == "" ? "Ana" : userName.text;
+        GameManager.instancia.playerName = (userName.text.Length < 1 ||
+            userName.text.Length > 15) || userName.text == null || userName.text == "" ?
+            "Ana" : char.ToUpper(userName.text[0]) + userName.text.Substring(1);
         Debug.Log("Your name is " + GameManager.instancia.playerName);
 
         Dificulties();
