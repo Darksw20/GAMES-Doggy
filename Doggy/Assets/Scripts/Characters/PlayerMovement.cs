@@ -13,9 +13,13 @@ public class PlayerMovement : MonoBehaviour
 
     bool isJumping = false;
     bool isCrouching = false;
+    public AudioClip jump;
+    AudioSource musicObject;
 
     void Update()
     {
+        musicObject = GameObject.FindGameObjectsWithTag("JumpSound")[0].GetComponent<AudioSource>();
+
         if (!pauseController.isPaused)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -34,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (Input.GetButtonDown("Jump"))
+            {
                 isJumping = true;
+                musicObject.PlayOneShot(jump);
+            }
             if (Input.GetButtonDown("Crouch"))
                 isCrouching = true;
             else if (Input.GetButtonUp("Crouch"))
