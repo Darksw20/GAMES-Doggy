@@ -16,40 +16,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        if(gameObject.transform.position.x <= 1.83F)
+        if (!pauseController.isPaused)
         {
-            Vector2 vector2 = new Vector2(1.84F, gameObject.transform.position.y);
-            gameObject.transform.position = vector2;
-        }
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if(Input.GetButtonDown("Jump"))
-        {
-            isJumping = true;
-        }
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if(Input.GetButtonDown("Crouch"))
-        {
-            isCrouching = true;
-        } else if(Input.GetButtonUp("Crouch"))
-        {
-            isCrouching = false;
-        }
-
-        if (gameObject.transform.position.y <= -10 && SceneManager.GetActiveScene().name == "Level1_1")
-        {
-            Vector2 vector2 = new Vector2(1.84F, -0.38F);
-            gameObject.transform.position = vector2;
-            GameManager.instancia.health--;
-            if(GameManager.instancia.health == 0)
+            if (gameObject.transform.position.y <= -10 && SceneManager.GetActiveScene().name == "Level1_1")
             {
-
+                Vector2 vector2 = new Vector2(1.84F, -0.38F);
+                gameObject.transform.position = vector2;
+                GameManager.instancia.health--;
+                if (GameManager.instancia.health == 0)
+                {
+                    // 0 vidas
+                }
             }
-        }
 
+            if (Input.GetButtonDown("Jump"))
+                isJumping = true;
+            if (Input.GetButtonDown("Crouch"))
+                isCrouching = true;
+            else if (Input.GetButtonUp("Crouch"))
+                isCrouching = false;
+        }
     }
 
     private void FixedUpdate()

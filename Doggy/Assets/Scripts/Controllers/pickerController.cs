@@ -1,10 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class pickerController : MonoBehaviour
+public class pickerController : GameRouting
 {
-    
+    public Object controller;
+    private itemsController itemsController;
+    private level2_2 lvl22Controller;
+
+    void Start()
+    {
+        if(SceneManager.GetActiveScene().name == "Level2_1_1" ||
+            SceneManager.GetActiveScene().name == "Level2_2")
+        {
+            controller = GetComponent<itemsController>();
+            itemsController = (itemsController)controller;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.transform.tag)
@@ -12,6 +26,13 @@ public class pickerController : MonoBehaviour
             case "Coin":
                 GameManager.instancia.money++;
                 Destroy(other.gameObject);
+                break;
+
+            case "BacheLvl2_1_2":
+
+                GameManager.instancia.health--;
+                Destroy(other.gameObject);
+
                 break;
 
             case "MysteryBox":
@@ -31,6 +52,63 @@ public class pickerController : MonoBehaviour
             case "Galleta":
                 GameManager.instancia.galletas++;
                 Destroy(other.gameObject);
+                break;
+
+            case "Meta":
+                GameManager.instancia.laps++;
+                Debug.Log("Vuelta "+GameManager.instancia.laps.ToString()+" completada");
+                if(GameManager.instancia.laps == 7)
+                {
+                    Level2_2();
+                }
+                break;
+
+            case "TuboEn3":
+                Debug.Log("Agarraste un Tubo en 3");
+                itemsController.pickTube(other.gameObject);
+                break;
+
+            case "TuboL":
+                Debug.Log("Agarraste un Tubo en L");
+                itemsController.pickTube(other.gameObject);
+                break;
+
+            case "TuboEnX":
+                Debug.Log("Agarraste un Tubo en X");
+                itemsController.pickTube(other.gameObject);
+                break;
+
+            case "TuboEstatico3":
+                Debug.Log("Agarraste un Tubo en 3");
+                itemsController.giveItem(other.gameObject);
+                break;
+
+            case "TuboEstaticoL":
+                Debug.Log("Agarraste un Tubo en L");
+                itemsController.giveItem(other.gameObject);
+                break;
+
+            case "TuboEstaticoX":
+                Debug.Log("Agarraste un Tubo en X");
+                itemsController.giveItem(other.gameObject);
+                break;
+
+            case "PajaroCarpinteroLvl2_1_1":
+                itemsController.giveItem();
+                break;
+
+            case "CarroLvl_2_1_1":
+                itemsController.pickItem(other.gameObject);
+                break;
+
+            case "FinalJuego":
+                GameManager.instancia.level = 9;
+                GameManager.instancia.nextLevel = 11;
+                nextLevel();
+                break;
+
+            case null:
+                Debug.Log(other.GetType().ToString());
                 break;
         }
     }

@@ -4,50 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InitializeGame : MonoBehaviour
+public class InitializeGame : GameRouting
 {
     public TMP_InputField userName;
     public void clickSaveButton()
     {
-        GameManager.instancia.playerName = userName.text;
+        GameManager.instancia.playerName = (userName.text.Length < 1 ||
+            userName.text.Length > 15) || userName.text == null || userName.text == "" ?
+            "Ana" : char.ToUpper(userName.text[0]) + userName.text.Substring(1);
         Debug.Log("Your name is " + GameManager.instancia.playerName);
 
-        GameRouting.Dificulties();
+        Dificulties();
     }
     public void easyInitializeGame()
     {
+        GameManager.instancia.saveSlot = 0;
         GameManager.instancia.time = 100;
         GameManager.instancia.dificulty = 0;
-        checkInitialization();
-        GameRouting.Level1_1();
+        GameManager.instancia.VisualizeData();
+        Anim_adoption();
     }
 
     public void normalInitializeGame()
     {
+        GameManager.instancia.saveSlot = 1;
         GameManager.instancia.time = 60;
         GameManager.instancia.dificulty = 1;
-        checkInitialization();
-        GameRouting.Level1_1();
+        GameManager.instancia.VisualizeData();
+        Anim_adoption();
     }
 
     public void hardInitializeGame()
     {
+        GameManager.instancia.saveSlot = 2;
         GameManager.instancia.time = 30;
         GameManager.instancia.dificulty = 2;
-        checkInitialization();
-        GameRouting.Level1_1();
+        GameManager.instancia.VisualizeData();
+        Anim_adoption();
     }
 
-    public static void checkInitialization()
-    {
-        Debug.Log("Your name is " + GameManager.instancia.playerName);
-        Debug.Log("Your actual level is " + GameManager.instancia.level);
-        Debug.Log("Your points are " + GameManager.instancia.points);
-        Debug.Log("Your Life is " + GameManager.instancia.health);
-        Debug.Log("Your Money is " + GameManager.instancia.money);
-        Debug.Log("Your Red Gems are " + GameManager.instancia.redJewels);
-        Debug.Log("Your Blue Gems is " + GameManager.instancia.blueJewels);
-        Debug.Log("Your Time is " + GameManager.instancia.time);
-        Debug.Log("Your Dificulty is " + GameManager.instancia.dificulty);
-    }
 }

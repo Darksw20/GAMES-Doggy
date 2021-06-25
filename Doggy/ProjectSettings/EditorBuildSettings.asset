@@ -38,9 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Animations/Anim_construccion.unity
     guid: dfd6b3080d35d074c842f12d19bc340d
-  - enabled: 1
-    path: Assets/Scenes/Animations/Anim_credits.unity
-    guid: 4c253ec98b99c264ab1f186e2a216d43
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Animations/Anim_Fin.unity
     guid: 0bde24b003eac22449941a8ef1816d18
@@ -66,10 +66,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Level3_2_1.unity
     guid: 92131eff20dbe2f44bae21359a308f73
   - enabled: 1
-    path: Assets/Scenes/Game/Level3_2_2.unity
+    path: Assets/Scenes/Game/Level3_2_3.unity
     guid: ec32ebe4878029c43bbb2b452786cfa9
   - enabled: 1
-    path: Assets/Scenes/Game/Level3_2_3.unity
+    path: Assets/Scenes/Game/Level3_2_2.unity
     guid: ce5ab0cd92ff8c6428a2680fa83613da
   - enabled: 1
     path: Assets/Scenes/HowTo.unity
@@ -86,4 +86,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PoweredBy.unity
     guid: 4f0a3229602672a4a870d34368559cfc
+  - enabled: 1
+    path: Assets/Scenes/LevelStats.unity
+    guid: a4f61f17e219d7d479afcf374d1310f9
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: 98ed71cb22a84e24e9132e5fa3d23a13
   m_configObjects: {}

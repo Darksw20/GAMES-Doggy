@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameRouting : MonoBehaviour
 {
-    public TMP_InputField userName;
     
     public void QuitGameSequence()
     {
@@ -87,7 +85,7 @@ public class GameRouting : MonoBehaviour
     {
         SceneManager.LoadScene("Level2_1_2");
     }
-    public void Level2_2()
+    public static void Level2_2()
     {
         SceneManager.LoadScene("Level2_2");
     }
@@ -108,45 +106,73 @@ public class GameRouting : MonoBehaviour
         SceneManager.LoadScene("Level3_2_3");
     }
 
+    public void nextLevel()
+    {
+        SceneManager.LoadScene("LevelStats");
+    }
+
     public void ChooseLevel(string level)
     {
         switch (level)
         {
+            case "1":
             case "Level1_1":
                 Level1_1();
                 break;
 
+            case "2":
             case "Level1_2":
                 Level1_2();
                 break;
 
+            case "3":
             case "Level2_1_1":
                 Level2_1_1();
                 break;
 
+            case "4":
             case "Level2_1_2":
                 Level2_1_2();
                 break;
 
+            case "5":
             case "Level2_2":
                 Level2_2();
                 break;
 
+            case "6":
             case "Level3_1":
                 Level3_1();
                 break;
 
+            case "7":
             case "Level3_2_1":
                 Level3_2_1();
                 break;
 
+            case "8":
             case "Level3_2_2":
                 Level3_2_2();
                 break;
 
+            case "9":
             case "Level3_2_3":
                 Level3_2_3();
                 break;
+
+            case "10":
+            case "Anim_construction":
+                Anim_construction();
+                break;
+
+            case "11":
+            case "Anim_Fin":
+                Anim_Fin();
+                break;
+
+            case "Menu":
+                MainMenu();
+                break;
         }
-    }
+    }   
 }

@@ -9,6 +9,25 @@ TagManager:
   - MysteryBox
   - GameLoader
   - Galleta
+  - PajaroCarpinteroLvl2_1_1
+  - CarroLvl_2_1_1
+  - BacheLvl2_1_2
+  - Tubo
+  - Circulo
+  - Sabor
+  - Cono
+  - Boton
+  - Mapa
+  - Meta
+  - BacheLvl3_2_3
+  - TuboEstatico
+  - TuboL
+  - TuboEn3
+  - TuboEnX
+  - TuboEstatico3
+  - TuboEstaticoL
+  - TuboEstaticoX
+  - FinalJuego
   layers:
   - Default
   - TransparentFX
@@ -19,9 +38,9 @@ TagManager:
   - 
   - 
   - Background
+  - Obstacle
   - Player
-  - 
-  - 
+  - Dialogue
   - 
   - 
   - 
@@ -49,6 +68,12 @@ TagManager:
   - name: Background
     uniqueID: 2041165617
     locked: 0
+  - name: Objects
+    uniqueID: 852295495
+    locked: 0
   - name: Player
     uniqueID: 824238057
+    locked: 0
+  - name: UI
+    uniqueID: 3751920249
     locked: 0

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // ------------------------
     public string playerName;
     public int level;
+    public int nextLevel;
     public int points;
     public int galletas;
     public int health;
@@ -16,8 +17,11 @@ public class GameManager : MonoBehaviour
     public int redJewels;
     public int blueJewels;
     public int time;
+    public int levelTime;
     public int dificulty;
     public int isMusicOn;
+    public int saveSlot;
+    public int laps;
     //att privado (_instancia)
     static private GameManager _instancia;
 
@@ -65,15 +69,32 @@ public class GameManager : MonoBehaviour
         isMusicOn = 1;
         
         playerName = "";
-        level = 0;
+        level = 1;
+        nextLevel = 2;
         points = 0;
         galletas = 0;
         health = 3;
         money = 0;
         redJewels = 0;
         blueJewels = 0;
-        time = 0;
         dificulty = 0;
+        saveSlot = 0;
+        laps = 0;
     }
 
+    public void VisualizeData()
+    {
+        Debug.Log("Your name is " + _instancia.playerName);
+        Debug.Log("Your actual level is " + _instancia.level);
+        Debug.Log("Your points are " + _instancia.points);
+        Debug.Log("Your Life is " + _instancia.health);
+        Debug.Log("Your Money is " + _instancia.money);
+        Debug.Log("Your Red Gems are " + _instancia.redJewels);
+        Debug.Log("Your Blue Gems is " + _instancia.blueJewels);
+        Debug.Log("Your Time is " + _instancia.time);
+        Debug.Log("Your Dificulty is " + _instancia.dificulty);
+        Debug.Log("Your Save Slot is " + _instancia.saveSlot);
+        Debug.Log("Your Laps are " + _instancia.laps);
+
+    }
 }

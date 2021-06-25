@@ -510,7 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15a2003ae7a88143962319bb07d2f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: {fileID: 0}
 --- !u!114 &343014644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,9 +519,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 343014641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2bb8031a537b3d409a4a1339ab49fe7, type: 3}
+  m_Script: {fileID: 11500000, guid: 444bf32274caf3f46ae133a239e02451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userName: {fileID: 0}
 --- !u!1 &479370797
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 343014644}
-        m_TargetAssemblyTypeName: InitializeLevel, Assembly-CSharp
+        m_TargetAssemblyTypeName: InitializeGame, Assembly-CSharp
         m_MethodName: hardInitializeGame
         m_Mode: 1
         m_Arguments:
@@ -919,7 +919,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 343014644}
-        m_TargetAssemblyTypeName: InitializeLevel, Assembly-CSharp
+        m_TargetAssemblyTypeName: InitializeGame, Assembly-CSharp
         m_MethodName: easyInitializeGame
         m_Mode: 1
         m_Arguments:
@@ -1317,7 +1317,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 343014644}
-        m_TargetAssemblyTypeName: InitializeLevel, Assembly-CSharp
+        m_TargetAssemblyTypeName: InitializeGame, Assembly-CSharp
         m_MethodName: normalInitializeGame
         m_Mode: 1
         m_Arguments:
