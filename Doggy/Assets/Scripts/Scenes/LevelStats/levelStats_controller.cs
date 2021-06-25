@@ -47,7 +47,8 @@ public class levelStats_controller : GameRouting
 
     public void nextScene()
     {
-        ChooseLevel(GameManager.instancia.nextLevel.ToString());
+        Debug.Log(GameManager.instancia.level++.ToString());
+        ChooseLevel(GameManager.instancia.level++.ToString());
     }
 
     private string getLevelText()

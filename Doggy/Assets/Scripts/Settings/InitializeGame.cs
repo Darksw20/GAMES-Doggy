@@ -19,6 +19,7 @@ public class InitializeGame : GameRouting
     public void easyInitializeGame()
     {
         GameManager.instancia.saveSlot = 0;
+        GameManager.instancia.nextLevel = 2;
         GameManager.instancia.time = 100;
         GameManager.instancia.dificulty = 0;
         GameManager.instancia.VisualizeData();
@@ -28,6 +29,7 @@ public class InitializeGame : GameRouting
     public void normalInitializeGame()
     {
         GameManager.instancia.saveSlot = 1;
+        GameManager.instancia.nextLevel = 2;
         GameManager.instancia.time = 60;
         GameManager.instancia.dificulty = 1;
         GameManager.instancia.VisualizeData();
@@ -37,6 +39,7 @@ public class InitializeGame : GameRouting
     public void hardInitializeGame()
     {
         GameManager.instancia.saveSlot = 2;
+        GameManager.instancia.nextLevel = 2;
         GameManager.instancia.time = 30;
         GameManager.instancia.dificulty = 2;
         GameManager.instancia.VisualizeData();
