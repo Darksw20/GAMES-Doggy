@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour
     private void endDialogue()
     {
         GameObject.Find("Dialogue").SetActive(false);
-        GameObject.Find("Pajaro").SetActive(false);
+        //GameObject.Find("Pajaro").SetActive(false);
         timeController.timerIsRunning = true;
         enabled = false;
     }
