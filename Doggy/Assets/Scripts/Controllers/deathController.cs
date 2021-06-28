@@ -14,7 +14,7 @@ public class deathController : GameRouting
         yield return new WaitForSeconds(3);
         GameManager.instancia.points = 0;
         GameManager.instancia.galletas = 0;
-        GameManager.instancia.health = 3;
+        GameManager.instancia.health--;
         GameManager.instancia.money = 0;
         GameManager.instancia.redJewels = 0;
         GameManager.instancia.blueJewels = 0;

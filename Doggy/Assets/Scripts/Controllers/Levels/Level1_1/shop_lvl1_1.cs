@@ -73,7 +73,6 @@ public class shop_lvl1_1 : MonoBehaviour
 
                 GameManager.instancia.galletas--;
                 GameManager.instancia.time += 5;
-                timeController.ability5sec();
                 timeJoker();
             }
         }
@@ -117,6 +116,7 @@ public class shop_lvl1_1 : MonoBehaviour
 
     private void timeJoker()
     {
+        timeController.ability5sec();
         canBuyTime = false;
         StartCoroutine(cronTimeOff(5));
     }

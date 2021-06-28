@@ -25,7 +25,7 @@ public class videoStopperController : GameRouting
         AudioSource musicObject = GameObject.FindGameObjectsWithTag("GameMusic")[0].GetComponent<AudioSource>();
 
         currentTime = gameObject.GetComponent<VideoPlayer>().time;
-        if (currentTime >= time)
+        if (currentTime >= time || Input.GetButton("Continue"))
         {
             musicObject.mute = !musicObject.mute;
             ChooseLevel(level);

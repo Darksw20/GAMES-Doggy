@@ -11,7 +11,18 @@ public class timeController : MonoBehaviour
 
     private void Start()
     {
+        switch (GameManager.instancia.dificulty)
+        {
+            case 0:
+                initialTime += 10;
+                break;
+            case 2:
+                initialTime -= 10;
+                break;
+
+        }
         timeRemaining = initialTime;
+
         GameManager.instancia.levelTime = (int)timeRemaining;
         GameManager.instancia.time = (int)timeRemaining;
     }

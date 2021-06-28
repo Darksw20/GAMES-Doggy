@@ -95,7 +95,7 @@ public class itemsController : GameRouting
         }
         else
         {
-            if (!lvl2_1_1_shopController.getStrenght())
+            if (!lvl2_1_1_shopController.hasBoughtStrenght)
             {
                 llanta1.SetActive(true);
             }
@@ -150,7 +150,7 @@ public class itemsController : GameRouting
     {
         
         // Si el jugador compró la habilidad de fuerza
-        if (lvl2_1_1_shopController.getStrenght())
+        if (lvl2_1_1_shopController.hasBoughtStrenght)
         {
             addItem(gameObject.name);
             Destroy(gameObject);

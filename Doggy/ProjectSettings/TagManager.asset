@@ -78,3 +78,6 @@ TagManager:
   - name: UI
     uniqueID: 3751920249
     locked: 0
+  - name: Dialogue
+    uniqueID: 700780675
+    locked: 0
