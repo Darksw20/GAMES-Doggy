@@ -72,6 +72,7 @@ public class shop_lvl1_1 : MonoBehaviour
 
                 GameManager.instancia.galletas--;
                 GameManager.instancia.time += 5;
+                timeController.ability5sec();
                 timeJoker();
             }
         }
