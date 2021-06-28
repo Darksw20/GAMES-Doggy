@@ -44,6 +44,7 @@ public class shop_lvl1_1 : MonoBehaviour
         {
             if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuySniff)
             {
+                
                 if (GameManager.instancia.redJewels > 0)
                     GameManager.instancia.redJewels--;
                 else

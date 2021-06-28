@@ -14,15 +14,12 @@ public class timeController : MonoBehaviour
         timeRemaining = initialTime;
         GameManager.instancia.levelTime = (int)timeRemaining;
         GameManager.instancia.time = (int)timeRemaining;
-        
-        Debug.Log("Ins " + GameManager.instancia.time);
     }
 
     void Update()
     {
         if (timerIsRunning)
         {
-            Debug.Log("time re " + timeRemaining);
             if (GameManager.instancia.time > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -40,5 +37,15 @@ public class timeController : MonoBehaviour
     public static void ability5sec()
     {
         timeRemaining += 5;
+    }
+
+    public static void stopTime()
+    {
+        timerIsRunning = false;
+    }
+
+    public static void continueTime()
+    {
+        timerIsRunning = true;
     }
 }
