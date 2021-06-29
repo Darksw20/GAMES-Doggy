@@ -9,12 +9,14 @@ public class InitializeGame : GameRouting
 {
     public TMP_InputField userName;
     public GameObject errorText;
+    public GameObject errorTextMay;
 
     void Start()
     {
         try
         {
             errorText.SetActive(false);
+            errorTextMay.SetActive(false);
         }
         catch (NullReferenceException nr) { Debug.Log(nr); }
 
@@ -22,13 +24,16 @@ public class InitializeGame : GameRouting
 
     public void clickSaveButton()
     {
+        errorText.SetActive(false);
+        errorTextMay.SetActive(false);
+
         if (userName.text.Length < 1 ||
             userName.text.Length > 15 || userName.text == null || userName.text == "")
         {
             errorText.SetActive(true);
         } else if (!char.IsUpper(userName.text[0]))
         {
-            errorText.SetActive(true);
+            errorTextMay.SetActive(true);
         }
         else
         {
