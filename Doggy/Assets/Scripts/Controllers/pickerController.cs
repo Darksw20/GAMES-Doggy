@@ -8,7 +8,6 @@ public class pickerController : GameRouting
     public Object controller;
     private itemsController itemsController;
     private level2_2 lvl22Controller;
-    RotateController carRotate;
     void Start()
     {
         if(SceneManager.GetActiveScene().name == "Level2_1_1" ||
@@ -38,7 +37,7 @@ public class pickerController : GameRouting
                 break;
 
             case "BacheLvl2_1_2":
-                 
+                GameManager.instancia.isRotating = true;
                 GameManager.instancia.health--;
                 Destroy(other.gameObject);
 
@@ -121,6 +120,6 @@ public class pickerController : GameRouting
                 break;
         }
     }
+    
 
-  
 }

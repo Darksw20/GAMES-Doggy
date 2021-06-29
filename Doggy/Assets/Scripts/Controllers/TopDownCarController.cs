@@ -38,9 +38,16 @@ public class TopDownCarController : MonoBehaviour
 
     void FixedUpdate()
     {
-        ApplyEngineForce();
-        killOrthogonalVelocity();
-        ApplySteering();
+        if (GameManager.instancia.isRotating)
+        {
+            StartCoroutine(Rotate(1.0f));
+        }
+        else
+        {
+            ApplyEngineForce();
+            killOrthogonalVelocity();
+            ApplySteering();
+        }
     }
 
     void ApplyEngineForce()
@@ -96,5 +103,18 @@ public class TopDownCarController : MonoBehaviour
 
         carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
 
+    }
+    IEnumerator Rotate(float duration)
+    {
+        Quaternion startRot = transform.rotation;
+        float t = 0.0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            transform.rotation = startRot * Quaternion.AngleAxis(t / duration * 360f, Vector3.back); //or transform.right if you want it to be locally based
+            yield return null;
+        }
+        transform.rotation = startRot;
+        GameManager.instancia.isRotating = false;
     }
 }

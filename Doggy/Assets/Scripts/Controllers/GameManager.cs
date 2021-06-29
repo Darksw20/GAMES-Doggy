@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public int isMusicOn;
     public int saveSlot;
     public int laps;
+    public bool isRotating;
 
     public int hSlot1;
     public int hSlot2;
@@ -86,6 +87,8 @@ public class GameManager : MonoBehaviour
         dificulty = 0;
         saveSlot = 0;
         laps = 0;
+        isRotating = false;
+
         hSlot1 = 0;
         hSlot2 = 0;
         hSlot3 = 0;
