@@ -11,13 +11,9 @@ public class lvl2_2_shopController : MonoBehaviour
     {
         if (Input.GetButton("1"))
         {
-            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuyTime)
+            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
             {
-                if (GameManager.instancia.redJewels > 0)
-                    GameManager.instancia.redJewels--;
-                else
-                    GameManager.instancia.blueJewels--;
-
+                GameManager.instancia.blueJewels -= 3;
                 GameManager.instancia.time += 5;
                 timeJoker();
             }

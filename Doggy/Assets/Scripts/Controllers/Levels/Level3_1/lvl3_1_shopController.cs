@@ -12,22 +12,19 @@ public class lvl3_1_shopController : MonoBehaviour
         if (Input.GetButton("1"))
         {
             bool hasBoughtMemory = mapa.GetComponent<lvl3_1_danceController>().getMemory();
-            if (!hasBoughtMemory)
+            if (!hasBoughtMemory && GameManager.instancia.redJewels > 1 && GameManager.instancia.blueJewels > 5)
             {
-                GameManager.instancia.galletas--;
+                GameManager.instancia.redJewels -= 2;
+                GameManager.instancia.blueJewels -= 6;
                 mapa.GetComponent<lvl3_1_danceController>().setMemory(true);
             }
         }
 
         if (Input.GetButton("2"))
         {
-            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuyTime)
+            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
             {
-                if (GameManager.instancia.redJewels > 0)
-                    GameManager.instancia.redJewels--;
-                else
-                    GameManager.instancia.blueJewels--;
-
+                GameManager.instancia.blueJewels -= 3;
                 GameManager.instancia.time += 5;
                 timeJoker();
             }

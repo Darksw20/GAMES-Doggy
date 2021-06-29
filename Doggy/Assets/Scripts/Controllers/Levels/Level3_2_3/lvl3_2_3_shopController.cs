@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class lvl3_2_3_shopController : MonoBehaviour
 {
+    public GameObject baches;
     private bool canBuyTime = true;
+    private bool canBuyBaches = true;
+
 
     void Update()
     {
         if (Input.GetButton("1"))
         {
-            
+            if (GameManager.instancia.blueJewels > 1 && canBuyBaches)
+            {
+                GameManager.instancia.blueJewels -= 2;
+                baches.SetActive(false);
+                canBuyBaches = false;
+            }
         }
         if (Input.GetButton("2"))
         {
-            if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuyTime)
+            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
             {
-                if (GameManager.instancia.redJewels > 0)
-                    GameManager.instancia.redJewels--;
-                else
-                    GameManager.instancia.blueJewels--;
-
+                GameManager.instancia.blueJewels -= 3;
                 GameManager.instancia.time += 5;
                 timeJoker();
             }
