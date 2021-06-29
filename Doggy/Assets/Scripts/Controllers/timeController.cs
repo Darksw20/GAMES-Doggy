@@ -5,22 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class timeController : MonoBehaviour
 {
-    public float timeRemaining;
+    public float initialTime;
+    public static float timeRemaining;
     public static bool timerIsRunning = false;
 
     private void Start()
     {
+        switch (GameManager.instancia.dificulty)
+        {
+            case 0:
+                initialTime += 10;
+                break;
+            case 2:
+                initialTime -= 10;
+                break;
+
+        }
+        timeRemaining = initialTime;
+
         GameManager.instancia.levelTime = (int)timeRemaining;
+        GameManager.instancia.time = (int)timeRemaining;
     }
 
     void Update()
     {
         if (timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if (GameManager.instancia.time > 0)
             {
-                GameManager.instancia.time = Mathf.FloorToInt(timeRemaining % 60);
                 timeRemaining -= Time.deltaTime;
+                GameManager.instancia.time = (int)timeRemaining;
             }
             else
             {
@@ -29,5 +43,20 @@ public class timeController : MonoBehaviour
                 timerIsRunning = false;
             }
         }
+    }
+
+    public static void ability5sec()
+    {
+        timeRemaining += 5;
+    }
+
+    public static void stopTime()
+    {
+        timerIsRunning = false;
+    }
+
+    public static void continueTime()
+    {
+        timerIsRunning = true;
     }
 }

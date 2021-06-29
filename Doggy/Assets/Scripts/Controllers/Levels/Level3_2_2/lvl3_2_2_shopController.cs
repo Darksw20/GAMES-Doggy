@@ -2,24 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lvl3_1_shopController : MonoBehaviour
+public class lvl3_2_2_shopController : MonoBehaviour
 {
-    public GameObject mapa;
     private bool canBuyTime = true;
 
     void Update()
     {
         if (Input.GetButton("1"))
-        {
-            bool hasBoughtMemory = mapa.GetComponent<lvl3_1_danceController>().getMemory();
-            if (!hasBoughtMemory)
-            {
-                GameManager.instancia.galletas--;
-                mapa.GetComponent<lvl3_1_danceController>().setMemory(true);
-            }
-        }
-
-        if (Input.GetButton("2"))
         {
             if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuyTime)
             {
@@ -33,7 +22,6 @@ public class lvl3_1_shopController : MonoBehaviour
             }
         }
     }
-
     private void timeJoker()
     {
         timeController.ability5sec();
@@ -43,11 +31,11 @@ public class lvl3_1_shopController : MonoBehaviour
 
     IEnumerator cronTimeOff(int time)
     {
-        GameManager.instancia.hSlot2 = time;
+        GameManager.instancia.hSlot1 = time;
         for (int i = 0; i < time; i++)
         {
             yield return new WaitForSeconds(1);
-            GameManager.instancia.hSlot2--;
+            GameManager.instancia.hSlot1--;
         }
         canBuyTime = true;
     }

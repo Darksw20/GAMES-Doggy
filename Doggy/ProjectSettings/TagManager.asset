@@ -29,6 +29,8 @@ TagManager:
   - TuboEstaticoX
   - FinalJuego
   - JumpSound
+  - Pausa
+  - Tienda
   layers:
   - Default
   - TransparentFX
@@ -77,4 +79,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3751920249
+    locked: 0
+  - name: Dialogue
+    uniqueID: 700780675
     locked: 0

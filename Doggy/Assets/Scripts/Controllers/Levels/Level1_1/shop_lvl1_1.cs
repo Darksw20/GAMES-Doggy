@@ -11,11 +11,15 @@ public class shop_lvl1_1 : MonoBehaviour
 
     private bool canBuyLight = true;
     private bool canBuySniff = true;
+    private bool canBuyTime = true;
 
     private bool renderLine = false;
 
     public Color c1 = Color.yellow;
     public Color c2 = Color.red;
+
+    public float Tiempo = 0.0f;
+    public bool DebeAumentar = false;
 
     void Start()
     {
@@ -40,6 +44,7 @@ public class shop_lvl1_1 : MonoBehaviour
         {
             if ((GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0) && canBuySniff)
             {
+                
                 if (GameManager.instancia.redJewels > 0)
                     GameManager.instancia.redJewels--;
                 else
@@ -60,6 +65,20 @@ public class shop_lvl1_1 : MonoBehaviour
 
                 lightWildcard();
             }
+        }
+        if (Input.GetButton("3"))
+        {
+            if (GameManager.instancia.galletas > 0 && canBuyTime)
+            {
+
+                GameManager.instancia.galletas--;
+                GameManager.instancia.time += 5;
+                timeJoker();
+            }
+        }
+        if (Input.GetButton("Tienda"))
+        {
+
         }
 
         if (renderLine)
@@ -95,7 +114,15 @@ public class shop_lvl1_1 : MonoBehaviour
     {
         renderLine = true;
         canBuySniff = false;
-        StartCoroutine(sniffAbilityOff());
+        
+        StartCoroutine(sniffAbilityOff(10));
+    }
+
+    private void timeJoker()
+    {
+        timeController.ability5sec();
+        canBuyTime = false;
+        StartCoroutine(cronTimeOff(5));
     }
 
     private void lightWildcard()
@@ -107,21 +134,31 @@ public class shop_lvl1_1 : MonoBehaviour
             light2.enabled = true;
         if (light3 != null)
             light3.enabled = true;
-        StartCoroutine(lightWildcardOff());
+        StartCoroutine(lightWildcardOff(10));
     }
 
-    IEnumerator sniffAbilityOff()
+    IEnumerator sniffAbilityOff(int time)
     {
-        yield return new WaitForSeconds(10);
+        GameManager.instancia.hSlot1 = time;
+        for (int i=0;i<time ;i++)
+        {
+            yield return new WaitForSeconds(1);
+            GameManager.instancia.hSlot1--;
+        }
         renderLine = false;
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
         canBuySniff = true;
     }
 
-    IEnumerator lightWildcardOff()
+    IEnumerator lightWildcardOff(int time)
     {
-        yield return new WaitForSeconds(10);
+        GameManager.instancia.hSlot2 = time;
+        for (int i = 0; i < time; i++)
+        {
+            yield return new WaitForSeconds(1);
+            GameManager.instancia.hSlot2--;
+        }
         if (light1 != null)
             light1.enabled = false;
         if (light2 != null)
@@ -129,6 +166,17 @@ public class shop_lvl1_1 : MonoBehaviour
         if (light3 != null)
             light3.enabled = false;
         canBuyLight = true;
+    }
+
+    IEnumerator cronTimeOff(int time)
+    {
+        GameManager.instancia.hSlot3 = time;
+        for (int i = 0; i < time; i++)
+        {
+            yield return new WaitForSeconds(1);
+            GameManager.instancia.hSlot3--;
+        }
+        canBuyTime = true;
     }
 
 }
