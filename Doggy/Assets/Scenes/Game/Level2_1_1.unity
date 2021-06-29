@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 145841575}
   - component: {fileID: 145841577}
   - component: {fileID: 145841576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: llanta3
   m_TagString: CarroLvl_2_1_1
   m_Icon: {fileID: 0}
@@ -770,8 +770,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 852295495
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3970e69b8395464aa84b8338ab9bc5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1419,7 +1419,7 @@ GameObject:
   - component: {fileID: 274154987}
   - component: {fileID: 274154989}
   - component: {fileID: 274154988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: llanta1
   m_TagString: CarroLvl_2_1_1
   m_Icon: {fileID: 0}
@@ -1434,7 +1434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274154986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.712757, y: -0.8990383, z: 31.721392}
+  m_LocalPosition: {x: 24.77, y: -0.76, z: 31.721392}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1948173754}
@@ -1503,8 +1503,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 852295495
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3970e69b8395464aa84b8338ab9bc5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2077,6 +2077,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239ab0829888e014083672fcd49f5d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  piezas:
+  - {fileID: 274154986}
+  - {fileID: 2032617478}
+  - {fileID: 145841574}
+  - {fileID: 1014634233}
+  - {fileID: 1194606620}
 --- !u!114 &328086509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,7 +5604,7 @@ GameObject:
   - component: {fileID: 1014634234}
   - component: {fileID: 1014634236}
   - component: {fileID: 1014634235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: llanta4
   m_TagString: CarroLvl_2_1_1
   m_Icon: {fileID: 0}
@@ -5682,8 +5688,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 852295495
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3970e69b8395464aa84b8338ab9bc5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6236,7 +6242,7 @@ GameObject:
   - component: {fileID: 1194606621}
   - component: {fileID: 1194606623}
   - component: {fileID: 1194606622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: box
   m_TagString: CarroLvl_2_1_1
   m_Icon: {fileID: 0}
@@ -6320,8 +6326,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 852295495
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dc9c7a73201940f498ec7f979d83e726, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7512,7 +7518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676890359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.521131, y: -1.7519999, z: -10}
+  m_LocalPosition: {x: -1.52, y: -1.7519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357233178}
@@ -8256,7 +8262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1948173754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8708,7 +8714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984869194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.521131, y: -1.7519999, z: -10}
+  m_LocalPosition: {x: -1.52, y: -1.7519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8988,7 +8994,7 @@ GameObject:
   - component: {fileID: 2032617479}
   - component: {fileID: 2032617481}
   - component: {fileID: 2032617480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: llanta2
   m_TagString: CarroLvl_2_1_1
   m_Icon: {fileID: 0}
@@ -9072,8 +9078,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 852295495
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3970e69b8395464aa84b8338ab9bc5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

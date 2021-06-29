@@ -2,12 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class lvl2_1_1_shopController : MonoBehaviour
 {
-
     public static bool hasBoughtStrenght = false;
     private bool canBuyTime = true;
+    public GameObject[] piezas;
+    private static readonly Random random = new Random();
+
+    void Start()
+    {
+        for (int i=0; i<5;i++)
+        {
+            float x = (float)RandomNumberBetween(-4.0f, 24.77f);
+            Debug.Log("x: " + x);
+            piezas[i].transform.position = new Vector3(x, -4.0f, 31.72139f);
+        }
+    }
+
 
     void Update()
     {
@@ -34,6 +47,13 @@ public class lvl2_1_1_shopController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private static double RandomNumberBetween(double minValue, double maxValue)
+    {
+        var next = random.NextDouble();
+
+        return minValue + (next * (maxValue - minValue));
     }
 
     private void timeStrenght()
