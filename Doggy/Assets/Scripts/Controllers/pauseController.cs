@@ -27,7 +27,7 @@ public class pauseController : GameRouting
             isPaused = !isPaused;
             pauseGame();
         }
-        if (Input.GetButtonDown("Tienda"))
+        if (Input.GetButtonDown("Tienda") && (GameManager.instancia.redJewels > 0 || GameManager.instancia.blueJewels > 0))
         {
             isTienda = !isTienda;
             tiendaGame();

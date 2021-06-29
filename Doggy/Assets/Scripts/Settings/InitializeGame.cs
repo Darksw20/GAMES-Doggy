@@ -11,7 +11,7 @@ public class InitializeGame : GameRouting
     {
         GameManager.instancia.playerName = (userName.text.Length < 1 ||
             userName.text.Length > 15) || userName.text == null || userName.text == "" ?
-            "Ana" : char.ToUpper(userName.text[0]) + userName.text.Substring(1);
+            "Error" : char.ToUpper(userName.text[0]) + userName.text.Substring(1);
         Debug.Log("Your name is " + GameManager.instancia.playerName);
 
         Dificulties();

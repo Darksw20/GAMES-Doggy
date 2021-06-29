@@ -32,6 +32,8 @@ public class levelStats_controller : GameRouting
         {
             backgroundImage.GetComponent<SpriteRenderer>().sprite = levelCompleted;
         }
+        GameManager.instancia.blueJewels += 2;
+        GameManager.instancia.redJewels += 2;
         StartCoroutine(removeImage());
     }
 
