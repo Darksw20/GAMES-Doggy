@@ -30,6 +30,7 @@ TagManager:
   - FinalJuego
   - JumpSound
   - Pausa
+  - Tienda
   layers:
   - Default
   - TransparentFX

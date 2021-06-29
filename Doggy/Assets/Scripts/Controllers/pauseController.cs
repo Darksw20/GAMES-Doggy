@@ -40,9 +40,9 @@ public class pauseController : GameRouting
         {
             
             pause.SetActive(true);
-            GetComponent<Image>().enabled = true;
-            disableHUD();
             Time.timeScale = 0F;
+            disableHUD();
+            GetComponent<Image>().enabled = true;
         }
         else
         {
@@ -60,16 +60,16 @@ public class pauseController : GameRouting
         {
 
             tienda.SetActive(true);
-            //GetComponent<Image>().enabled = true;
-            disableHUD();
             Time.timeScale = 0F;
+            disableHUD();
+            GetComponent<Image>().enabled = true;
         }
         else
         {
             tienda.SetActive(false);
             Time.timeScale = 1F;
             enableHUD();
-            //GetComponent<Image>().enabled = false;
+            GetComponent<Image>().enabled = false;
 
         }
     }
