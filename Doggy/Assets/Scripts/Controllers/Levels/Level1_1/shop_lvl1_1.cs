@@ -76,6 +76,10 @@ public class shop_lvl1_1 : MonoBehaviour
                 timeJoker();
             }
         }
+        if (Input.GetButton("Tienda"))
+        {
+
+        }
 
         if (renderLine)
             renderSniff();

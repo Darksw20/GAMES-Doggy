@@ -29,6 +29,7 @@ TagManager:
   - TuboEstaticoX
   - FinalJuego
   - JumpSound
+  - Pausa
   layers:
   - Default
   - TransparentFX

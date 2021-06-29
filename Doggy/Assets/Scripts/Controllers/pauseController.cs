@@ -1,18 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class pauseController : MonoBehaviour
+public class pauseController : GameRouting
 {
-    public static bool isPaused;
+    public static bool isPaused = false;
+    public static bool isTienda = false;
+
+    public GameObject pause;
+    public GameObject tienda;
+    public GameObject hud;
+
+    void Start()
+    {
+        pause.SetActive(false);
+        tienda.SetActive(false);
+        hud.SetActive(true);
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Pause"))
         {
             isPaused = !isPaused;
             pauseGame();
+        }
+        if (Input.GetButtonDown("Tienda"))
+        {
+            isTienda = !isTienda;
+            tiendaGame();
         }
     }
 
@@ -20,12 +38,15 @@ public class pauseController : MonoBehaviour
     {
         if (isPaused)
         {
+            
+            pause.SetActive(true);
             GetComponent<Image>().enabled = true;
             disableHUD();
             Time.timeScale = 0F;
         }
         else
         {
+            pause.SetActive(false);
             Time.timeScale = 1F;
             enableHUD();
             GetComponent<Image>().enabled = false;
@@ -33,39 +54,57 @@ public class pauseController : MonoBehaviour
         }
     }
 
+    private void tiendaGame()
+    {
+        if (isTienda)
+        {
+
+            tienda.SetActive(true);
+            //GetComponent<Image>().enabled = true;
+            disableHUD();
+            Time.timeScale = 0F;
+        }
+        else
+        {
+            tienda.SetActive(false);
+            Time.timeScale = 1F;
+            enableHUD();
+            //GetComponent<Image>().enabled = false;
+
+        }
+    }
+
     private void disableHUD()
     {
-        foreach (Transform child in GameObject.Find("Hud").transform)
-        {
-            if (child.name != "Pause menu")
-            {
-                child.localScale = new Vector3(0, 0, 0);
-            } else if (child.name == "Shop")
-            {
-                foreach(Transform subchild in child)
-                {
-                    subchild.localScale = new Vector3(0, 0, 0);
-                }
-            }
-        }
+        hud.SetActive(false);
     }
 
     private void enableHUD()
     {
-        foreach (Transform child in GameObject.Find("Hud").transform)
-        {
-            if (child.name != "Pause menu")
-            {
-                child.localScale = new Vector3(1, 1, 0);
-            }
-            else if (child.name == "Shop")
-            {
-                foreach (Transform subchild in child)
-                {
-                    subchild.localScale = new Vector3(1, 1, 0);
-                }
-            }
-        }
+        hud.SetActive(true);
+    }
+    public void continueLevel()
+    {
+        pause.SetActive(false);
+        Time.timeScale = 1F;
+        enableHUD();
+        GetComponent<Image>().enabled = false;
+    }
+
+    public void restartLevel()
+    {
+        ChooseLevel(GameManager.instancia.level.ToString());
+    }
+
+    public void saveLevel()
+    {
+        SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
+
+    }
+
+    public void exitLevel()
+    {
+        MainMenu();
     }
 
 }
