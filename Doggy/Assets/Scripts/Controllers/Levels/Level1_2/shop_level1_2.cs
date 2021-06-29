@@ -9,24 +9,27 @@ public class shop_level1_2 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("1"))
+        if (GameManager.instancia.dificulty != 2)
         {
-            if (GameManager.instancia.redJewels > 1 && GameManager.instancia.blueJewels > 2 && canBuySpeed)
+            if (Input.GetButton("1"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.redJewels -= 2;
+                if (GameManager.instancia.redJewels > 1 && GameManager.instancia.blueJewels > 2 && canBuySpeed)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.redJewels -= 2;
 
-                speedAbility();
+                    speedAbility();
+                }
             }
-        }
 
-        if (Input.GetButton("2"))
-        {
-            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+            if (Input.GetButton("2"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.time += 5;
-                timeJoker();
+                if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.time += 5;
+                    timeJoker();
+                }
             }
         }
     }

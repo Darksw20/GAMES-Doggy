@@ -11,24 +11,27 @@ public class lvl2_1_1_shopController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("1"))
+        if (GameManager.instancia.dificulty != 2)
         {
-            if (GameManager.instancia.redJewels > 1 && GameManager.instancia.blueJewels > 2 && !hasBoughtStrenght)
+            if (Input.GetButton("1"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.redJewels -= 2;
+                if (GameManager.instancia.redJewels > 1 && GameManager.instancia.blueJewels > 2 && !hasBoughtStrenght)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.redJewels -= 2;
 
-                timeStrenght();
+                    timeStrenght();
+                }
             }
-        }
 
-        if (Input.GetButton("2"))
-        {
-            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+            if (Input.GetButton("2"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.time += 5;
-                timeJoker();
+                if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.time += 5;
+                    timeJoker();
+                }
             }
         }
     }

@@ -11,22 +11,25 @@ public class lvl3_2_3_shopController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("1"))
+        if (GameManager.instancia.dificulty != 2)
         {
-            if (GameManager.instancia.blueJewels > 1 && canBuyBaches)
+            if (Input.GetButton("1"))
             {
-                GameManager.instancia.blueJewels -= 2;
-                baches.SetActive(false);
-                canBuyBaches = false;
+                if (GameManager.instancia.blueJewels > 1 && canBuyBaches)
+                {
+                    GameManager.instancia.blueJewels -= 2;
+                    baches.SetActive(false);
+                    canBuyBaches = false;
+                }
             }
-        }
-        if (Input.GetButton("2"))
-        {
-            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+            if (Input.GetButton("2"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.time += 5;
-                timeJoker();
+                if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.time += 5;
+                    timeJoker();
+                }
             }
         }
     }

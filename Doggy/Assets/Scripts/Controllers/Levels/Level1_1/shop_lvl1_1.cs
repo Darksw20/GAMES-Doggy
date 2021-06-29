@@ -40,35 +40,38 @@ public class shop_lvl1_1 : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButton("1"))
+        if (GameManager.instancia.dificulty != 2)
         {
-            if (GameManager.instancia.blueJewels > 0 && canBuySniff)
+            if(Input.GetButton("1"))
             {
-                GameManager.instancia.blueJewels--;
-                sniffAbility();
+                if (GameManager.instancia.blueJewels > 0 && canBuySniff)
+                {
+                    GameManager.instancia.blueJewels--;
+                    sniffAbility();
+                }
             }
-        }
 
-        if(Input.GetButton("2"))
-        {
-            if (GameManager.instancia.blueJewels > 1 && canBuyLight)
+            if(Input.GetButton("2"))
             {
-                GameManager.instancia.blueJewels -= 2;
-                lightWildcard();
+                if (GameManager.instancia.blueJewels > 1 && canBuyLight)
+                {
+                    GameManager.instancia.blueJewels -= 2;
+                    lightWildcard();
+                }
             }
-        }
-        if (Input.GetButton("3"))
-        {
-            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+            if (Input.GetButton("3"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.time += 5;
-                timeJoker();
+                if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.time += 5;
+                    timeJoker();
+                }
             }
-        }
 
-        if (renderLine)
-            renderSniff();
+            if (renderLine)
+                renderSniff();
+        }
     }
 
     private void renderSniff()

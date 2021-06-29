@@ -9,22 +9,25 @@ public class lvl3_2_1_shopController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("1"))
+        if (GameManager.instancia.dificulty != 2)
         {
-            if (GameManager.instancia.blueJewels > 2 && !hasBoughtCircles)
+            if (Input.GetButton("1"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameObject.Find("Mapa").GetComponent<lvl3_2_1_controller>().setShouldSeeCircles(true);
-                hasBoughtCircles = true;
+                if (GameManager.instancia.blueJewels > 2 && !hasBoughtCircles)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameObject.Find("Mapa").GetComponent<lvl3_2_1_controller>().setShouldSeeCircles(true);
+                    hasBoughtCircles = true;
+                }
             }
-        }
-        if (Input.GetButton("2"))
-        {
-            if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+            if (Input.GetButton("2"))
             {
-                GameManager.instancia.blueJewels -= 3;
-                GameManager.instancia.time += 5;
-                timeJoker();
+                if (GameManager.instancia.blueJewels > 2 && canBuyTime)
+                {
+                    GameManager.instancia.blueJewels -= 3;
+                    GameManager.instancia.time += 5;
+                    timeJoker();
+                }
             }
         }
     }
