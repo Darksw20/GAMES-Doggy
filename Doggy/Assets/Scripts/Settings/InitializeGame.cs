@@ -3,18 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class InitializeGame : GameRouting
 {
     public TMP_InputField userName;
+    public GameObject errorText;
+
+    void Start()
+    {
+        try
+        {
+            errorText.SetActive(false);
+        }
+        catch (NullReferenceException nr) { Debug.Log(nr); }
+
+    }
+
     public void clickSaveButton()
     {
-        GameManager.instancia.playerName = (userName.text.Length < 1 ||
-            userName.text.Length > 15) || userName.text == null || userName.text == "" ?
-            "Error" : char.ToUpper(userName.text[0]) + userName.text.Substring(1);
-        Debug.Log("Your name is " + GameManager.instancia.playerName);
-
-        Dificulties();
+        if (userName.text.Length < 1 ||
+            userName.text.Length > 15 || userName.text == null || userName.text == "")
+        {
+            errorText.SetActive(true);
+        } else if (!char.IsUpper(userName.text[0]))
+        {
+            errorText.SetActive(true);
+        }
+        else
+        {
+            GameManager.instancia.playerName = char.ToUpper(userName.text[0]) + userName.text.Substring(1);
+            Debug.Log("Your name is " + GameManager.instancia.playerName);
+            Dificulties();
+        }
     }
     public void easyInitializeGame()
     {
