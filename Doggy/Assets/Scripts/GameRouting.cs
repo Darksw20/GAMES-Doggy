@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * GameRouting es el ruteo de los niveles
+ * haciendo una interfaz mas sencilla para
+ * cambiar de nivel
+ */
 public class GameRouting : MonoBehaviour
 {
     
@@ -45,9 +50,7 @@ public class GameRouting : MonoBehaviour
     }
     public void NewGame()
     {
-        // Aqui creo un personaje
         SceneManager.LoadScene("NewGame");
-        //Destroy(GameObject.Find("Audio Source"));
     }
     public void Levels()
     {
@@ -56,7 +59,6 @@ public class GameRouting : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("LoadGame");
-        //Destroy(GameObject.Find("Audio Source"));
     }
     public void HowToPlay()
     {
@@ -70,7 +72,6 @@ public class GameRouting : MonoBehaviour
 
     public static void Level1_1()
     {
-        //Aqui debe estar la logica de crear nuevo personaje
         SceneManager.LoadScene("Level1_1");
     }
     public void Level1_2()
@@ -111,6 +112,8 @@ public class GameRouting : MonoBehaviour
         SceneManager.LoadScene("LevelStats");
     }
 
+    //Recibe un string con el nombre el nombre del nivel o de el
+    //numero de nivel
     public void ChooseLevel(string level)
     {
         switch (level)

@@ -17,7 +17,8 @@ public class GUI : MonoBehaviour
     public TextMeshProUGUI hSlot5;
 
 
-    // Start is called before the first frame update
+    // Se asocian los componentes con variables para 
+    // modificar sus valores
     void Start()
     {
         time = time.GetComponent<TextMeshProUGUI>();
@@ -34,7 +35,9 @@ public class GUI : MonoBehaviour
         hSlot5 = hSlot5.GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
+    // Actualizamos los valores mostrados en pantalla
+    // cada vez que se cargue un frame utilizando los 
+    // datos de la instancia Singleton
     void Update()
     {
         health.SetText(GameManager.instancia.health.ToString());

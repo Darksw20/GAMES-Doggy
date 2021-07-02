@@ -24,6 +24,8 @@ public class levelStats_controller : GameRouting
 
     private void showImage()
     {
+        //Verifico el nivel donde se encuentra el jugador
+        //y le muestro la pantalla corrrespondiente
         int level = GameManager.instancia.level;
         if (level == 1 || level == 3 || level == 4 || level == 6 || level == 7 || level == 8)
         {
@@ -32,13 +34,18 @@ public class levelStats_controller : GameRouting
         {
             backgroundImage.GetComponent<SpriteRenderer>().sprite = levelCompleted;
         }
+        //Le damos al jugador una recompesa en joyas
         GameManager.instancia.blueJewels += 2;
         GameManager.instancia.redJewels += 2;
+        
+        //Quita la imagen
         StartCoroutine(removeImage());
     }
-
+    //Cambia los datos de la pantalla con los datos 
+    //de los items que conseguiste en ese nivel
     private void updateText()
     {
+        //Reviso en cuanto tiempo se completo el juego
         time.text = "Completado en:\n" + (GameManager.instancia.levelTime-GameManager.instancia.time) + " segundos";
         level.text = getLevelText();
         health.text = GameManager.instancia.health.ToString();
@@ -46,13 +53,13 @@ public class levelStats_controller : GameRouting
         blueDiamonds.text = GameManager.instancia.blueJewels.ToString();
         coins.text = GameManager.instancia.money.ToString();
     }
-
     public void nextScene()
     {
         Debug.Log(GameManager.instancia.level++.ToString());
         ChooseLevel(GameManager.instancia.level++.ToString());
     }
 
+    //Me dice en texto cual es el nivel que jugue
     private string getLevelText()
     {
         switch (GameManager.instancia.level)
@@ -86,6 +93,7 @@ public class levelStats_controller : GameRouting
         }
         return null;
     }
+    //Quita la imagen espera 3 segundos y modifica los datos en pantalla
 
     IEnumerator removeImage()
     {
