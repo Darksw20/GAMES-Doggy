@@ -134,38 +134,38 @@ public class GameRouting : MonoBehaviour
                 break;
 
             case "4":
+            case "Anim_construction":
+                Anim_construction();
+                break;
+
+            case "5":
             case "Level2_1_2":
                 Level2_1_2();
                 break;
 
-            case "5":
+            case "6":
             case "Level2_2":
                 Level2_2();
                 break;
 
-            case "6":
+            case "7":
             case "Level3_1":
                 Level3_1();
                 break;
 
-            case "7":
+            case "8":
             case "Level3_2_1":
                 Level3_2_1();
                 break;
 
-            case "8":
+            case "9":
             case "Level3_2_2":
                 Level3_2_2();
                 break;
 
-            case "9":
+            case "10":
             case "Level3_2_3":
                 Level3_2_3();
-                break;
-
-            case "10":
-            case "Anim_construction":
-                Anim_construction();
                 break;
 
             case "11":

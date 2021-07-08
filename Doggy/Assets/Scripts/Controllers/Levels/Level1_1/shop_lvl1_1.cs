@@ -40,6 +40,7 @@ public class shop_lvl1_1 : MonoBehaviour
 
     void Update()
     {
+        //Verifica la dificultad para habilitar las habilidades
         if (GameManager.instancia.dificulty != 2)
         {
             if(Input.GetButton("1"))
