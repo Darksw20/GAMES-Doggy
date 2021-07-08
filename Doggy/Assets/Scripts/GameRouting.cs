@@ -112,6 +112,11 @@ public class GameRouting : MonoBehaviour
         SceneManager.LoadScene("LevelStats");
     }
 
+    public void reviewGame()
+    {
+        SceneManager.LoadScene("ThanksToPlay");
+    }
+
     //Recibe un string con el nombre el nombre del nivel o de el
     //numero de nivel
     public void ChooseLevel(string level)
@@ -175,6 +180,9 @@ public class GameRouting : MonoBehaviour
 
             case "Menu":
                 MainMenu();
+                break;
+            case "reviewGame":
+                reviewGame();
                 break;
         }
     }   
