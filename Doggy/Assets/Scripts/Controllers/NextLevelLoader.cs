@@ -26,6 +26,8 @@ public class NextLevelLoader : GameRouting
                 //Guardo el nivel
                 SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
                 //Paso al siguiente nivel
+                GameManager.instancia.level = 1;
+                GameManager.instancia.nextLevel = 2;
                 nextLevel();
             }
             // Si el nivel es el 1.2
@@ -34,6 +36,8 @@ public class NextLevelLoader : GameRouting
                 //Guardo el nivel
                 SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
                 //Paso al siguiente nivel
+                GameManager.instancia.level = 2;
+                GameManager.instancia.nextLevel = 3;
                 nextLevel();
             }
             

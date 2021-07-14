@@ -181,6 +181,7 @@ public class GameRouting : MonoBehaviour
             case "Menu":
                 MainMenu();
                 break;
+            case "12":
             case "reviewGame":
                 reviewGame();
                 break;

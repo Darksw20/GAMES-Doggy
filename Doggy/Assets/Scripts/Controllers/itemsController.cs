@@ -201,7 +201,9 @@ public class itemsController : GameRouting
         if (piecesFound == 5)
         {
             GameManager.instancia.level = 3;
-            GameManager.instancia.nextLevel = 10;
+            GameManager.instancia.nextLevel = 4;
+            //Guardo el nivel
+            SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
             nextLevel();
         }
     }
@@ -366,7 +368,11 @@ public class itemsController : GameRouting
     IEnumerator lagoLlenandose()
     {
         yield return new WaitForSeconds(3);
-        Level3_1();
+        GameManager.instancia.level = 6;
+        GameManager.instancia.nextLevel = 7;
+        //Guardo el nivel
+        SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
+        nextLevel();
     }
     public GameObject isCarrying()
     {

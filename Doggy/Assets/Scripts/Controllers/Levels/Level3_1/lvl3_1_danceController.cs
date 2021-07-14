@@ -167,8 +167,10 @@ public class lvl3_1_danceController : GameRouting
         }else if (currentMovement == 4 && checkMatch(dance_4, current_4))
         {
             Debug.Log("Movimiento 4 correcto");
-            GameManager.instancia.level = 6;
-            GameManager.instancia.nextLevel = 7;
+            GameManager.instancia.level = 7;
+            GameManager.instancia.nextLevel = 8;
+            //Guardo el nivel
+            SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
             nextLevel();
         }else
         {

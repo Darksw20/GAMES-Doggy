@@ -55,8 +55,7 @@ public class levelStats_controller : GameRouting
     }
     public void nextScene()
     {
-        Debug.Log(GameManager.instancia.level++.ToString());
-        ChooseLevel(GameManager.instancia.level++.ToString());
+        ChooseLevel(GameManager.instancia.nextLevel.ToString());
     }
 
     //Me dice en texto cual es el nivel que jugue
@@ -74,22 +73,28 @@ public class levelStats_controller : GameRouting
                 return "Level2_1_1";
 
             case 4:
-                return "Level2_1_2";
+                return "Anim_construction";
 
             case 5:
-                return "Level2_2";
+                return "Level2_1_2";
 
             case 6:
-                return "Level3_1";
+                return "Level2_2";
 
             case 7:
-                return "Level3_2_1";
+                return "Level3_1";
 
             case 8:
-                return "Level3_2_2";
+                return "Level3_2_1";
 
             case 9:
+                return "Level3_2_2";
+
+            case 10:
                 return "Level3_2_3";
+            case 11:
+                return "Anim_Fin";
+            
         }
         return null;
     }

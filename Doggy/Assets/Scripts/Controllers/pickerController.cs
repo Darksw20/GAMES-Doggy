@@ -38,8 +38,15 @@ public class pickerController : GameRouting
 
             case "BacheLvl2_1_2":
                 GameManager.instancia.isRotating = true;
-                GameManager.instancia.health--;
-                Destroy(other.gameObject);
+                if (GameManager.instancia.health > 0)
+                {
+                    GameManager.instancia.health--;
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    SceneManager.LoadScene("Death");
+                }
 
                 break;
 
@@ -65,9 +72,13 @@ public class pickerController : GameRouting
             case "Meta":
                 GameManager.instancia.laps++;
                 Debug.Log("Vuelta "+GameManager.instancia.laps.ToString()+" completada");
-                if(GameManager.instancia.laps == 7)
+                if(GameManager.instancia.laps == 2)
                 {
-                    Level2_2();
+                    //Guardo el nivel
+                    GameManager.instancia.level = 5;
+                    GameManager.instancia.nextLevel = 6;
+                    SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
+                    nextLevel();
                 }
                 break;
 
@@ -110,8 +121,10 @@ public class pickerController : GameRouting
                 break;
 
             case "FinalJuego":
-                GameManager.instancia.level = 9;
+                GameManager.instancia.level = 10;
                 GameManager.instancia.nextLevel = 11;
+                //Guardo el nivel
+                SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
                 nextLevel();
                 break;
 

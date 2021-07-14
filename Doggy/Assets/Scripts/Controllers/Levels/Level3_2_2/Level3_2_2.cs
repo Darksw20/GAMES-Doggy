@@ -87,8 +87,10 @@ public class Level3_2_2 : GameRouting
         }
         if (level1Completed && level2Completed)
         {
-            GameManager.instancia.level = 8;
-            GameManager.instancia.nextLevel = 9;
+            GameManager.instancia.level = 9;
+            GameManager.instancia.nextLevel = 10;
+            //Guardo el nivel
+            SaveSystem.SaveGameData(GameManager.instancia.saveSlot);
             nextLevel();
         }
     }

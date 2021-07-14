@@ -55,9 +55,12 @@ public class TopDownCarController : MonoBehaviour
 
         velocityVsUp = Vector2.Dot(transform.up, carRigidbody2D.velocity);
 
+        //Si esta en velocidad maxima y le doy mas velocidad
+        //se retorna para mantener la velocidad maxima
         if (velocityVsUp > maxSpeed && accelerationInput > 0)
             return;
 
+        //Lo mismo pero en reversa
         if (velocityVsUp < -maxSpeed * 0.5f && accelerationInput < 0)
             return;
 
