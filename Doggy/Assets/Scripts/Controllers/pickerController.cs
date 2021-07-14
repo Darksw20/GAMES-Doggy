@@ -8,7 +8,6 @@ public class pickerController : GameRouting
     public Object controller;
     private itemsController itemsController;
     private level2_2 lvl22Controller;
-
     void Start()
     {
         if(SceneManager.GetActiveScene().name == "Level2_1_1" ||
@@ -21,15 +20,24 @@ public class pickerController : GameRouting
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         switch (other.transform.tag)
         {
             case "Coin":
-                GameManager.instancia.money++;
+                if (GameManager.instancia.money == 14)
+                {
+                    GameManager.instancia.health++;
+                    GameManager.instancia.money = 0;
+                }
+                else
+                {
+                    GameManager.instancia.money++;
+                }
                 Destroy(other.gameObject);
                 break;
 
             case "BacheLvl2_1_2":
-
+                GameManager.instancia.isRotating = true;
                 GameManager.instancia.health--;
                 Destroy(other.gameObject);
 
@@ -112,4 +120,6 @@ public class pickerController : GameRouting
                 break;
         }
     }
+    
+
 }

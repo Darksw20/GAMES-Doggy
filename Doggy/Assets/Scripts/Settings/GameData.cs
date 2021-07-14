@@ -19,6 +19,7 @@ public class GameData
     public int saveSlot;
     public int laps;
 
+    //El constructor guarda los datos que estan en el Singleton dentro del objeto
     public GameData()
     {
         playerName = GameManager.instancia.playerName;

@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour
     public int isMusicOn;
     public int saveSlot;
     public int laps;
+    public bool isRotating;
+
+    public int hSlot1;
+    public int hSlot2;
+    public int hSlot3;
+    public int hSlot4;
+    public int hSlot5;
     //att privado (_instancia)
     static private GameManager _instancia;
 
@@ -80,7 +87,14 @@ public class GameManager : MonoBehaviour
         dificulty = 0;
         saveSlot = 0;
         laps = 0;
-    }
+        isRotating = false;
+
+        hSlot1 = 0;
+        hSlot2 = 0;
+        hSlot3 = 0;
+        hSlot4 = 0;
+        hSlot5 = 0;
+}
 
     public void VisualizeData()
     {

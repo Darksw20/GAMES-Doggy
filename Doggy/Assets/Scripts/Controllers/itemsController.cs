@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class itemsController : GameRouting
 {
-
+    public GameObject lagoLleno;
     private GameObject llanta1;
     private GameObject llanta2;
     private GameObject llanta3;
@@ -56,6 +56,7 @@ public class itemsController : GameRouting
             _19 = GameObject.Find("19");
             _17r = GameObject.Find("17r");
             _9i = GameObject.Find("9i");
+            lagoLleno = GameObject.Find("2-2(v2)");
 
             _13m.SetActive(false);
             _14n.SetActive(false);
@@ -67,6 +68,7 @@ public class itemsController : GameRouting
             _19.SetActive(false);
             _17r.SetActive(false);
             _9i.SetActive(false);
+            lagoLleno.SetActive(false);
         }
     }
 
@@ -95,7 +97,7 @@ public class itemsController : GameRouting
         }
         else
         {
-            if (!lvl2_1_1_shopController.getStrenght())
+            if (!lvl2_1_1_shopController.hasBoughtStrenght)
             {
                 llanta1.SetActive(true);
             }
@@ -150,7 +152,7 @@ public class itemsController : GameRouting
     {
         
         // Si el jugador compró la habilidad de fuerza
-        if (lvl2_1_1_shopController.getStrenght())
+        if (lvl2_1_1_shopController.hasBoughtStrenght)
         {
             addItem(gameObject.name);
             Destroy(gameObject);
@@ -356,10 +358,16 @@ public class itemsController : GameRouting
         
         if (piecesFound == 10)
         {
-            Level3_1();
+            lagoLleno.SetActive(true);
+            StartCoroutine(lagoLlenandose());
+            
         }
     }
-
+    IEnumerator lagoLlenandose()
+    {
+        yield return new WaitForSeconds(3);
+        Level3_1();
+    }
     public GameObject isCarrying()
     {
         return itemBeingCarried;

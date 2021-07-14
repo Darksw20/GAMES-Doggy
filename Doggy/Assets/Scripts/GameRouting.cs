@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * GameRouting es el ruteo de los niveles
+ * haciendo una interfaz mas sencilla para
+ * cambiar de nivel
+ */
 public class GameRouting : MonoBehaviour
 {
     
@@ -45,9 +50,7 @@ public class GameRouting : MonoBehaviour
     }
     public void NewGame()
     {
-        // Aqui creo un personaje
         SceneManager.LoadScene("NewGame");
-        //Destroy(GameObject.Find("Audio Source"));
     }
     public void Levels()
     {
@@ -56,7 +59,6 @@ public class GameRouting : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("LoadGame");
-        //Destroy(GameObject.Find("Audio Source"));
     }
     public void HowToPlay()
     {
@@ -70,7 +72,6 @@ public class GameRouting : MonoBehaviour
 
     public static void Level1_1()
     {
-        //Aqui debe estar la logica de crear nuevo personaje
         SceneManager.LoadScene("Level1_1");
     }
     public void Level1_2()
@@ -111,6 +112,13 @@ public class GameRouting : MonoBehaviour
         SceneManager.LoadScene("LevelStats");
     }
 
+    public void reviewGame()
+    {
+        SceneManager.LoadScene("ThanksToPlay");
+    }
+
+    //Recibe un string con el nombre el nombre del nivel o de el
+    //numero de nivel
     public void ChooseLevel(string level)
     {
         switch (level)
@@ -131,38 +139,38 @@ public class GameRouting : MonoBehaviour
                 break;
 
             case "4":
+            case "Anim_construction":
+                Anim_construction();
+                break;
+
+            case "5":
             case "Level2_1_2":
                 Level2_1_2();
                 break;
 
-            case "5":
+            case "6":
             case "Level2_2":
                 Level2_2();
                 break;
 
-            case "6":
+            case "7":
             case "Level3_1":
                 Level3_1();
                 break;
 
-            case "7":
+            case "8":
             case "Level3_2_1":
                 Level3_2_1();
                 break;
 
-            case "8":
+            case "9":
             case "Level3_2_2":
                 Level3_2_2();
                 break;
 
-            case "9":
+            case "10":
             case "Level3_2_3":
                 Level3_2_3();
-                break;
-
-            case "10":
-            case "Anim_construction":
-                Anim_construction();
                 break;
 
             case "11":
@@ -172,6 +180,9 @@ public class GameRouting : MonoBehaviour
 
             case "Menu":
                 MainMenu();
+                break;
+            case "reviewGame":
+                reviewGame();
                 break;
         }
     }   

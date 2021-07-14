@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue)
     {
+        Time.timeScale = 0F;
         string aux;
         sentences = new Queue<string>();
 
@@ -57,6 +58,7 @@ public class DialogueManager : MonoBehaviour
         //GameObject.Find("Pajaro").SetActive(false);
         timeController.timerIsRunning = true;
         enabled = false;
+        Time.timeScale = 1F;
     }
 
 }
