@@ -4754,7 +4754,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1395906508}
         m_TargetAssemblyTypeName: pauseController, Assembly-CSharp
         m_MethodName: restartLevel
         m_Mode: 1
@@ -7383,7 +7383,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1395906508}
         m_TargetAssemblyTypeName: pauseController, Assembly-CSharp
         m_MethodName: saveLevel
         m_Mode: 1
@@ -8622,7 +8622,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1395906508}
         m_TargetAssemblyTypeName: pauseController, Assembly-CSharp
         m_MethodName: continueLevel
         m_Mode: 1
@@ -9461,7 +9461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1395906508}
         m_TargetAssemblyTypeName: pauseController, Assembly-CSharp
         m_MethodName: exitLevel
         m_Mode: 1
