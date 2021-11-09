@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class lvl3_2_1_shopController : MonoBehaviour
 {
-    private bool hasBoughtCircles = false;
+    private bool canBoughtCircles = true;
     private bool canBuyTime = true;
+    private lvl3_2_1_controller levelController;
+
+    private void Start()
+    {
+        levelController = GameObject.Find("Mapa").GetComponent<lvl3_2_1_controller>();
+    }
 
     void Update()
     {
@@ -13,11 +19,11 @@ public class lvl3_2_1_shopController : MonoBehaviour
         {
             if (Input.GetButton("1"))
             {
-                if (GameManager.instancia.blueJewels > 2 && !hasBoughtCircles)
+                if (GameManager.instancia.blueJewels > 2 && canBoughtCircles)
                 {
                     GameManager.instancia.blueJewels -= 3;
-                    GameObject.Find("Mapa").GetComponent<lvl3_2_1_controller>().setShouldSeeCircles(true);
-                    hasBoughtCircles = true;
+                    circulesClues();
+                    levelController.setShouldSeeCircles(true);
                 }
             }
             if (Input.GetButton("2"))
@@ -38,6 +44,13 @@ public class lvl3_2_1_shopController : MonoBehaviour
         StartCoroutine(cronTimeOff(5));
     }
 
+    private void circulesClues()
+    {
+        Debug.Log("s");
+        canBoughtCircles = false;
+        StartCoroutine(cronTimeOffCircles(5));
+    }
+
     IEnumerator cronTimeOff(int time)
     {
         GameManager.instancia.hSlot2 = time;
@@ -47,5 +60,17 @@ public class lvl3_2_1_shopController : MonoBehaviour
             GameManager.instancia.hSlot2--;
         }
         canBuyTime = true;
+    }
+
+    IEnumerator cronTimeOffCircles(int time)
+    {
+        GameManager.instancia.hSlot1 = time;
+        for (int i = 0; i < time; i++)
+        {
+            yield return new WaitForSeconds(1);
+            GameManager.instancia.hSlot1--;
+        }
+        canBoughtCircles = true;
+        levelController.setShouldSeeCircles(false);
     }
 }

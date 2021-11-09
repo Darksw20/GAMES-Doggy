@@ -6,7 +6,7 @@ public class LoadController : GameRouting
 {
     public void clickLoad1()
     {
-        LoadGame(0);
+        LoadGame(0);//hola
     }
 
     public void clickLoad2()

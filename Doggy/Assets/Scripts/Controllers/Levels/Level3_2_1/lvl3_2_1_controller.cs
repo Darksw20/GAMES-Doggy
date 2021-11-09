@@ -115,6 +115,14 @@ public class lvl3_2_1_controller : GameRouting
             circle4.GetComponent<SpriteRenderer>().enabled = true;
             circle5.GetComponent<SpriteRenderer>().enabled = true;
         }
+        else
+        {
+            circle1.GetComponent<SpriteRenderer>().enabled = false;
+            circle2.GetComponent<SpriteRenderer>().enabled = false;
+            circle3.GetComponent<SpriteRenderer>().enabled = false;
+            circle4.GetComponent<SpriteRenderer>().enabled = false;
+            circle5.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     public bool getShouldSeeCircles()
