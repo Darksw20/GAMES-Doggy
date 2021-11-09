@@ -18,8 +18,7 @@ public class lvl3_2_3_shopController : MonoBehaviour
                 if (GameManager.instancia.blueJewels > 1 && canBuyBaches)
                 {
                     GameManager.instancia.blueJewels -= 2;
-                    baches.SetActive(false);
-                    canBuyBaches = false;
+                    timeBaches();
                 }
             }
             if (Input.GetButton("2"))
@@ -49,5 +48,24 @@ public class lvl3_2_3_shopController : MonoBehaviour
             GameManager.instancia.hSlot2--;
         }
         canBuyTime = true;
+    }
+
+    private void timeBaches()
+    {
+        baches.SetActive(false);
+        canBuyBaches = false;
+        StartCoroutine(cronTimeOffBaches(5));
+    }
+
+    IEnumerator cronTimeOffBaches(int time)
+    {
+        GameManager.instancia.hSlot1 = time;
+        for (int i = 0; i < time; i++)
+        {
+            yield return new WaitForSeconds(1);
+            GameManager.instancia.hSlot1--;
+        }
+        canBuyBaches = true;
+        baches.SetActive(true);
     }
 }
